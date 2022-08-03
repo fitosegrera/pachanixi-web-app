@@ -1,12 +1,25 @@
 <script>
+	//LIBS
+	import * as prismicH from '@prismicio/helpers';
+
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
 	import Divider from '../../components/information/divider.svelte';
+
 	//PROPS
 	export let data;
+
+	const htmlSerializer = (type, element, content, children) => {
+		if (type === 'strong') {
+			return `<strong class="text-primary-main">${children}</strong>`;
+		}
+		if (type === 'paragraph') {
+			return `<p class="text-primary-light pb-32">${children}</p>`;
+		}
+	};
 </script>
 
 <div id="wrapper" class="w-auto h-auto bg-primary-dark pb-124 text-center">
@@ -18,7 +31,8 @@
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div class="text-p1 text-primary-light font-medium pt-48">
-			<p>{data.primary.paragraph[0].text}</p>
+			<!-- <p>{data.primary.paragraph[0].text}</p> -->
+			<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
 		</div>
 		<div class="flex w-auto justify-center mt-72">
 			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
