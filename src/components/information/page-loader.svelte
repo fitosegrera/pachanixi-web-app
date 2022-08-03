@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	//LIBS
 	import P5 from 'p5-svelte';
 
@@ -58,4 +58,4 @@
 	};
 </script>
 
-<P5 {sketch} /> -->
+<P5 {sketch} />
