@@ -75,7 +75,7 @@
 	<div class="text-wrapper w-full h-auto">
 		<div class="relative w-full h-auto">
 			<Main>
-				<div class="w-full h-auto text-left text-h5 text-primary-main font-bold">
+				<div class="w-full h-auto text-left text-h2 text-primary-main font-bold">
 					<div class="flex w-full h-32 justify-left">
 						<Divider name="mint-hero-section-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 					</div>
@@ -83,13 +83,13 @@
 						class="flex justify-left items-center space-x-32 text-h3 text-primary-main w-full h-auto text-left pt-32"
 					>
 						<Icon icon="ci:image-alt" />
-						<h3 class="font-bold">
+						<h2 class="font-bold">
 							{data.primary.heading[0].text}
-						</h3>
+						</h2>
 					</div>
 				</div>
 				<div class="w-full h-auto text-left pt-32">
-					<h7 class="text-h7 gradient-text-primary-light font-bold"
+					<h7 class="text-h6 gradient-text-primary-light font-bold"
 						>{data.primary.subheading_1[0].text}</h7
 					>
 				</div>
