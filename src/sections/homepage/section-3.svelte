@@ -25,11 +25,12 @@
 				<NftCard data={item} />
 			{/each}
 		</div>
+
 		<div class="flex w-auto justify-center mt-72">
 			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
 	</Main>
-	<div class="w-full h-auto mt-72">
+	<div class="w-full h-auto mt-96">
 		<Scroller data={data.primary.scroller[0].text} />
 	</div>
 </div>

@@ -38,7 +38,7 @@
 	</div>
 	<div class="video-wrapper w-full h-960">
 		<video autoplay autobuffer loop muted>
-			<source src="/assets/vids/story-hero.webm" type="video/webm" />
+			<source src="/assets/vids/cosmovision-primary-hero.webm" type="video/webm" />
 		</video>
 	</div>
 </div>

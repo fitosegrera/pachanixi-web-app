@@ -50,8 +50,8 @@
 				totalFrames={240}
 				name={'section-5-orb-right'}
 				url={'/assets/vids/orbitante-2-seq/'}
-				imgWidth={320}
-				imgHeight={320}
+				imgWidth={240}
+				imgHeight={240}
 			/>
 		</div>
 	</Main>

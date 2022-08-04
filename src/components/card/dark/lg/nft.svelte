@@ -3,9 +3,9 @@
 	export let data;
 </script>
 
-<div class="w-420 h-auto bg-primary-dark-variant mx-64 shadow-xl">
-	<div clsas="w-full h-368">
-		<video width="420" height="368" autoplay loop muted>
+<div class="w-432 h-auto bg-primary-dark-variant mx-16 shadow-xl">
+	<div clsas="w-full h-auto">
+		<video width="432" height="auto" autoplay loop muted>
 			<source src={data.video_path} type="video/mp4" />
 		</video>
 	</div>

@@ -1,4 +1,7 @@
 <script>
+	//LIBS
+	import * as prismicH from '@prismicio/helpers';
+
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
@@ -9,6 +12,15 @@
 
 	//PROPS
 	export let data;
+
+	const htmlSerializer = (type, element, content, children) => {
+		if (type === 'strong') {
+			return `<strong class="text-primary-dark">${children}</strong>`;
+		}
+		if (type === 'paragraph') {
+			return `<p class="text-primary-dark pb-32">${children}</p>`;
+		}
+	};
 </script>
 
 <div class="relative w-auto h-auto bg-primary-main pt-32 pb-124">
@@ -37,8 +49,9 @@
 				/>
 			</div>
 		</div>
-		<div class="w-full h-auto pt-32 text-p2 font-medium">
-			<p class="">{data.primary.paragraph[0].text}</p>
+		<div class="w-full h-auto pt-32 text-p1 font-medium">
+			<!-- <p class="">{data.primary.paragraph[0].text}</p> -->
+			<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
 		</div>
 		<div class="flex w-auto justify-center mt-72">
 			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
@@ -77,7 +90,7 @@
 	#orb-right-wrapper {
 		position: absolute;
 		right: 200px;
-		top: 750px;
+		top: 800px;
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 3;
@@ -86,7 +99,7 @@
 	#orb-left-wrapper {
 		position: absolute;
 		left: 200px;
-		top: 750px;
+		top: 950px;
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 3;
