@@ -7,8 +7,6 @@
 	import Main from '../../containers/main.svelte';
 
 	//COMPONENTS
-	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
-	import LogoButton from '../../components/information/logo-static.svelte';
 	import Divider from '../../components/information/divider.svelte';
 
 	//PORPS
@@ -21,66 +19,16 @@
 	};
 </script>
 
-<!-- <div id="wrapper" class="w-auto h-auto bg-primary-dark py-160">
-	<Main>
-		<div class="w-full h-auto">
-			<div
-				class="flex justify-center items-center space-x-32 text-h3 text-primary-main w-full h-auto text-center pt-32"
-			>
-				<Icon icon="ci:image-alt" />
-				<h3 class="font-bold">
-					{data.primary.heading[0].text}
-				</h3>
-			</div>
-			<div class="w-full h-auto text-center pt-32">
-				<h7 class="text-h7 gradient-text-primary-light font-bold"
-					>{data.primary.subheading_1[0].text}</h7
-				>
-			</div>
-			<div class="w-full h-auto text-center pt-48 pb-32">
-				<p class="text-p2 text-primary-light font-medium">
-					{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
-				</p>
-			</div>
-		</div>
-	</Main>
-	<div class="flex w-auto justify-center mb-32">
-		<Divider name="section-1-divider" w={'full'} h={'32'} pixCol={'#BDFF00'} />
-	</div>
-	<div class="grid grid-cols-4">
-		<div>
-			<video width="100%" height="auto" autoplay loop muted>
-				<source src="/assets/vids/nft-0.mp4" type="video/mp4" />
-			</video>
-		</div>
-		<div>
-			<video width="100%" height="auto" autoplay loop muted>
-				<source src="/assets/vids/nft-1.mp4" type="video/mp4" />
-			</video>
-		</div>
-		<div>
-			<video width="100%" height="auto" autoplay loop muted>
-				<source src="/assets/vids/nft-2.mp4" type="video/mp4" />
-			</video>
-		</div>
-		<div>
-			<video width="100%" height="auto" autoplay loop muted>
-				<source src="/assets/vids/nft-3.mp4" type="video/mp4" />
-			</video>
-		</div>
-	</div>
-</div> -->
-
 <div class="relative w-full h-auto">
 	<div class="text-wrapper w-full h-auto">
 		<div class="relative w-full h-auto">
 			<Main>
-				<div class="w-full h-auto text-left text-h2 text-primary-main font-bold">
-					<div class="flex w-full h-32 justify-left">
+				<div class="w-full h-auto text-center text-h2 text-primary-main font-bold">
+					<div class="flex w-full h-32 justify-center">
 						<Divider name="mint-hero-section-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 					</div>
 					<div
-						class="flex justify-left items-center space-x-32 text-h3 text-primary-main w-full h-auto text-left pt-32"
+						class="flex justify-center items-center space-x-32 text-h3 text-primary-main w-full h-auto text-center"
 					>
 						<Icon icon="ci:image-alt" />
 						<h2 class="font-bold">
@@ -88,14 +36,13 @@
 						</h2>
 					</div>
 				</div>
-				<div class="w-full h-auto text-left pt-32">
+				<div class="w-full h-auto text-center pt-32">
 					<h7 class="text-h6 gradient-text-primary-light font-bold"
 						>{data.primary.subheading_1[0].text}</h7
 					>
 				</div>
-				<div class="flex w-full h-auto items-center justify-left mt-32 mb-160">
-					<div class="w-50 text-p2 font-medium text-primary-light text-left">
-						<!-- <p>{data.primary.paragraph[0].text}</p> -->
+				<div class="flex w-full h-auto items-center justify-center mt-32 mb-72">
+					<div class="w-50 text-p2 font-medium text-primary-light text-center">
 						<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
 					</div>
 				</div>
@@ -120,13 +67,13 @@
 		top: 50%;
 		left: 50%;
 		z-index: -100;
-		min-width: 100%;
-		min-height: 100%;
+		min-width: 160%;
+		min-height: 160%;
 		width: auto;
 		height: auto;
-		-webkit-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-60%, -60%);
+		-ms-transform: translate(-60%, -60%);
+		transform: translate(-60%, -60%);
 		pointer-events: none;
 	}
 

@@ -14,11 +14,12 @@
 		const client = prismic.createClient(endpoint, { routes, accessToken });
 		const cosmovisionData = await client.getSingle('cosmovision');
 
-		console.log(cosmovisionData.data.body);
+		//console.log(cosmovisionData.data.body);
 
 		return {
 			props: {
-				cosmovisionData: cosmovisionData.data.body
+				cosmovisionData: cosmovisionData.data.body,
+				title: cosmovisionData.data.page_title[0].text
 			}
 		};
 	}
@@ -32,8 +33,12 @@
 	import Section_2 from '../sections/cosmovision/section-2.svelte';
 
 	//PROPS
-	export let cosmovisionData;
+	export let cosmovisionData, title;
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
 
 <PrimaryHeroSection data={cosmovisionData[0]} />
 <Section_1 data={cosmovisionData[1]} />

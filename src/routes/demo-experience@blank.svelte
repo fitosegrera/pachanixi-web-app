@@ -18,7 +18,8 @@
 
 		return {
 			props: {
-				demoExperienceData: demoExperienceData.data.body
+				demoExperienceData: demoExperienceData.data.body,
+				title: demoExperienceData.data.title[0].text
 			}
 		};
 	}
@@ -29,7 +30,11 @@
 	import HeroSection from '../sections/demo-experience/hero-section.svelte';
 
 	//PROPS
-	export let demoExperienceData;
+	export let demoExperienceData, title;
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
 
 <HeroSection data={demoExperienceData[0]} />

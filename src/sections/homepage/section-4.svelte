@@ -90,6 +90,6 @@
 	.button-wrapper {
 		position: absolute;
 		bottom: 0;
-		z-index: 100;
+		z-index: 10;
 	}
 </style>

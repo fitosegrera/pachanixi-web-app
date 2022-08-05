@@ -52,7 +52,7 @@
 	/>
 </svelte:head>
 
-<div id="page-wrapper" class="h-auto w-auto">
+<div id="page-wrapper" class="w-auto h-auto">
 	<NavBar {navBarData} />
 	<slot />
 	<Footer {footerData} />

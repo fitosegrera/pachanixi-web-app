@@ -10,7 +10,8 @@
 	export let data;
 </script>
 
-<div class="w-auto h-auto bg-primary-dark">
+<div id="wrapper" class="w-auto h-auto bg-primary-dark">
+	<div id="img-wrapper" class="w-full h-full" />
 	<Main>
 		<div class="w-full h-auto">
 			<div class="mt-160">
@@ -66,6 +67,30 @@
 <style>
 	* {
 		overflow: hidden;
+	}
+
+	#wrapper {
+		position: relative;
+		z-index: 10;
+	}
+
+	#img-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url('/assets/imgs/bg-texture.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		-webkit-mask-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(#02232b55),
+			to(#02232b00)
+		);
+		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
+		z-index: -10;
 	}
 
 	#orb-right-wrapper {

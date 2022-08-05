@@ -14,11 +14,12 @@
 		const client = prismic.createClient(endpoint, { routes, accessToken });
 		const mintData = await client.getSingle('mint');
 
-		//console.log(mintData.data.body);
+		//console.log(mintData.data);
 
 		return {
 			props: {
-				mintData: mintData.data.body
+				mintData: mintData.data.body,
+				title: mintData.data.title[0].text
 			}
 		};
 	}
@@ -27,9 +28,17 @@
 <script>
 	//SECTIONS
 	import HeroSection from '../sections/mint/hero-section.svelte';
+	import Section_1 from '../sections/mint/section-1.svelte';
+	import Section_2 from '../sections/mint/section-2.svelte';
 
 	//PROPS
-	export let mintData;
+	export let mintData, title;
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
+
 <HeroSection data={mintData[0]} />
+<Section_1 data={mintData[1]} />
+<Section_2 />

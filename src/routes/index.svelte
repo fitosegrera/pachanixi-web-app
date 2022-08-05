@@ -14,7 +14,7 @@
 		const client = prismic.createClient(endpoint, { routes, accessToken });
 		const homepageData = await client.getSingle('home');
 
-		//console.log(homepageData.data.body);
+		//console.log(homepageData.data);
 
 		return {
 			props: {
@@ -44,6 +44,10 @@
 	export let homepageData;
 </script>
 
+<svelte:head>
+	<title>{homepageData[0].primary.title[0].text}</title>
+</svelte:head>
+
 {#if $img_seq_loading < 9}
 	<div id="asset-loader" class="flex items-center justify-center bg-primary-dark w-full h-full">
 		<div>
@@ -63,6 +67,7 @@
 		</div>
 	</div>
 {/if}
+
 <HeroSection data={homepageData[0]} />
 <Section1 data={homepageData[1]} />
 <Section2 data={homepageData[2]} />
