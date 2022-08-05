@@ -6,7 +6,7 @@
 <div class="flex h-110 w-full justify-start">
 	<div class="flex items-center w-full h-full">
 		<!-- <img src="/assets/imgs/logo-horizontal.png" alt="pachanixi logo" /> -->
-		<a href="/">
+		<a sveltekit:reload href="/">
 			<ImageSequence
 				totalFrames={40}
 				name={'logo-seq'}

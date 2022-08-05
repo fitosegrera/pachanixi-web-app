@@ -49,14 +49,19 @@
 </svelte:head>
 
 {#if $img_seq_loading < 9}
-	<div id="asset-loader" class="flex items-center justify-center bg-primary-dark w-full h-full">
-		<div>
+	<div
+		id="asset-loader"
+		class="flex items-center justify-center bg-primary-dark-alpha-variant w-full h-full"
+	>
+		<div
+			class="w-auto px-32 py-24 h-auto bg-primary-dark opacity-90 border-primary-main border-4 rounded-lg"
+		>
 			<p class="text-p2 font-bold text-primary-main text-center">
 				CARGANDO: {$img_seq_loading} / 10
 			</p>
-			<p class="text-p3 font-medium text-primary-main text-center">ESPERE UN MOMENTO...</p>
+			<p class="text-p3 font-medium text-primary-main text-center pb-4">ESPERE UN MOMENTO...</p>
 			<PageLoader
-				w={460}
+				w={320}
 				h={16}
 				foreground={'#BDFF00'}
 				background={'#02232B'}
@@ -82,6 +87,6 @@
 		top: 0;
 		left: 0;
 		z-index: 100;
-		opacity: 0.98;
+		/* opacity: 0.9; */
 	}
 </style>

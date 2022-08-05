@@ -70,6 +70,6 @@
 		right: 100px;
 		top: -100px;
 		rotate: 0deg;
-		z-index: 4;
+		z-index: 200;
 	}
 </style>

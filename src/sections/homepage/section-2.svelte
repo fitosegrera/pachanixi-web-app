@@ -15,7 +15,7 @@
 
 	const htmlSerializer = (type, element, content, children) => {
 		if (type === 'strong') {
-			return `<strong class="text-primary-dark">${children}</strong>`;
+			return `<strong class="text-primary-dark-variant">${children}</strong>`;
 		}
 		if (type === 'paragraph') {
 			return `<p class="text-primary-dark pb-32">${children}</p>`;
@@ -99,9 +99,9 @@
 	#orb-left-wrapper {
 		position: absolute;
 		left: 200px;
-		top: 950px;
+		top: 960px;
 		rotate: 60deg;
 		pointer-events: none;
-		z-index: 3;
+		z-index: 200;
 	}
 </style>
