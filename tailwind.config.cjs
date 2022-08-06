@@ -41,6 +41,7 @@ module.exports = {
 			65: '65%',
 			72: '72px',
 			75: '75%',
+			80: '80px',
 			88: '88px',
 			92: '92px',
 			96: '96px',
@@ -156,6 +157,22 @@ module.exports = {
 					letterSpacing: '0.1em'
 				}
 			]
+		},
+		screens: {
+			sm: '320px',
+			// => @media (min-width: 320px) { ... }
+
+			md: '640px',
+			// => @media (min-width: 640px) { ... }
+
+			lg: '960px',
+			// => @media (min-width: 960px) { ... }
+
+			xl: '1280px',
+			// => @media (min-width: 1280px) { ... }
+
+			'2xl': '1440px'
+			// => @media (min-width: 1440px) { ... }
 		},
 		extend: {}
 	},

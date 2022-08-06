@@ -24,17 +24,17 @@
 
 <div id="wrapper" class="w-auto h-auto bg-primary-dark pb-124 text-center">
 	<Main>
-		<div class="text-h5 text-primary-main font-bold">
+		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
 			<div class="flex w-auto justify-center">
 				<Divider name="section-1-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
-		<div class="text-p1 text-primary-light font-medium pt-48">
+		<div class="md:text-p1 sm:text-p3 text-primary-light font-medium pt-48">
 			<!-- <p>{data.primary.paragraph[0].text}</p> -->
 			<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
 		</div>
-		<div class="flex w-auto justify-center mt-72">
+		<div class="flex w-auto justify-center md:mt-72 sm:mt-32">
 			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
 	</Main>
