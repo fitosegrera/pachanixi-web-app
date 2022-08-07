@@ -79,7 +79,10 @@
 					<h1 class="">{data.primary.subtitle_2[1].text}</h1>
 				</div>
 			</div>
-			<div id="nft-wrapper" class="w-auto h-auto">
+			<div
+				id="nft-wrapper"
+				class="w-auto h-auto xl:-right-160 lg:-right-296 md:-right-296 sm:-right-220 lg:-top-196 sm:-top-48"
+			>
 				<ImageSequence
 					totalFrames={240}
 					name={'section-2-nft'}
@@ -96,22 +99,25 @@
 		<div class="flex w-auto justify-center md:mt-72 sm:mt-32">
 			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
-		<div id="orb-left-wrapper" class="w-auto h-auto">
+		<div id="orb-left-wrapper" class="w-auto h-auto sm:bottom-96 sm:left-24 lg:top-960 lg:left-210">
 			<ImageSequence
 				totalFrames={240}
 				name={'section-2-orb-left'}
 				url={'/assets/vids/orbitante-2-seq/'}
-				imgWidth={240}
-				imgHeight={240}
+				imgWidth={orbLeftImgSeqWidth}
+				imgHeight={orbLeftImgSeqHeight}
 			/>
 		</div>
-		<div id="orb-right-wrapper" class="w-auto h-auto">
+		<div
+			id="orb-right-wrapper"
+			class="w-auto h-auto sm:bottom-196 sm:right-24 lg:top-880 lg:right-210"
+		>
 			<ImageSequence
 				totalFrames={240}
 				name={'section-2-orb-right'}
 				url={'/assets/vids/orbitante-3-seq/'}
-				imgWidth={180}
-				imgHeight={180}
+				imgWidth={orbRightImgSeqWidth}
+				imgHeight={orbRightImgSeqHeight}
 			/>
 		</div>
 	</Main>
@@ -120,8 +126,8 @@
 <style>
 	#nft-wrapper {
 		position: absolute;
-		right: -50px;
-		top: -180px;
+		/* right: -50px;
+		top: -180px; */
 		pointer-events: none;
 		mix-blend-mode: normal;
 		z-index: 3;
@@ -129,19 +135,19 @@
 
 	#orb-right-wrapper {
 		position: absolute;
-		right: 200px;
-		top: 800px;
+		/* right: 200px; */
+		/* top: 800px; */
 		rotate: 60deg;
 		pointer-events: none;
-		z-index: 200;
+		z-index: 12;
 	}
 
 	#orb-left-wrapper {
 		position: absolute;
-		left: 200px;
-		top: 960px;
+		/* left: 200px;
+		top: 960px; */
 		rotate: 60deg;
 		pointer-events: none;
-		z-index: 200;
+		z-index: 12;
 	}
 </style>

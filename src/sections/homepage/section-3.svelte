@@ -15,13 +15,15 @@
 <div id="wrapper" class="w-auto h-auto bg-primary-dark text-center">
 	<div id="img-wrapper" class="w-full h-full" />
 	<Main>
-		<div class="text-h5 text-primary-main font-bold">
+		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
 			<div class="flex w-auto justify-center pt-32">
 				<Divider name="section-3-divider" w={'960'} h={'32'} pixCol={'#BDFF00'} />
 			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
-		<div class="flex justify-center mt-88">
+		<div
+			class="w-full h-auto grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:gap-24 sm:gap-32 xl:mt-88 md:mt-56 sm:mt-32"
+		>
 			{#each data.items as item, i}
 				<NftCard data={item} />
 			{/each}

@@ -24,23 +24,27 @@
 </script>
 
 <div class="relative w-full h-auto">
-	<div class="text-wrapper w-full h-full pt-48">
+	<div class="text-wrapper w-full h-full xl:pt-48 sm:pt-32">
 		<div class="relative w-full h-full">
 			<Main>
-				<div class="w-full h-auto text-right px-112 text-h5 text-primary-main font-bold">
-					<div class="flex w-full h-32 justify-end">
+				<div
+					class="w-full h-auto xl:text-right sm:text-center 2xl:px-112 md:px-32 sm:px-16 md:text-h5 sm:text-h7 text-primary-main font-bold"
+				>
+					<div class="flex w-full h-32 xl:justify-end sm:justify-center">
 						<Divider name="section-4-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 					</div>
 					<h5>{data.primary.title[0].text}</h5>
 				</div>
 				<div
-					class="flex w-full h-auto space-x-32 my-48 justify-end px-112 text-h5 text-primary-main-variant"
+					class="flex w-full h-auto space-x-32 xl:my-48 sm:my-16 xl:justify-end sm:justify-center 2xl:px-112 md:px-32 sm:px-16 md:text-h5 sm:text-h7 text-primary-main-variant"
 				>
 					<Icon icon={data.primary.icon_1_label} />
 					<Icon icon={data.primary.icon_2_label} />
 				</div>
-				<div class="flex w-full h-auto items-center justify-end mb-160">
-					<div class="pr-112 w-996 text-p1 font-medium text-primary-light text-right">
+				<div class="flex w-full h-auto items-center xl:justify-end sm:justify-center mb-160">
+					<div
+						class="2xl:pr-112 md:pr-32 sm:pr-16 lg:w-996 md:text-p1 sm:text-p3 font-medium text-primary-light xl:text-right sm:text-center"
+					>
 						<!-- <p>{data.primary.paragraph[0].text}</p> -->
 						<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
 					</div>
@@ -49,7 +53,7 @@
 		</div>
 	</div>
 	<div class="button-wrapper w-full h-auto">
-		<div class="flex w-full justify-center mb-96 ">
+		<div class="flex w-full justify-center lg:mb-96 sm:mb-48">
 			<PrimaryButton
 				label={data.primary.button_label}
 				url={data.primary.button_url}
@@ -57,7 +61,7 @@
 			/>
 		</div>
 	</div>
-	<div class="video-wrapper w-full h-960">
+	<div class="video-wrapper flex justify-center xl:h-auto md:h-680 sm:h-480">
 		<video autoplay autobuffer loop muted>
 			<source src="/assets/vids/demo-experience-section.webm" type="video/webm" />
 		</video>
@@ -65,19 +69,14 @@
 </div>
 
 <style>
+	.video-wrapper {
+		margin: 0 auto;
+		background-color: black;
+	}
+
 	video {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: -100;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		-webkit-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-		pointer-events: none;
+		width: 100% !important;
+		height: auto !important;
 	}
 
 	.text-wrapper {

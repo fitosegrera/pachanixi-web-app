@@ -25,6 +25,8 @@ module.exports = {
 			'secondary-main': secondaryMain
 		},
 		spacing: {
+			'-24': '-24px',
+			0: '0px',
 			4: '4px',
 			6: '6px',
 			8: '8px',
@@ -60,9 +62,12 @@ module.exports = {
 			420: '420px',
 			432: '432px',
 			456: '456px',
+			480: '480px',
 			520: '520px',
 			640: '640px',
+			680: '680px',
 			720: '720px',
+			760: '760px',
 			800: '800px',
 			960: '960px',
 			996: '996px',
@@ -111,7 +116,7 @@ module.exports = {
 			h7: [
 				'48px',
 				{
-					lineHeight: '48px'
+					lineHeight: '52px'
 				}
 			],
 			p1: [

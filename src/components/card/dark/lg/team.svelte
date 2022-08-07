@@ -17,7 +17,7 @@
 	};
 </script>
 
-<div class="w-420 h-auto bg-transparent">
+<div class="w-420 h-auto bg-transparent mx-auto">
 	<div class="image-cropper w-340 h-340 mx-auto">
 		<img src={data.profile_picture.url} alt="" />
 	</div>

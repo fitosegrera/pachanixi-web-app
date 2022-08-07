@@ -13,13 +13,18 @@
 <div id="wrapper" class="w-auto h-auto bg-primary-dark text-center pb-112">
 	<div id="img-wrapper" class="w-full h-full" />
 	<Main>
-		<div class="text-h5 text-primary-main font-bold">
+		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
 			<div class="flex w-auto justify-center pt-32">
 				<Divider name="section-5-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
-		<div class="flex justify-center mt-88 space-x-72">
+		<!-- <div class="flex justify-center mt-88 space-x-72">
+			{#each data.items as item, i}
+				<TeamCard data={item} />
+			{/each}
+		</div> -->
+		<div class="w-full h-auto grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 lg:mt-88 sm:mt-48">
 			{#each data.items as item, i}
 				<TeamCard data={item} />
 			{/each}
