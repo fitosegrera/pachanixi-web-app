@@ -24,15 +24,15 @@
 </script>
 
 <div class="relative w-full h-auto">
-	<div class="text-wrapper w-full h-full xl:pt-48 sm:pt-32">
+	<div class="text-wrapper w-full h-full pt-48">
 		<div class="relative w-full h-full">
 			<Main>
 				<div
 					class="w-full h-auto xl:text-right sm:text-center 2xl:px-112 md:px-32 sm:px-16 md:text-h5 sm:text-h7 text-primary-main font-bold"
 				>
-					<div class="flex w-full h-32 xl:justify-end sm:justify-center">
+					<!-- <div class="flex w-full h-32 xl:justify-end sm:justify-center">
 						<Divider name="section-4-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
-					</div>
+					</div> -->
 					<h5>{data.primary.title[0].text}</h5>
 				</div>
 				<div
@@ -61,7 +61,7 @@
 			/>
 		</div>
 	</div>
-	<div class="video-wrapper flex justify-center xl:h-auto md:h-680 sm:h-480">
+	<div class="video-wrapper flex justify-center xl:h-auto md:h-680 sm:h-520">
 		<video autoplay autobuffer loop muted>
 			<source src="/assets/vids/demo-experience-section.webm" type="video/webm" />
 		</video>

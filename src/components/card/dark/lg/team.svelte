@@ -17,13 +17,13 @@
 	};
 </script>
 
-<div class="w-420 h-auto bg-transparent mx-auto">
-	<div class="image-cropper w-340 h-340 mx-auto">
+<div class="wrapper md:w-420 sm:w-320 h-auto bg-transparent mb-48 mx-auto">
+	<div class="image-cropper md:w-340 sm:w-240 md:h-340 sm:h-240 mx-auto">
 		<img src={data.profile_picture.url} alt="" />
 	</div>
 	<div class="w-full h-auto">
 		<div class="h-full text-center">
-			<p class="text-p1 font-bold text-primary-main mt-32">
+			<p class="md:text-p1 sm:text-p2 font-bold text-primary-main mt-32">
 				{data.name[0].text}
 			</p>
 			<p class="text-p3 font-medium text-primary-light pt-4">
@@ -57,8 +57,11 @@
 </div>
 
 <style>
+	.wrapper {
+	}
+
 	.image-cropper {
-		position: relative;
+		/* position: relative; */
 		overflow: hidden;
 		border-radius: 50%;
 	}

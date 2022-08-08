@@ -6,6 +6,6 @@
 	export let icon;
 </script>
 
-<div class="text-h5 p-16 text-primary-main hover:text-primary-light cursor-pointer w-124">
+<div class="text-h5 px-16 text-primary-main hover:text-primary-light cursor-pointer w-124">
 	<Icon {icon} />
 </div>

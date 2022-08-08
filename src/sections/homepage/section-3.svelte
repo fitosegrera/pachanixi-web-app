@@ -15,10 +15,10 @@
 <div id="wrapper" class="w-auto h-auto bg-primary-dark text-center">
 	<div id="img-wrapper" class="w-full h-full" />
 	<Main>
-		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
-			<div class="flex w-auto justify-center pt-32">
+		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold pt-48">
+			<!-- <div class="flex w-auto justify-center pt-32">
 				<Divider name="section-3-divider" w={'960'} h={'32'} pixCol={'#BDFF00'} />
-			</div>
+			</div> -->
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div

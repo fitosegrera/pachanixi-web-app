@@ -34,6 +34,8 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth={$window_width} />
+
 {#if $is_mobile_view}
 	<div
 		id="navbar-wrapper"
@@ -84,6 +86,6 @@
 
 <style>
 	#navbar-wrapper {
-		z-index: 15;
+		z-index: 50;
 	}
 </style>

@@ -50,6 +50,8 @@
 	$: $is_mobile_view, evalutateMobileView();
 </script>
 
+<svelte:window bind:innerWidth={$window_width} />
+
 <div id="wrapper" class="w-auto h-auto bg-primary-dark">
 	<div id="img-wrapper" class="w-full h-full" />
 	<Main>

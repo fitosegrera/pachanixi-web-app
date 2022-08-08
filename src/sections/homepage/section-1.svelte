@@ -25,9 +25,9 @@
 <div id="wrapper" class="w-auto h-auto bg-primary-dark pb-124 text-center">
 	<Main>
 		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
-			<div class="flex w-auto justify-center">
+			<!-- <div class="flex w-auto justify-center">
 				<Divider name="section-1-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
-			</div>
+			</div> -->
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div class="md:text-p1 sm:text-p3 text-primary-light font-medium pt-48">

@@ -61,13 +61,15 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth={$window_width} />
+
 <div class="relative w-auto h-auto bg-primary-main pt-32 md:pb-124 sm:pb-72">
 	<Main>
 		<div class="flex">
 			<div>
-				<div class="flex w-full justify-start">
+				<!-- <div class="flex w-full justify-start">
 					<Divider name="section-2-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
-				</div>
+				</div> -->
 				<div
 					class="lg:flex lg:space-x-32 sm:space-y-16 md:text-h5 sm:text-h7 text-primary-dark font-bold items-center"
 				>
