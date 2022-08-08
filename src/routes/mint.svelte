@@ -39,6 +39,16 @@
 	<title>{title}</title>
 </svelte:head>
 
-<HeroSection data={mintData[0]} />
-<Section_1 data={mintData[1]} />
-<Section_2 />
+<div class="h-full w-full">
+	<HeroSection data={mintData[0]} />
+	<Section_1 data={mintData[1]} />
+	<Section_2 />
+</div>
+
+<style>
+	div {
+		position: relative;
+		background: #000000 !important;
+		z-index: -100;
+	}
+</style>
