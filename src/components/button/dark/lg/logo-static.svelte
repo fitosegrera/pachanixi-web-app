@@ -3,7 +3,11 @@
 	import { onMount } from 'svelte';
 
 	//STORES
-	import { window_width, is_mobile_view, break_point } from '../../../../stores/main';
+	import {
+		window_width,
+		is_mobile_view,
+		break_point
+	} from '../../../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../../../helpers/mobileViewDetect';
@@ -21,23 +25,22 @@
 <svelte:window bind:innerWidth={$window_width} />
 
 {#if $is_mobile_view}
-	<div class="flex lg:h-110 lg:w-100 sm:h-88 sm:w-80  justify-start">
-		<div class="flex items-center w-full h-full">
+	<div class="lg:h-110 flex justify-start sm:h-72 sm:w-64 lg:w-100">
+		<div class="flex h-full w-full items-center">
 			<!-- <img src="/assets/imgs/logo-horizontal.png" alt="pachanixi logo" /> -->
 			<a sveltekit:reload href="/">
 				<ImageSequence
 					totalFrames={40}
 					name={'logo-seq'}
 					url={'/assets/vids/logo-seq/'}
-					imgWidth={72}
-					imgHeight={78}
-				/>
+					imgWidth={60}
+					imgHeight={64} />
 			</a>
 		</div>
 	</div>
 {:else}
-	<div class="flex lg:h-110 lg:w-100 sm:h-88 sm:w-80  justify-start">
-		<div class="flex items-center w-full h-full">
+	<div class="lg:h-110 flex justify-start sm:h-88 sm:w-80  lg:w-100">
+		<div class="flex h-full w-full items-center">
 			<!-- <img src="/assets/imgs/logo-horizontal.png" alt="pachanixi logo" /> -->
 			<a sveltekit:reload href="/">
 				<ImageSequence
@@ -45,8 +48,7 @@
 					name={'logo-seq'}
 					url={'/assets/vids/logo-seq/'}
 					imgWidth={88}
-					imgHeight={94}
-				/>
+					imgHeight={94} />
 			</a>
 		</div>
 	</div>

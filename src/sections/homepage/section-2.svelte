@@ -31,14 +31,21 @@
 		$is_mobile_view = detectMobileView($window_width, $break_point);
 	});
 
-	const evalutateMobileView = () => {
-		if ($is_mobile_view === true) {
-			nftImgSeqWidth = 640;
-			nftImgSeqHeight = 463;
+	const evaluateWindowWidth = () => {
+		if ($window_width < 820) {
+			nftImgSeqWidth = 480;
+			nftImgSeqHeight = 347;
 			orbLeftImgSeqWidth = 120;
 			orbLeftImgSeqHeight = 120;
 			orbRightImgSeqWidth = 72;
 			orbRightImgSeqHeight = 72;
+		} else if ($window_width >= 820 && $window_width < 1100) {
+			nftImgSeqWidth = 720;
+			nftImgSeqHeight = 521;
+			orbLeftImgSeqWidth = 180;
+			orbLeftImgSeqHeight = 180;
+			orbRightImgSeqWidth = 120;
+			orbRightImgSeqHeight = 120;
 		} else {
 			nftImgSeqWidth = 1000;
 			nftImgSeqHeight = 723;
@@ -49,7 +56,7 @@
 		}
 	};
 
-	$: $is_mobile_view, evalutateMobileView();
+	$: $window_width, evaluateWindowWidth();
 
 	const htmlSerializer = (type, element, content, children) => {
 		if (type === 'strong') {
@@ -63,7 +70,7 @@
 
 <svelte:window bind:innerWidth={$window_width} />
 
-<div class="relative w-auto h-auto bg-primary-main pt-32 md:pb-124 sm:pb-72">
+<div class="relative h-auto w-auto bg-primary-main pt-32 sm:pb-72 md:pb-124">
 	<Main>
 		<div class="flex">
 			<div>
@@ -71,56 +78,67 @@
 					<Divider name="section-2-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
 				</div> -->
 				<div
-					class="lg:flex lg:space-x-32 sm:space-y-16 md:text-h5 sm:text-h7 text-primary-dark font-bold items-center"
-				>
-					<h5>{data.primary.title[0].text}</h5>
-					<p class="md:text-p2 sm:text-p3 font-bold">{data.primary.subtitle_1[0].text}</p>
+					class="items-center font-bold text-primary-dark sm:space-y-16 sm:text-p1 md:text-h5 lg:flex lg:space-x-32">
+					<h5>
+						{data.primary.title[0].text}
+					</h5>
+					<p class="font-bold sm:text-p3 md:text-p2">
+						{data.primary.subtitle_1[0].text}
+					</p>
 				</div>
-				<div class="w-auto h-auto pt-32 lg:text-h1 md:text-h4 sm:text-h6 font-bold">
-					<h1 class="">{data.primary.subtitle_2[0].text}</h1>
-					<h1 class="">{data.primary.subtitle_2[1].text}</h1>
+				<div
+					class="h-auto w-auto pt-32 font-bold sm:text-h6 md:text-h4 lg:text-h1">
+					<h1 class="">
+						{data.primary.subtitle_2[0].text}
+					</h1>
+					<h1 class="">
+						{data.primary.subtitle_2[1].text}
+					</h1>
 				</div>
 			</div>
 			<div
 				id="nft-wrapper"
-				class="w-auto h-auto xl:-right-160 lg:-right-296 md:-right-296 sm:-right-220 lg:-top-196 sm:-top-48"
-			>
+				class="xl:-right-320 h-auto w-auto sm:-right-148 sm:-top-16 md:-right-124 md:top-64 lg:-right-240 lg:-top-72 xl:-top-224 2xl:-right-196">
 				<ImageSequence
 					totalFrames={240}
 					name={'section-2-nft'}
 					url={'/assets/vids/nft-2-seq/'}
 					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight}
-				/>
+					imgHeight={nftImgSeqHeight} />
 			</div>
 		</div>
-		<div class="w-full h-auto pt-32 lg:text-p1 md:text-p2 sm:text-p3 font-medium">
+		<div
+			class="h-auto w-full pt-32 font-medium sm:text-p3 md:text-p2 lg:text-p1">
 			<!-- <p class="">{data.primary.paragraph[0].text}</p> -->
-			<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
+			<p>
+				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
+			</p>
 		</div>
-		<div class="flex w-auto justify-center md:mt-72 sm:mt-32">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
+		<div class="flex w-auto justify-center sm:mt-32 md:mt-72">
+			<PrimaryButton
+				label={data.primary.button_label}
+				url={data.primary.button_url}
+				target={''} />
 		</div>
-		<div id="orb-left-wrapper" class="w-auto h-auto sm:bottom-96 sm:left-24 lg:top-960 lg:left-210">
+		<div
+			id="orb-left-wrapper"
+			class="h-auto w-auto sm:bottom-96 sm:left-24 lg:top-960 lg:left-72 xl:left-210">
 			<ImageSequence
 				totalFrames={240}
 				name={'section-2-orb-left'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight}
-			/>
+				imgHeight={orbLeftImgSeqHeight} />
 		</div>
 		<div
 			id="orb-right-wrapper"
-			class="w-auto h-auto sm:bottom-196 sm:right-24 lg:top-880 lg:right-210"
-		>
+			class="lg:top-880 h-auto w-auto sm:bottom-196 sm:right-24 lg:right-210">
 			<ImageSequence
 				totalFrames={240}
 				name={'section-2-orb-right'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight}
-			/>
+				imgHeight={orbRightImgSeqHeight} />
 		</div>
 	</Main>
 </div>

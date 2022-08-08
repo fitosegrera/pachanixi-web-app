@@ -47,50 +47,49 @@
 
 <svelte:window bind:innerWidth={$window_width} />
 
-<div class="relative w-auto h-auto bg-primary-main pt-48 sm:pb-24 md:pb-124 text-center">
+<div
+	class="relative h-auto w-auto bg-primary-main pt-48 text-center sm:pb-24 md:pb-124">
 	<Main>
 		<div class="">
 			<!-- <div class="w-auto h-auto">
 				<Divider name="section-6-main-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
 			</div> -->
-			<h5 class="md:text-h5 sm:text-h7 text-primary-dark font-bold">
+			<h5 class="font-bold text-primary-dark sm:text-h7 md:text-h5">
 				{data.primary.title[0].text}
 			</h5>
 		</div>
-		<div class="flex justify-center w-full h-auto">
-			<div class="w-960 h-auto pt-32 sm:text-p3 md:text-p2 font-medium">
+		<div class="flex h-auto w-full justify-center">
+			<div class="h-auto w-960 pt-32 font-medium sm:text-p3 md:text-p2">
 				<p class="">{data.primary.paragraph[0].text}</p>
 			</div>
 		</div>
 		<div
-			class="flex items-center lg:text-h3 md:text-h4 sm:text-h6 text-primary-dark justify-center h-full w-auto md:space-x-48 sm:space-x-24 md:py-48 sm:py-24"
-		>
+			class="flex h-full w-auto items-center justify-center text-primary-dark sm:space-x-24 sm:py-24 sm:text-h6 md:space-x-48 md:py-48 md:text-h4 lg:text-h3">
 			{#each data.items as item}
 				<SocialButton
 					icon={item.social_icon_label}
 					name={item.social}
 					active={item.active}
-					url={item.social_network_url.url}
-				/>
+					url={item.social_network_url.url} />
 			{/each}
 		</div>
-		<div id="orb-left-wrapper" class="w-auto h-auto">
+		<div id="orb-left-wrapper" class="h-auto w-auto">
 			<ImageSequence
 				totalFrames={240}
 				name={'section-5-orb-bottom'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight}
-			/>
+				imgHeight={orbLeftImgSeqHeight} />
 		</div>
-		<div id="orb-right-wrapper" class="w-auto h-auto sm:right-100 sm:-top-72 md:-top-100">
+		<div
+			id="orb-right-wrapper"
+			class="h-auto w-auto sm:right-100 sm:-top-72 md:-top-100">
 			<ImageSequence
 				totalFrames={240}
 				name={'section-5-orb-right'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight}
-			/>
+				imgHeight={orbRightImgSeqHeight} />
 		</div>
 	</Main>
 </div>
@@ -106,6 +105,6 @@
 	#orb-right-wrapper {
 		position: absolute;
 		rotate: 0deg;
-		z-index: 50;
+		z-index: 20;
 	}
 </style>

@@ -22,8 +22,8 @@
 	let nftImgSeqHeight = 680;
 	let orbLeftImgSeqWidth = 200;
 	let orbLeftImgSeqHeight = 200;
-	let orbRightImgSeqWidth = 240;
-	let orbRightImgSeqHeight = 240;
+	let orbRightImgSeqWidth = 200;
+	let orbRightImgSeqHeight = 200;
 
 	onMount(async () => {
 		$is_mobile_view = detectMobileView($window_width, $break_point);
@@ -42,8 +42,8 @@
 			nftImgSeqHeight = 680;
 			orbLeftImgSeqWidth = 200;
 			orbLeftImgSeqHeight = 200;
-			orbRightImgSeqWidth = 240;
-			orbRightImgSeqHeight = 240;
+			orbRightImgSeqWidth = 200;
+			orbRightImgSeqHeight = 200;
 		}
 	};
 
@@ -85,7 +85,10 @@
 					imgHeight={nftImgSeqHeight}
 				/>
 			</div>
-			<div id="orb-right-wrapper" class="w-auto h-auto">
+			<div
+				id="orb-right-wrapper"
+				class="w-auto h-auto sm:right-32 md:right-72 lg:right-148 top-600"
+			>
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-orb-right'}
@@ -94,7 +97,10 @@
 					imgHeight={orbRightImgSeqHeight}
 				/>
 			</div>
-			<div id="orb-left-wrapper" class="w-auto h-auto">
+			<div
+				id="orb-left-wrapper"
+				class="w-auto h-auto sm:left-24 md:left-72 lg:left-124 sm:top-920 lg:top-800"
+			>
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-orb-left'}
@@ -138,12 +144,12 @@
 
 	#orb-right-wrapper {
 		position: absolute;
-		right: 140px;
-		top: 600px;
+		/* right: 140px;
+		top: 600px; */
 	}
 	#orb-left-wrapper {
 		position: absolute;
-		left: 120px;
-		top: 800px;
+		/* left: 120px;
+		top: 800px; */
 	}
 </style>

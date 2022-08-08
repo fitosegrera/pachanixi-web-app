@@ -39,47 +39,57 @@
 {#if $is_mobile_view}
 	<div
 		id="navbar-wrapper"
-		class="fixed grid grid-flow-col grid-cols-2 w-full max-w-full h-auto py-16 bg-primary-dark-alpha text-h5 text-primary-light backdrop-blur-md"
-	>
-		<div class="flex items-center h-110 w-100 justify-start pl-8">
+		class="fixed grid h-auto w-full max-w-full grid-flow-col grid-cols-2 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
+		<div class="flex h-72 w-64 items-center justify-start pl-8">
 			<div class="cursor-pointer">
 				<!-- <LogoButton type={navBarData.logo} url={'/'} /> -->
 				<LogoButton />
 			</div>
 		</div>
 
-		<div class="flex items-center h-full w-auto justify-end pr-4 text-h4">
-			<div class="hover:text-primary-main cursor-pointer" on:click={openMenu}>
+		<div class="flex h-full w-auto items-center justify-end pr-4 text-h6">
+			<div class="cursor-pointer hover:text-primary-main" on:click={openMenu}>
 				<HamburgerButton />
 			</div>
 		</div>
 		{#if showSideBar}
-			<SideBar on:closeSideBar={closeMenu} menu={navBarData.menu} social={navBarData.social} />
+			<SideBar
+				on:closeSideBar={closeMenu}
+				menu={navBarData.menu}
+				social={navBarData.social} />
 		{/if}
 	</div>
 {:else}
 	<div
 		id="navbar-wrapper"
-		class="fixed grid grid-flow-col grid-cols-3 w-1920 max-w-full h-auto py-16 bg-primary-dark-alpha text-h5 text-primary-light backdrop-blur-md"
-	>
-		<div class="flex items-center lg:h-110 lg:w-100 sm:h-88 sm:w-80 justify-start pl-32">
+		class="fixed grid h-auto w-1920 max-w-full grid-flow-col grid-cols-3 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
+		<div
+			class="lg:h-110 flex items-center justify-start pl-32 sm:h-88 sm:w-80 lg:w-100">
 			<div class="cursor-pointer">
 				<!-- <LogoButton type={navBarData.logo} url={'/'} /> -->
 				<LogoButton />
 			</div>
 		</div>
-		<div class="flex items-center justify-center h-full w-auto lg:space-x-48 sm:space-x-16">
+		<div
+			class="flex h-full w-auto items-center justify-center sm:space-x-16 lg:space-x-48">
 			{#each navBarData.social as item}
-				<SocialButton icon={item.icon} name={item.name} active={item.active} url={item.url.url} />
+				<SocialButton
+					icon={item.icon}
+					name={item.name}
+					active={item.active}
+					url={item.url.url} />
 			{/each}
 		</div>
-		<div class="flex items-center h-full w-auto justify-end pr-16 text-h4">
-			<div class="hover:text-primary-main cursor-pointer" on:click={openMenu}>
+		<div class="flex h-full w-auto items-center justify-end pr-16 text-h4">
+			<div class="cursor-pointer hover:text-primary-main" on:click={openMenu}>
 				<HamburgerButton />
 			</div>
 		</div>
 		{#if showSideBar}
-			<SideBar on:closeSideBar={closeMenu} menu={navBarData.menu} social={navBarData.social} />
+			<SideBar
+				on:closeSideBar={closeMenu}
+				menu={navBarData.menu}
+				social={navBarData.social} />
 		{/if}
 	</div>
 {/if}
