@@ -19,7 +19,7 @@
 
 			this.getRandomColor = () => {
 				let col;
-				if (Math.random() > 0.975) {
+				if (Math.random() > 0.98) {
 					col = pixCol;
 				} else {
 					col = '#00000000';
@@ -48,7 +48,9 @@
 
 				for (let x = 0; x <= self.width / self.pixelSize; x++) {
 					for (let y = 0; y <= self.height / self.pixelSize; y++) {
-						let predef = self.opts.forced[x] ? self.opts.forced[x][y] : undefined;
+						let predef = self.opts.forced[x]
+							? self.opts.forced[x][y]
+							: undefined;
 						self.createPixel(x, y, predef);
 					}
 				}
@@ -63,7 +65,7 @@
 
 		let el = document.getElementById(name);
 		new RandomPixels(el, {
-			pixelSize: 8,
+			pixelSize: 6,
 			forced: {
 				0: {
 					0: '#00000000'

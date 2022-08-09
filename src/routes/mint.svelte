@@ -48,7 +48,7 @@
 <style>
 	div {
 		position: relative;
-		background: #000000 !important;
+		background-image: -webkit-linear-gradient(#000000, #02232b) !important;
 		z-index: -100;
 	}
 </style>

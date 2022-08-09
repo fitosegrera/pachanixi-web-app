@@ -2,6 +2,13 @@
 	//LIBS
 	import * as prismicH from '@prismicio/helpers';
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
+
+	//STORES
+	import { window_width, is_mobile_view, break_point } from '../../stores/main';
+
+	//HELPERS
+	import { detectMobileView } from '../../helpers/mobileViewDetect';
 
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
@@ -17,22 +24,49 @@
 			return `<strong class="text-primary-main">${children}</strong>`;
 		}
 	};
+
+	onMount(async () => {
+		$is_mobile_view = detectMobileView($window_width, $break_point);
+	});
+
+	$: $is_mobile_view;
 </script>
 
-<div class="relative h-auto w-full">
-	<div class="text-wrapper h-auto w-full">
-		<div class="h-auto w-full">
+<svelte:window bind:innerWidth={$window_width} />
+
+<div class="relative h-screen w-full">
+	<div class="text-wrapper h-auto w-full sm:pt-124 md:pt-160 xl:pt-196">
+		<div class="h-full w-full">
 			<Main>
 				<div class="h-auto w-full text-center">
-					<!-- <div class="flex w-full h-32 justify-center">
-						<Divider name="mint-hero-section-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
-					</div> -->
 					<div
-						class="h-auto w-full text-center font-bold text-primary-main sm:space-x-16 sm:text-h6 md:flex md:items-center md:justify-center md:space-x-32 md:text-h5 lg:text-h3">
-						<!-- <Icon icon="ci:image-alt"/> -->
-						<h2 class="font-bold">
-							{data.primary.heading[0].text}
-						</h2>
+						class="flex h-auto w-full flex-col text-center font-bold text-primary-main sm:space-x-16 sm:text-h6 md:flex md:items-center md:justify-center md:space-x-32 md:text-h5 lg:text-h3">
+						{#if $is_mobile_view}
+							<div class="flex flex-col items-center justify-center">
+								<div class="pb-16 sm:text-h6 md:text-h4">
+									<Icon icon="ci:image-alt" />
+								</div>
+								<div>
+									<h2 class="font-bold">
+										{data.primary.heading[0].text}
+									</h2>
+								</div>
+							</div>
+						{:else}
+							<div class="flex h-full w-full justify-center">
+								<Divider
+									name="mint-hero-section-divider"
+									w={'50'}
+									h={'32'}
+									pixCol={'#BDFF00'} />
+							</div>
+							<div class="flex justify-center space-x-16">
+								<Icon icon="ci:image-alt" />
+								<h2 class="font-bold">
+									{data.primary.heading[0].text}
+								</h2>
+							</div>
+						{/if}
 					</div>
 				</div>
 				<div class="h-auto w-full text-center sm:pt-12 lg:pt-32">
@@ -43,7 +77,7 @@
 				<div
 					class="flex h-auto w-full items-center justify-center md:mb-72 md:mt-32">
 					<div
-						class="sm:w-90 text-center font-medium text-primary-light sm:mb-48 sm:pt-16 sm:text-p4 md:text-p2 xl:w-75">
+						class="sm:w-90 text-center font-medium text-primary-light sm:mb-48 sm:pt-16 sm:text-p3 md:w-75 md:text-p2 xl:w-50">
 						<p>
 							{@html prismicH.asHTML(
 								data.primary.paragraph,
@@ -57,7 +91,7 @@
 		</div>
 	</div>
 
-	<div class="video-wrapper sm:h-420 md:h-960">
+	<div class="video-wrapper h-960 w-full">
 		<video autoplay autobuffer loop muted>
 			<source src="/assets/vids/mint-hero-section.webm" type="video/webm" />
 		</video>
@@ -71,22 +105,22 @@
 
 	video {
 		position: absolute;
-		top: 50%;
-		left: 50%;
+		/* top: 50%;
+		left: 50%; */
 		z-index: -100;
-		min-width: 160%;
+		min-width: 100%;
 		min-height: 160%;
-		/* width: auto;
-		height: auto; */
-		-webkit-transform: translate(-60%, -60%);
-		-ms-transform: translate(-60%, -60%);
-		transform: translate(-60%, -60%);
+		width: auto;
+		height: auto;
+		-webkit-transform: translate(0%, 0%);
+		-ms-transform: translate(0%, 0%);
+		transform: translate(0%, 0%);
 		pointer-events: none;
 	}
 
 	.text-wrapper {
 		position: absolute;
-		bottom: 0%;
+		top: 0%;
 		left: 0;
 		z-index: 10;
 	}
