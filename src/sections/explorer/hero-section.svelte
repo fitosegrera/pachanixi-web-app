@@ -1,40 +1,48 @@
 <script>
 	//LIBS
-	import * as prismicH from '@prismicio/helpers';
 	import Icon from '@iconify/svelte';
 
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
 	//COMPONENTS
-	import Divider from '../../components/information/divider.svelte';
+	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
 
 	//PORPS
 	export let data;
 
-	const htmlSerializer = (type, element, content, children) => {
-		if (type === 'strong') {
-			return `<strong class="text-primary-main">${children}</strong>`;
-		}
-	};
+	let nftImgSeqWidth = 640;
+	let nftImgSeqHeight = 463;
 </script>
 
-<div id="wrapper" class="w-auto h-960 bg-primary-dark">
-	<div id="img-wrapper" class="w-full h-full" />
-	<div class="text-wrapper w-full h-auto pt-224">
+<div id="wrapper" class="h-auto w-auto">
+	<div id="img-wrapper" class="h-full w-full" />
+	<div class="h-full w-full">
 		<Main>
-			<div class="flex w-full h-32 justify-center">
-				<Divider name="explorer-hero-section-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
+			<div
+				class="mt-124 flex h-auto w-full flex-col items-center justify-center">
+				<div
+					class="my-16 h-auto w-auto text-primary-main sm:text-h4 md:text-h3">
+					<Icon icon={data.primary.icon_label} />
+				</div>
 			</div>
-			<div class="w-full h-full text-center space-y-16">
-				<div class="flex justify-center items-center space-x-32 text-h5 text-primary-main">
-					<Icon icon={data.icon_label} />
-					<h5 class="text-h5 text-primary-main font-bold">{data.heading[0].text}</h5>
-				</div>
-				<h5 class="text-p1 gradient-text-primary-light font-bold">{data.subheading[0].text}</h5>
-				<div class="w-ful text-p2 font-medium text-primary-light text-center pt-72">
-					<p>{@html prismicH.asHTML(data.paragraph, null, htmlSerializer)}</p>
-				</div>
+			<div
+				class="w-auto text-center font-bold text-primary-main sm:text-h6 md:text-h5 lg:text-h3">
+				<h3>{data.primary.hero_section_title[0].text}</h3>
+			</div>
+			<div class="h-auto w-full pt-4">
+				<p
+					class="text-center font-bold text-primary-light sm:text-p3 lg:text-p2">
+					{data.primary.hero_section_subtitle[0].text.toUpperCase()}
+				</p>
+			</div>
+			<div class="mt-72 flex h-auto w-auto justify-center">
+				<ImageSequence
+					totalFrames={240}
+					name={'hero-nft'}
+					url={'/assets/vids/nft-4-seq/'}
+					imgWidth={nftImgSeqWidth}
+					imgHeight={nftImgSeqHeight} />
 			</div>
 		</Main>
 	</div>
@@ -47,14 +55,13 @@
 
 	#wrapper {
 		position: relative;
-		z-index: 10;
 	}
 
 	#img-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url('/assets/imgs/bg-texture.png');
+		background-image: url('/assets/imgs/bg-grabado-2.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -65,14 +72,7 @@
 			from(#02232b55),
 			to(#02232b00)
 		);
-		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
+		mask-image: linear-gradient(to bottom, #02232b66, #02232b00);
 		z-index: -10;
-	}
-
-	.text-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 10;
 	}
 </style>

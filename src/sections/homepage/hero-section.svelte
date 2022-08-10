@@ -52,62 +52,54 @@
 
 <svelte:window bind:innerWidth={$window_width} />
 
-<div id="wrapper" class="w-auto h-auto bg-primary-dark">
-	<div id="img-wrapper" class="w-full h-full" />
+<div id="wrapper" class="h-auto w-auto bg-primary-dark">
+	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
-		<div class="w-full h-auto">
+		<div class="h-auto w-full">
 			<div class="mt-160">
 				<img
 					src={data.primary.background_image.url}
 					alt={data.primary.background_image.alt}
-					class="w-full"
-				/>
+					class="w-full" />
 			</div>
 			<div
-				class="flex w-full mt-32 items-center justify-center text-center text-primary-light font-bold xl:text-p1 md:text-p2 sm:text-p3"
-			>
+				class="mt-32 flex w-full items-center justify-center text-center font-bold text-primary-light sm:text-p3 md:text-p2 xl:text-p1">
 				<h2>{data.primary.paragraph[0].text}</h2>
 			</div>
-			<div class="flex w-auto justify-center mt-88">
+			<div class="mt-88 flex w-auto justify-center">
 				<PrimaryButton
 					label={data.primary.button_label}
 					url={data.primary.button_url}
-					target={'__blank'}
-				/>
+					target={'__blank'} />
 			</div>
 
-			<div class="flex w-auto h-auto justify-center mt-64">
+			<div class="mt-64 flex h-auto w-auto justify-center">
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-1-seq/'}
 					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight}
-				/>
+					imgHeight={nftImgSeqHeight} />
 			</div>
 			<div
 				id="orb-right-wrapper"
-				class="w-auto h-auto sm:right-32 md:right-72 lg:right-148 top-600"
-			>
+				class="top-600 h-auto w-auto sm:right-32 md:right-72 lg:right-148">
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-orb-right'}
 					url={'/assets/vids/orbitante-2-seq/'}
 					imgWidth={orbRightImgSeqWidth}
-					imgHeight={orbRightImgSeqHeight}
-				/>
+					imgHeight={orbRightImgSeqHeight} />
 			</div>
 			<div
 				id="orb-left-wrapper"
-				class="w-auto h-auto sm:left-24 md:left-72 lg:left-124 sm:top-920 lg:top-800"
-			>
+				class="h-auto w-auto sm:left-24 sm:top-920 md:left-72 lg:left-124 lg:top-800">
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-orb-left'}
 					url={'/assets/vids/orbitante-3-seq/'}
 					imgWidth={orbLeftImgSeqWidth}
-					imgHeight={orbLeftImgSeqHeight}
-				/>
+					imgHeight={orbLeftImgSeqHeight} />
 			</div>
 		</div>
 	</Main>
@@ -127,7 +119,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url('/assets/imgs/bg-texture.png');
+		background-image: url('/assets/imgs/bg-grabado-1.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

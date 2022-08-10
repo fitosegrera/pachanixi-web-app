@@ -27,10 +27,10 @@
 
 <script>
 	//SECTIONS
-	import PrimaryHeroSection from '../sections/cosmovision/primary-hero-section.svelte';
-	import Section_1 from '../sections/cosmovision/section-1.svelte';
-	import SecondaryHeroSection from '../sections/cosmovision/secondary-hero-section.svelte';
-	import Section_2 from '../sections/cosmovision/section-2.svelte';
+	import HeroSection from '../sections/cosmovision/hero-section.svelte';
+	import Section1 from '../sections/cosmovision/section-1.svelte';
+	import SectionSplitter from '../sections/cosmovision/section-splitter.svelte';
+	import Section2 from '../sections/cosmovision/section-2.svelte';
 
 	//PROPS
 	export let cosmovisionData, title;
@@ -40,7 +40,7 @@
 	<title>{title}</title>
 </svelte:head>
 
-<PrimaryHeroSection data={cosmovisionData[0]} />
-<Section_1 data={cosmovisionData[1]} />
-<SecondaryHeroSection data={cosmovisionData[2]} />
-<Section_2 data={cosmovisionData[3]} />
+<HeroSection data={cosmovisionData[0]} />
+<Section1 data={cosmovisionData[1]} />
+<SectionSplitter />
+<Section2 data={cosmovisionData[2]} />
