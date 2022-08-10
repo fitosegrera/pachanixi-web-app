@@ -36,7 +36,7 @@
 					{data.primary.hero_section_subtitle[0].text.toUpperCase()}
 				</p>
 			</div>
-			<div class="mt-72 flex h-auto w-auto justify-center">
+			<div class="mt-112 flex h-auto w-auto justify-center">
 				<ImageSequence
 					totalFrames={240}
 					name={'hero-nft'}
