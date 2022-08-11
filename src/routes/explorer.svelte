@@ -14,7 +14,7 @@
 		const client = prismic.createClient(endpoint, { routes, accessToken });
 		const explorerData = await client.getSingle('explorer');
 
-		console.log(explorerData.data.body);
+		//console.log(explorerData.data.body);
 
 		return {
 			props: {
@@ -31,6 +31,9 @@
 	import Section1 from '../sections/explorer/section-1.svelte';
 	import Section2 from '../sections/explorer/section-2.svelte';
 
+	//COMPONENTS
+	import AssetsLoader from '../components/information/assets-loader.svelte';
+
 	//PROPS
 	export let explorerData, title;
 </script>
@@ -39,6 +42,7 @@
 	<title>{title}</title>
 </svelte:head>
 
+<AssetsLoader totalAssets={1} />
 <HeroSection data={explorerData[0]} />
 <Section1 data={explorerData[1]} />
 <Section2 data={explorerData[2]} />

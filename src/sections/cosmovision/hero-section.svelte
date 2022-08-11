@@ -2,6 +2,9 @@
 	//LIBS
 	import Icon from '@iconify/svelte';
 
+	//STORES
+	import { img_seq_total_frames } from '../../stores/main';
+
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
@@ -11,8 +14,8 @@
 	//PORPS
 	export let data;
 
-	let nftImgSeqWidth = 720;
-	let nftImgSeqHeight = 521;
+	let nftImgSeqWidth = 360;
+	let nftImgSeqHeight = 416;
 </script>
 
 <div id="wrapper" class="h-auto w-auto">
@@ -20,14 +23,14 @@
 	<div class="h-full w-full">
 		<Main>
 			<div
-				class="mt-124 flex h-auto w-full flex-col items-center justify-center">
+				class="mt-148 flex h-auto w-full flex-col items-center justify-center">
 				<div
 					class="-mb-24 h-auto w-auto text-primary-main sm:text-h3 md:text-h2">
 					<Icon icon={data.primary.icon_label} />
 				</div>
 			</div>
 			<div
-				class="w-auto text-center font-bold text-primary-main sm:text-h6 md:text-h5 lg:text-h3">
+				class="w-auto text-center font-bold text-primary-main sm:text-h7 md:text-h5 lg:text-h3">
 				<h3>{data.primary.hero_section_title[0].text}</h3>
 			</div>
 			<div class="h-auto w-full pt-4">
@@ -38,7 +41,7 @@
 			</div>
 			<div class="mt-72 flex h-auto w-auto justify-center">
 				<ImageSequence
-					totalFrames={240}
+					totalFrames={$img_seq_total_frames}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-3-seq/'}
 					imgWidth={nftImgSeqWidth}

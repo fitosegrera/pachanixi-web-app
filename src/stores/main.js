@@ -1,5 +1,6 @@
 import { writable, readable } from 'svelte/store';
 
+export const img_seq_total_frames = readable(160);
 export const loading = writable(false);
 export const img_seq_loading = writable(0);
 

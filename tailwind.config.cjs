@@ -124,6 +124,12 @@ module.exports = {
 					lineHeight: '72px'
 				}
 			],
+			'h6.5': [
+				'56px',
+				{
+					lineHeight: '64px'
+				}
+			],
 			h7: [
 				'48px',
 				{

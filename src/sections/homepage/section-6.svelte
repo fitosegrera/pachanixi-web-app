@@ -3,7 +3,12 @@
 	import { onMount } from 'svelte';
 
 	//STORES
-	import { window_width, is_mobile_view, break_point } from '../../stores/main';
+	import {
+		window_width,
+		is_mobile_view,
+		break_point,
+		img_seq_total_frames
+	} from '../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../helpers/mobileViewDetect';
@@ -75,7 +80,7 @@
 		</div>
 		<div id="orb-left-wrapper" class="h-auto w-auto">
 			<ImageSequence
-				totalFrames={240}
+				totalFrames={$img_seq_total_frames}
 				name={'section-5-orb-bottom'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
@@ -85,7 +90,7 @@
 			id="orb-right-wrapper"
 			class="h-auto w-auto sm:right-100 sm:-top-72 md:-top-100">
 			<ImageSequence
-				totalFrames={240}
+				totalFrames={$img_seq_total_frames}
 				name={'section-5-orb-right'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbRightImgSeqWidth}

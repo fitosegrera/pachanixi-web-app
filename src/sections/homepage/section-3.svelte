@@ -12,28 +12,30 @@
 	export let data;
 </script>
 
-<div id="wrapper" class="w-auto h-auto bg-primary-dark text-center">
-	<div id="img-wrapper" class="w-full h-full" />
+<div id="wrapper" class="h-auto w-auto bg-primary-dark text-center">
+	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
-		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold pt-48">
+		<div class="pt-48 font-bold text-primary-main sm:text-h7 md:text-h5">
 			<!-- <div class="flex w-auto justify-center pt-32">
 				<Divider name="section-3-divider" w={'960'} h={'32'} pixCol={'#BDFF00'} />
 			</div> -->
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div
-			class="w-full h-auto grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:gap-24 sm:gap-32 xl:mt-88 md:mt-56 sm:mt-32"
-		>
+			class="md:mt-56 grid h-auto w-full sm:mt-32 sm:grid-cols-1 sm:gap-32 md:grid-cols-2 xl:mt-88 xl:grid-cols-3 xl:gap-24 2xl:grid-cols-4">
 			{#each data.items as item, i}
 				<NftCard data={item} />
 			{/each}
 		</div>
 
-		<div class="flex w-auto justify-center mt-72">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
+		<div class="mt-72 flex w-auto justify-center">
+			<PrimaryButton
+				label={data.primary.button_label}
+				url={data.primary.button_url}
+				target={''} />
 		</div>
 	</Main>
-	<div class="w-full h-auto mt-96">
+	<div class="mt-96 h-auto w-full">
 		<Scroller data={data.primary.scroller[0].text} />
 	</div>
 </div>
@@ -48,7 +50,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url('/assets/imgs/bg-texture.png');
+		background-image: url('/assets/imgs/bg-grabado-1.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

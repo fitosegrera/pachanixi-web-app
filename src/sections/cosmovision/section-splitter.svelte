@@ -1,9 +1,12 @@
 <script>
+	//STORES
+	import { img_seq_total_frames } from '../../stores/main';
+
 	//COMPONENTS
 	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
 
-	let nftImgSeqWidth = 800;
-	let nftImgSeqHeight = 579;
+	let nftImgSeqWidth = 640;
+	let nftImgSeqHeight = 462;
 </script>
 
 <div id="wrapper" class="mt-64 h-full w-full">
@@ -13,7 +16,7 @@
 	</div>
 	<div id="nft-wrapper" class="">
 		<ImageSequence
-			totalFrames={240}
+			totalFrames={$img_seq_total_frames}
 			name={'cosmovision-section-splitter-nft'}
 			url={'/assets/vids/nft-1-seq/'}
 			imgWidth={nftImgSeqWidth}

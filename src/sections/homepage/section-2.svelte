@@ -4,7 +4,12 @@
 	import * as prismicH from '@prismicio/helpers';
 
 	//STORES
-	import { window_width, is_mobile_view, break_point } from '../../stores/main';
+	import {
+		window_width,
+		is_mobile_view,
+		break_point,
+		img_seq_total_frames
+	} from '../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../helpers/mobileViewDetect';
@@ -100,7 +105,7 @@
 				id="nft-wrapper"
 				class="xl:-right-320 h-auto w-auto sm:-right-148 sm:-top-16 md:-right-124 md:top-64 lg:-right-240 lg:-top-72 xl:-top-224 2xl:-right-196">
 				<ImageSequence
-					totalFrames={240}
+					totalFrames={$img_seq_total_frames}
 					name={'section-2-nft'}
 					url={'/assets/vids/nft-2-seq/'}
 					imgWidth={nftImgSeqWidth}
@@ -124,7 +129,7 @@
 			id="orb-left-wrapper"
 			class="h-auto w-auto sm:bottom-96 sm:left-24 lg:top-960 lg:left-72 xl:left-210">
 			<ImageSequence
-				totalFrames={240}
+				totalFrames={$img_seq_total_frames}
 				name={'section-2-orb-left'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
@@ -134,7 +139,7 @@
 			id="orb-right-wrapper"
 			class="lg:top-880 h-auto w-auto sm:bottom-196 sm:right-24 lg:right-210">
 			<ImageSequence
-				totalFrames={240}
+				totalFrames={$img_seq_total_frames}
 				name={'section-2-orb-right'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbRightImgSeqWidth}

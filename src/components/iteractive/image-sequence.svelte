@@ -11,6 +11,7 @@
 	export let totalFrames;
 
 	onMount(async () => {
+		$img_seq_loading = 0;
 		if (browser) {
 			let sequencePath = url;
 			let sequenceNumberLength = 1;
@@ -22,6 +23,13 @@
 			let startFrame = 1;
 			let endFrame = totalFrames;
 			let loop = true;
+
+			let fps, fpsInterval, startTime, now, then, elapsed;
+
+			fps = 16;
+			fpsInterval = 1000 / fps;
+			then = Date.now();
+			startTime = then;
 
 			// Functions
 			const padWithZeroes = (number, length) => {
@@ -39,7 +47,10 @@
 				for (let i = startFrame; i <= endFrame; i++) {
 					frames[i] = new Image();
 					frames[i].src =
-						sequencePath + fileName + padWithZeroes(i, sequenceNumberLength) + fileSuffix;
+						sequencePath +
+						fileName +
+						padWithZeroes(i, sequenceNumberLength) +
+						fileSuffix;
 					frames[i].onload = () => {
 						framesLoaded++;
 						if (framesLoaded >= endFrame - startFrame) {
@@ -52,11 +63,29 @@
 			let currentFrame = startFrame;
 
 			const frameAnimation = () => {
-				let canvas = targetElement;
-				let context = canvas.getContext('2d');
+				now = Date.now();
+				elapsed = now - then;
 
-				context.clearRect(0, 0, canvas.width, canvas.height);
-				context.drawImage(frames[currentFrame], 0, 0, canvas.width, canvas.height);
+				// if enough time has elapsed, draw the next frame
+
+				if (elapsed > fpsInterval) {
+					// Get ready for next frame by setting then=now, but also adjust for your
+					// specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+					then = now - (elapsed % fpsInterval);
+
+					// Put your drawing code here
+					let canvas = targetElement;
+					let context = canvas.getContext('2d');
+
+					context.clearRect(0, 0, canvas.width, canvas.height);
+					context.drawImage(
+						frames[currentFrame],
+						0,
+						0,
+						canvas.width,
+						canvas.height
+					);
+				}
 
 				// If last frame
 				if (currentFrame >= endFrame) {
@@ -82,7 +111,11 @@
 
 <div class="animation-wrapper">
 	<div class="canvas-wrapper">
-		<canvas class="w-auto h-auto" id={name} width={imgWidth} height={imgHeight} />
+		<canvas
+			class="h-auto w-auto"
+			id={name}
+			width={imgWidth}
+			height={imgHeight} />
 	</div>
 </div>
 

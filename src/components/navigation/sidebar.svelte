@@ -24,12 +24,12 @@
 		<CloseButton icon={'ant-design:close-square-outlined'} />
 	</div>
 	{#each menu as item}
-		<div class="h-auto w-auto" on:click={handleClick}>
+		<div class="mt-16 h-auto w-auto" on:click={handleClick}>
 			<MenuItem label={item.item} url={item.url} />
 		</div>
 	{/each}
 	<div
-		class="flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
+		class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
 		{#each social as item}
 			<div
 				class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">

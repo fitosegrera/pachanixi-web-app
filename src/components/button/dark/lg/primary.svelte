@@ -5,10 +5,9 @@
 	export let target;
 </script>
 
-<a sveltekit:prefetch href={url} alt={label} {target}>
+<a sveltekit:prefetch sveltekit:reload href={url} alt={label} {target}>
 	<div
-		class="flex items-center text-center justify-center md:text-p1 sm:text-p2 text-primary-main font-bold h-96 w-auto border-8 border-primary-main md:px-32 sm:px-24 py-32 hover:text-primary-dark hover:bg-primary-main hover:cursor-pointer"
-	>
+		class="flex h-96 w-auto items-center justify-center border-8 border-primary-main py-32 text-center font-bold text-primary-main hover:cursor-pointer hover:bg-primary-main hover:text-primary-dark sm:px-24 sm:text-p2 md:px-32 md:text-p1">
 		<p>{label}</p>
 	</div>
 </a>

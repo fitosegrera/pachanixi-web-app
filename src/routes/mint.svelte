@@ -19,7 +19,7 @@
 		return {
 			props: {
 				mintData: mintData.data.body,
-				title: mintData.data.title[0].text
+				title: mintData.data.page_title[0].text
 			}
 		};
 	}
@@ -29,7 +29,9 @@
 	//SECTIONS
 	import HeroSection from '../sections/mint/hero-section.svelte';
 	import Section_1 from '../sections/mint/section-1.svelte';
-	import Section_2 from '../sections/mint/section-2.svelte';
+
+	//COMPONENTS
+	import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
 	export let mintData, title;
@@ -39,16 +41,6 @@
 	<title>{title}</title>
 </svelte:head>
 
-<div class="h-full w-full">
-	<HeroSection data={mintData[0]} />
-	<Section_1 data={mintData[1]} />
-	<Section_2 />
-</div>
-
-<style>
-	div {
-		position: relative;
-		background-image: -webkit-linear-gradient(#000000, #02232b) !important;
-		z-index: -100;
-	}
-</style>
+<AssetsLoader totalAssets={1} />
+<HeroSection data={mintData[0]} />
+<Section_1 data={mintData[1]} />

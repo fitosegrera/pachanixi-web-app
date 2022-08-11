@@ -3,7 +3,12 @@
 	import { onMount } from 'svelte';
 
 	//STORES
-	import { window_width, is_mobile_view, break_point } from '../../stores/main';
+	import {
+		window_width,
+		is_mobile_view,
+		break_point,
+		img_seq_total_frames
+	} from '../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../helpers/mobileViewDetect';
@@ -75,7 +80,7 @@
 
 			<div class="mt-64 flex h-auto w-auto justify-center">
 				<ImageSequence
-					totalFrames={240}
+					totalFrames={$img_seq_total_frames}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-1-seq/'}
 					imgWidth={nftImgSeqWidth}
@@ -85,7 +90,7 @@
 				id="orb-right-wrapper"
 				class="top-600 h-auto w-auto sm:right-32 md:right-72 lg:right-148">
 				<ImageSequence
-					totalFrames={240}
+					totalFrames={$img_seq_total_frames}
 					name={'hero-orb-right'}
 					url={'/assets/vids/orbitante-2-seq/'}
 					imgWidth={orbRightImgSeqWidth}
@@ -95,7 +100,7 @@
 				id="orb-left-wrapper"
 				class="h-auto w-auto sm:left-24 sm:top-920 md:left-72 lg:left-124 lg:top-800">
 				<ImageSequence
-					totalFrames={240}
+					totalFrames={$img_seq_total_frames}
 					name={'hero-orb-left'}
 					url={'/assets/vids/orbitante-3-seq/'}
 					imgWidth={orbLeftImgSeqWidth}
