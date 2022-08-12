@@ -107,7 +107,7 @@
 			</div>
 			<div
 				id="nft-wrapper"
-				class="xl:-right-320 h-full w-auto sm:-right-112 sm:-top-240 md:-right-124 md:-top-264 lg:-top-368 lg:-right-296 xl:-top-160 2xl:-right-196">
+				class="xl:-right-320 h-full w-auto sm:-right-224 sm:-top-32 md:-right-124 md:-top-264 lg:-top-368 lg:-right-296 xl:-top-160 2xl:-right-196">
 				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'section-2-nft'}
@@ -134,23 +134,29 @@
 		</div>
 		<div
 			id="orb-left-wrapper"
-			class="h-auto w-auto sm:bottom-96 sm:left-24 lg:top-960 lg:left-72 xl:left-210">
-			<ImageSequence
+			class="h-auto w-auto sm:-bottom-24 sm:-left-96 lg:top-960 lg:left-72 xl:left-210">
+			<!-- <ImageSequence
 				totalFrames={$img_seq_total_frames}
 				name={'section-2-orb-left'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight} />
+				imgHeight={orbLeftImgSeqHeight} /> -->
+				<video width="50%" autoplay loop muted>
+					<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
+				</video>
 		</div>
 		<div
 			id="orb-right-wrapper"
-			class="lg:top-880 h-auto w-auto sm:bottom-196 sm:right-24 lg:right-210">
-			<ImageSequence
+			class="lg:bottom-32 h-auto w-auto sm:bottom-24 sm:-right-148 lg:right-210">
+			<!-- <ImageSequence
 				totalFrames={$img_seq_total_frames}
 				name={'section-2-orb-right'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight} />
+				imgHeight={orbRightImgSeqHeight} /> -->
+				<video width="50%" autoplay loop muted>
+					<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
+				</video>
 		</div>
 	</Main>
 </div>

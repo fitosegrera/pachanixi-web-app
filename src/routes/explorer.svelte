@@ -32,7 +32,7 @@
 	import Section2 from '../sections/explorer/section-2.svelte';
 
 	//COMPONENTS
-	import AssetsLoader from '../components/information/assets-loader.svelte';
+	//import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
 	export let explorerData, title;
@@ -42,7 +42,7 @@
 	<title>{title}</title>
 </svelte:head>
 
-<AssetsLoader totalAssets={1} />
+<!-- <AssetsLoader totalAssets={1} /> -->
 <HeroSection data={explorerData[0]} />
 <Section1 data={explorerData[1]} />
 <Section2 data={explorerData[2]} />

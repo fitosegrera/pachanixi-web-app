@@ -33,7 +33,7 @@
 	import Section2 from '../sections/cosmovision/section-2.svelte';
 
 	//COMPONENTS
-	import AssetsLoader from '../components/information/assets-loader.svelte';
+	//import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
 	export let cosmovisionData, title;
@@ -43,7 +43,7 @@
 	<title>{title}</title>
 </svelte:head>
 
-<AssetsLoader totalAssets={2} />
+<!-- <AssetsLoader totalAssets={2} /> -->
 <HeroSection data={cosmovisionData[0]} />
 <Section1 data={cosmovisionData[1]} />
 <SectionSplitter />

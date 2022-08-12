@@ -84,22 +84,28 @@
 			{/each}
 		</div>
 		<div id="orb-left-wrapper" class="h-auto w-auto">
-			<ImageSequence
+			<!-- <ImageSequence
 				totalFrames={$img_seq_total_frames}
 				name={'section-5-orb-bottom'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight} />
+				imgHeight={orbLeftImgSeqHeight} /> -->
+				<video width="50%" autoplay loop muted>
+					<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
+				</video>
 		</div>
 		<div
 			id="orb-right-wrapper"
 			class="h-auto w-auto sm:right-100 sm:-top-72 md:-top-100">
-			<ImageSequence
+			<!-- <ImageSequence
 				totalFrames={$img_seq_total_frames}
 				name={'section-5-orb-right'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight} />
+				imgHeight={orbRightImgSeqHeight} /> -->
+				<video width="50%" autoplay loop muted>
+					<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
+				</video>
 		</div>
 	</Main>
 </div>

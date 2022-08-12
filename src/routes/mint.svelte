@@ -31,7 +31,7 @@
 	import Section_1 from '../sections/mint/section-1.svelte';
 
 	//COMPONENTS
-	import AssetsLoader from '../components/information/assets-loader.svelte';
+	//import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
 	export let mintData, title;
@@ -41,6 +41,6 @@
 	<title>{title}</title>
 </svelte:head>
 
-<AssetsLoader totalAssets={1} />
+<!-- <AssetsLoader totalAssets={1} /> -->
 <HeroSection data={mintData[0]} />
 <Section_1 data={mintData[1]} />

@@ -35,7 +35,7 @@
 	import Section6 from '../sections/homepage/section-6.svelte';
 
 	//COMPONENTS
-	import AssetsLoader from '../components/information/assets-loader.svelte';
+	//import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
 	export let homepageData;
@@ -45,7 +45,7 @@
 	<title>{homepageData[0].primary.title[0].text}</title>
 </svelte:head>
 
-<AssetsLoader totalAssets={9} />
+<!-- <AssetsLoader totalAssets={9} /> -->
 <HeroSection data={homepageData[0]} />
 <Section1 data={homepageData[1]} />
 <Section2 data={homepageData[2]} />
