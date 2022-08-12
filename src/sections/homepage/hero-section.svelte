@@ -79,7 +79,7 @@
 			</div>
 			<div
 				id="orb-left-wrapper"
-				class="h-auto w-auto sm:-left-8 sm:top-640 md:left-48 lg:left-124 lg:top-800">
+				class="h-auto w-auto sm:-left-8 sm:top-680 md:left-48 lg:left-124 lg:top-800">
 				<video width={orbSize} autoplay loop muted>
 					<source
 						src="/assets/vids/alpha/orbitante-3-alpha.webm"

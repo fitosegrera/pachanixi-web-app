@@ -6,9 +6,10 @@
 	export let data;
 </script>
 
-<div class="pt-196">
+<div class="sm:pt-112 md:pt-196">
 	<Main>
-		<div class="pb-112 text-center text-p2 font-bold text-primary-light">
+		<div
+			class="pb-112 text-center font-bold text-primary-light sm:text-p3 md:text-p2">
 			<h1>{data.primary.brands_section_title[0].text.toUpperCase()}</h1>
 		</div>
 		<div class="flex justify-center space-x-224">
