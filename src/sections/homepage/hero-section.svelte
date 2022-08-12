@@ -78,33 +78,43 @@
 					target={'__blank'} />
 			</div>
 
-			<div class="mt-64 flex h-auto w-auto justify-center">
-				<ImageSequence
+			<div class="mt-96 flex h-auto w-auto justify-center">
+				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-1-seq/'}
 					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} />
+					imgHeight={nftImgSeqHeight} /> -->
+
+				<video width="50%" autoplay loop muted>
+					<source src="/assets/vids/alpha/nft-4-alpha.webm" type="video/webm" />
+				</video>
 			</div>
 			<div
 				id="orb-right-wrapper"
-				class="top-600 h-auto w-auto sm:right-32 md:right-72 lg:right-148">
-				<ImageSequence
+				class="top-600 h-auto w-auto sm:right-32 md:-right-224 lg:-right-124">
+				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'hero-orb-right'}
 					url={'/assets/vids/orbitante-2-seq/'}
 					imgWidth={orbRightImgSeqWidth}
-					imgHeight={orbRightImgSeqHeight} />
+					imgHeight={orbRightImgSeqHeight} /> -->
+					<video width="40%" autoplay loop muted>
+						<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
+					</video>
 			</div>
 			<div
 				id="orb-left-wrapper"
 				class="h-auto w-auto sm:left-24 sm:top-920 md:left-72 lg:left-124 lg:top-800">
-				<ImageSequence
+				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'hero-orb-left'}
 					url={'/assets/vids/orbitante-3-seq/'}
 					imgWidth={orbLeftImgSeqWidth}
-					imgHeight={orbLeftImgSeqHeight} />
+					imgHeight={orbLeftImgSeqHeight} /> -->
+					<video width="40%" autoplay loop muted>
+						<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
+					</video>
 			</div>
 		</div>
 	</Main>
@@ -137,6 +147,10 @@
 		);
 		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
 		z-index: -10;
+	}
+
+	video {
+		background-color: transparent;
 	}
 
 	#orb-right-wrapper {

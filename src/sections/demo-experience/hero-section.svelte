@@ -71,7 +71,7 @@
 	{/if}
 	<iframe
 		class="demo-experience"
-		src="https://50.116.40.214:3333"
+		src="localhost:3333"
 		title="Pachanixi demo experience"
 	/>
 </div>

@@ -23,7 +23,7 @@
 
 <div id="wrapper" class="h-auto w-auto text-center">
 	<Container>
-		<div class="mt-112">
+		<div class="mt-32">
 			<div class="flex h-auto w-full items-center justify-center">
 				<Divider
 					name="cosmovision-section-1-divider"

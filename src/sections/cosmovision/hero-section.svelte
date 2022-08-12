@@ -40,12 +40,15 @@
 				</p>
 			</div>
 			<div class="mt-72 flex h-auto w-auto justify-center">
-				<ImageSequence
+				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-3-seq/'}
 					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} />
+					imgHeight={nftImgSeqHeight} /> -->
+					<video width="40%" autoplay loop muted>
+						<source src="/assets/vids/alpha/nft-3-alpha.webm" type="video/webm" />
+					</video>
 			</div>
 		</Main>
 	</div>

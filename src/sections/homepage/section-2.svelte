@@ -79,9 +79,13 @@
 	<Main>
 		<div class="flex">
 			<div>
-				<!-- <div class="flex w-full justify-start">
-					<Divider name="section-2-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
-				</div> -->
+				<div class="flex h-auto w-full items-center justify-start">
+					<Divider
+						name="homepage-section-2-divider"
+						w={'50'}
+						h={'32'}
+						pixCol={'#02232B'} />
+				</div>
 				<div
 					class="items-center font-bold text-primary-dark sm:space-y-16 sm:text-p1 md:text-h5 lg:flex lg:space-x-32">
 					<h5>
@@ -92,7 +96,7 @@
 					</p>
 				</div>
 				<div
-					class="h-auto w-auto pt-32 font-bold sm:text-h6 md:text-h4 lg:text-h1">
+					class="h-auto w-auto pt-32 font-bold sm:text-h6 md:text-h3 lg:text-h1">
 					<h1 class="">
 						{data.primary.subtitle_2[0].text}
 					</h1>
@@ -103,17 +107,20 @@
 			</div>
 			<div
 				id="nft-wrapper"
-				class="xl:-right-320 h-auto w-auto sm:-right-148 sm:-top-16 md:-right-124 md:top-64 lg:-right-240 lg:-top-72 xl:-top-224 2xl:-right-196">
-				<ImageSequence
+				class="xl:-right-320 h-full w-auto sm:-right-112 sm:-top-240 md:-right-124 md:-top-264 lg:-top-368 lg:-right-296 xl:-top-160 2xl:-right-196">
+				<!-- <ImageSequence
 					totalFrames={$img_seq_total_frames}
 					name={'section-2-nft'}
 					url={'/assets/vids/nft-2-seq/'}
 					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} />
+					imgHeight={nftImgSeqHeight} /> -->
+				<video width="100%" autoplay loop muted>
+					<source src="/assets/vids/alpha/nft-2-alpha.webm" type="video/webm" />
+				</video>
 			</div>
 		</div>
 		<div
-			class="h-auto w-full pt-32 font-medium sm:text-p3 md:text-p2 lg:text-p1">
+			class="h-auto w-full pt-32 text-justify font-medium sm:text-p3 md:text-p2 lg:text-p1">
 			<!-- <p class="">{data.primary.paragraph[0].text}</p> -->
 			<p>
 				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
@@ -154,8 +161,12 @@
 		/* right: -50px;
 		top: -180px; */
 		pointer-events: none;
-		mix-blend-mode: normal;
+		/* mix-blend-mode: normal; */
 		z-index: 3;
+	}
+
+	video {
+		background-color: transparent;
 	}
 
 	#orb-right-wrapper {

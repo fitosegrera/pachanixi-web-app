@@ -23,47 +23,56 @@
 	};
 </script>
 
-<div class="relative w-full h-auto">
-	<div class="text-wrapper w-full h-full pt-48">
-		<div class="relative w-full h-full">
+<div class="relative h-auto w-full">
+	<div class="text-wrapper h-full w-full pt-48">
+		<div class="relative h-full w-full">
 			<Main>
 				<div
-					class="w-full h-auto xl:text-right sm:text-center 2xl:px-112 md:px-32 sm:px-16 md:text-h5 sm:text-h7 text-primary-main font-bold"
-				>
-					<!-- <div class="flex w-full h-32 xl:justify-end sm:justify-center">
-						<Divider name="section-4-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
-					</div> -->
+					class="h-auto w-full font-bold text-primary-main sm:px-16 sm:text-center sm:text-h7 md:px-32 md:text-h5 xl:text-right 2xl:px-112">
+					<div class="flex h-auto w-full items-center justify-end">
+						<Divider
+							name="homepage-section-4-divider"
+							w={'50'}
+							h={'32'}
+							pixCol={'#BDFF00'} />
+					</div>
 					<h5>{data.primary.title[0].text}</h5>
 				</div>
 				<div
-					class="flex w-full h-auto space-x-32 xl:my-48 sm:my-16 xl:justify-end sm:justify-center 2xl:px-112 md:px-32 sm:px-16 md:text-h5 sm:text-h7 text-primary-main-variant"
-				>
+					class="flex h-auto w-full space-x-32 text-primary-main-variant sm:my-16 sm:justify-center sm:px-16 sm:text-h7 md:px-32 md:text-h5 xl:my-48 xl:justify-end 2xl:px-112">
 					<Icon icon={data.primary.icon_1_label} />
 					<Icon icon={data.primary.icon_2_label} />
 				</div>
-				<div class="flex w-full h-auto items-center xl:justify-end sm:justify-center mb-160">
+				<div
+					class="mb-160 flex h-auto w-full items-center sm:justify-center xl:justify-end">
 					<div
-						class="2xl:pr-112 md:pr-32 sm:pr-16 lg:w-996 md:text-p1 sm:text-p3 font-medium text-primary-light xl:text-right sm:text-center"
-					>
+						class="font-medium text-primary-light sm:pr-16 sm:text-center sm:text-p3 md:pr-32 md:text-p1 lg:w-996 xl:text-right 2xl:pr-112">
 						<!-- <p>{data.primary.paragraph[0].text}</p> -->
-						<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
+						<p>
+							{@html prismicH.asHTML(
+								data.primary.paragraph,
+								null,
+								htmlSerializer
+							)}
+						</p>
 					</div>
 				</div>
 			</Main>
 		</div>
 	</div>
-	<div class="button-wrapper w-full h-auto">
-		<div class="flex w-full justify-center lg:mb-96 sm:mb-48">
+	<div class="button-wrapper h-auto w-full">
+		<div class="flex w-full justify-center sm:mb-48 lg:mb-96">
 			<PrimaryButton
 				label={data.primary.button_label}
 				url={data.primary.button_url}
-				target={'__blank'}
-			/>
+				target={'__blank'} />
 		</div>
 	</div>
-	<div class="video-wrapper flex justify-center xl:h-auto md:h-680 sm:h-520">
+	<div class="video-wrapper flex justify-center sm:h-520 md:h-680 xl:h-auto">
 		<video autoplay autobuffer loop muted>
-			<source src="/assets/vids/demo-experience-section.webm" type="video/webm" />
+			<source
+				src="/assets/vids/demo-experience-section.webm"
+				type="video/webm" />
 		</video>
 	</div>
 </div>

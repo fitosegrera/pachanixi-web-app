@@ -16,9 +16,13 @@
 	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
 		<div class="pt-48 font-bold text-primary-main sm:text-h7 md:text-h5">
-			<!-- <div class="flex w-auto justify-center pt-32">
-				<Divider name="section-3-divider" w={'960'} h={'32'} pixCol={'#BDFF00'} />
-			</div> -->
+			<div class="flex h-auto w-full items-center justify-center">
+				<Divider
+					name="homepage-section-3-divider"
+					w={'50'}
+					h={'32'}
+					pixCol={'#BDFF00'} />
+			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div

@@ -56,15 +56,20 @@
 	class="relative h-auto w-auto bg-primary-main pt-48 text-center sm:pb-24 md:pb-124">
 	<Main>
 		<div class="">
-			<!-- <div class="w-auto h-auto">
-				<Divider name="section-6-main-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
-			</div> -->
+			<div class="flex h-auto w-full items-center justify-center">
+				<Divider
+					name="homepage-section-6-divider"
+					w={'50'}
+					h={'32'}
+					pixCol={'#02232B'} />
+			</div>
 			<h5 class="font-bold text-primary-dark sm:text-h7 md:text-h5">
 				{data.primary.title[0].text}
 			</h5>
 		</div>
 		<div class="flex h-auto w-full justify-center">
-			<div class="h-auto w-960 pt-32 font-medium sm:text-p3 md:text-p2">
+			<div
+				class="h-auto w-960 pt-32 font-medium sm:text-p3 md:text-p2 lg:text-p1">
 				<p class="">{data.primary.paragraph[0].text}</p>
 			</div>
 		</div>

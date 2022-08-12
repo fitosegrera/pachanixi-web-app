@@ -19,7 +19,7 @@
 
 			this.getRandomColor = () => {
 				let col;
-				if (Math.random() > 0.98) {
+				if (Math.random() > 0.975) {
 					col = pixCol;
 				} else {
 					col = '#00000000';
@@ -78,4 +78,5 @@
 	});
 </script>
 
-<div id={name} class={`w-${w} h-${h}`} />
+<!-- <div id={name} class={`w-${w} h-${h}`} /> -->
+<div id={name} class="h-32 w-340" />

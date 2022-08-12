@@ -3,7 +3,7 @@
 	import * as prismicH from '@prismicio/helpers';
 
 	//CONTAINERS
-	import Main from '../../containers/main.svelte';
+	import Main from '../../containers/margins.svelte';
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
@@ -22,20 +22,29 @@
 	};
 </script>
 
-<div id="wrapper" class="w-auto h-auto bg-primary-dark pb-124 text-center">
+<div id="wrapper" class="h-auto w-auto bg-primary-dark pt-112 pb-124 text-center">
 	<Main>
-		<div class="md:text-h5 sm:text-h7 text-primary-main font-bold">
-			<!-- <div class="flex w-auto justify-center">
-				<Divider name="section-1-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
-			</div> -->
+		<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
+			<div class="flex h-auto w-full items-center justify-center">
+				<Divider
+					name="homepage-section-1-divider"
+					w={'50'}
+					h={'32'}
+					pixCol={'#BDFF00'} />
+			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
-		<div class="md:text-p1 sm:text-p3 text-primary-light font-medium pt-48">
+		<div class="pt-48 font-medium text-primary-light sm:text-p3 md:text-p1">
 			<!-- <p>{data.primary.paragraph[0].text}</p> -->
-			<p>{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}</p>
+			<p>
+				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
+			</p>
 		</div>
-		<div class="flex w-auto justify-center md:mt-72 sm:mt-32">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
+		<div class="flex w-auto justify-center sm:mt-32 md:mt-72">
+			<PrimaryButton
+				label={data.primary.button_label}
+				url={data.primary.button_url}
+				target={''} />
 		</div>
 	</Main>
 </div>
