@@ -23,12 +23,7 @@
 	//PORPS
 	export let data;
 
-	let nftImgSeqWidth = 940;
-	let nftImgSeqHeight = 680;
-	let orbLeftImgSeqWidth = 200;
-	let orbLeftImgSeqHeight = 200;
-	let orbRightImgSeqWidth = 200;
-	let orbRightImgSeqHeight = 200;
+	let orbSize = '40%';
 
 	onMount(async () => {
 		$is_mobile_view = detectMobileView($window_width, $break_point);
@@ -36,19 +31,9 @@
 
 	const evalutateMobileView = () => {
 		if ($is_mobile_view === true) {
-			nftImgSeqWidth = 640;
-			nftImgSeqHeight = 463;
-			orbLeftImgSeqWidth = 80;
-			orbLeftImgSeqHeight = 80;
-			orbRightImgSeqWidth = 120;
-			orbRightImgSeqHeight = 120;
+			orbSize = '25%';
 		} else {
-			nftImgSeqWidth = 940;
-			nftImgSeqHeight = 680;
-			orbLeftImgSeqWidth = 200;
-			orbLeftImgSeqHeight = 200;
-			orbRightImgSeqWidth = 200;
-			orbRightImgSeqHeight = 200;
+			orbSize = '40%';
 		}
 	};
 
@@ -79,42 +64,27 @@
 			</div>
 
 			<div class="mt-96 flex h-auto w-auto justify-center">
-				<!-- <ImageSequence
-					totalFrames={$img_seq_total_frames}
-					name={'hero-nft'}
-					url={'/assets/vids/nft-1-seq/'}
-					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} /> -->
-
 				<video width="50%" autoplay loop muted>
 					<source src="/assets/vids/alpha/nft-4-alpha.webm" type="video/webm" />
 				</video>
 			</div>
 			<div
 				id="orb-right-wrapper"
-				class="top-600 h-auto w-auto sm:right-32 md:-right-224 lg:-right-124">
-				<!-- <ImageSequence
-					totalFrames={$img_seq_total_frames}
-					name={'hero-orb-right'}
-					url={'/assets/vids/orbitante-2-seq/'}
-					imgWidth={orbRightImgSeqWidth}
-					imgHeight={orbRightImgSeqHeight} /> -->
-					<video width="40%" autoplay loop muted>
-						<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
-					</video>
+				class="top-600 h-auto w-auto sm:-right-264 md:-right-160 lg:-right-124">
+				<video width={orbSize} autoplay loop muted>
+					<source
+						src="/assets/vids/alpha/orbitante-2-alpha.webm"
+						type="video/webm" />
+				</video>
 			</div>
 			<div
 				id="orb-left-wrapper"
-				class="h-auto w-auto sm:left-24 sm:top-920 md:left-72 lg:left-124 lg:top-800">
-				<!-- <ImageSequence
-					totalFrames={$img_seq_total_frames}
-					name={'hero-orb-left'}
-					url={'/assets/vids/orbitante-3-seq/'}
-					imgWidth={orbLeftImgSeqWidth}
-					imgHeight={orbLeftImgSeqHeight} /> -->
-					<video width="40%" autoplay loop muted>
-						<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
-					</video>
+				class="h-auto w-auto sm:-left-8 sm:top-640 md:left-48 lg:left-124 lg:top-800">
+				<video width={orbSize} autoplay loop muted>
+					<source
+						src="/assets/vids/alpha/orbitante-3-alpha.webm"
+						type="video/webm" />
+				</video>
 			</div>
 		</div>
 	</Main>
@@ -155,12 +125,9 @@
 
 	#orb-right-wrapper {
 		position: absolute;
-		/* right: 140px;
-		top: 600px; */
 	}
+
 	#orb-left-wrapper {
 		position: absolute;
-		/* left: 120px;
-		top: 800px; */
 	}
 </style>

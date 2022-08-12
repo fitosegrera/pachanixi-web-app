@@ -27,6 +27,7 @@
 <script>
 	//SECTIONS
 	import HeroSection from '../sections/homepage/hero-section.svelte';
+	import BrandsSection from '../sections/homepage/brands.svelte';
 	import Section1 from '../sections/homepage/section-1.svelte';
 	import Section2 from '../sections/homepage/section-2.svelte';
 	import Section3 from '../sections/homepage/section-3.svelte';
@@ -47,9 +48,10 @@
 
 <!-- <AssetsLoader totalAssets={9} /> -->
 <HeroSection data={homepageData[0]} />
-<Section1 data={homepageData[1]} />
-<Section2 data={homepageData[2]} />
-<Section3 data={homepageData[3]} />
-<Section4 data={homepageData[4]} />
-<Section5 data={homepageData[5]} />
-<Section6 data={homepageData[6]} />
+<BrandsSection data={homepageData[1]} />
+<Section1 data={homepageData[2]} />
+<Section2 data={homepageData[3]} />
+<Section3 data={homepageData[4]} />
+<Section4 data={homepageData[5]} />
+<Section5 data={homepageData[6]} />
+<Section6 data={homepageData[7]} />
