@@ -70,7 +70,7 @@
 			</div>
 			<div
 				id="orb-right-wrapper"
-				class="top-600 h-auto w-auto sm:-right-264 md:-right-160 lg:-right-124">
+				class="hue top-600 h-auto w-auto sm:-right-264 md:-right-160 lg:-right-124">
 				<video width={orbSize} autoplay loop muted>
 					<source
 						src="/assets/vids/alpha/orbitante-2-alpha.webm"
@@ -79,7 +79,7 @@
 			</div>
 			<div
 				id="orb-left-wrapper"
-				class="h-auto w-auto sm:-left-8 sm:top-680 md:left-48 lg:left-124 lg:top-800">
+				class="hue h-auto w-auto sm:-left-8 sm:top-680 md:left-48 lg:left-124 lg:top-800">
 				<video width={orbSize} autoplay loop muted>
 					<source
 						src="/assets/vids/alpha/orbitante-3-alpha.webm"
@@ -129,5 +129,9 @@
 
 	#orb-left-wrapper {
 		position: absolute;
+	}
+
+	.hue {
+		filter: hue-rotate(190deg);
 	}
 </style>

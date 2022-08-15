@@ -3,12 +3,7 @@
 	import { onMount } from 'svelte';
 
 	//STORES
-	import {
-		window_width,
-		is_mobile_view,
-		break_point,
-		img_seq_total_frames
-	} from '../../stores/main';
+	import { window_width, is_mobile_view, break_point } from '../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../helpers/mobileViewDetect';
@@ -18,36 +13,26 @@
 
 	//COMPONENTS
 	import SocialButton from '../../components/button/light/lg/social.svelte';
-	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
 	import Divider from '../../components/information/divider.svelte';
 
 	//PROPS
 	export let data;
 
-	let orbLeftImgSeqWidth = 200;
-	let orbLeftImgSeqHeight = 200;
-	let orbRightImgSeqWidth = 240;
-	let orbRightImgSeqHeight = 240;
+	let orbSize = '40%';
 
 	onMount(async () => {
 		$is_mobile_view = detectMobileView($window_width, $break_point);
 	});
 
-	const evalutateMobileView = () => {
+	const evaluateWindowWidth = () => {
 		if ($is_mobile_view === true) {
-			orbLeftImgSeqWidth = 80;
-			orbLeftImgSeqHeight = 80;
-			orbRightImgSeqWidth = 120;
-			orbRightImgSeqHeight = 120;
+			orbSize = '25%';
 		} else {
-			orbLeftImgSeqWidth = 200;
-			orbLeftImgSeqHeight = 200;
-			orbRightImgSeqWidth = 240;
-			orbRightImgSeqHeight = 240;
+			orbSize = '40%';
 		}
 	};
 
-	$: $is_mobile_view, evalutateMobileView();
+	$: $is_mobile_view, evaluateWindowWidth();
 </script>
 
 <svelte:window bind:innerWidth={$window_width} />
@@ -83,38 +68,28 @@
 					url={item.social_network_url.url} />
 			{/each}
 		</div>
-		<div id="orb-left-wrapper" class="h-auto w-auto">
-			<!-- <ImageSequence
-				totalFrames={$img_seq_total_frames}
-				name={'section-5-orb-bottom'}
-				url={'/assets/vids/orbitante-3-seq/'}
-				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight} /> -->
-				<video width="50%" autoplay loop muted>
-					<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
-				</video>
+		<div id="orb-left-wrapper" class="h-auto w-auto sm:top-112">
+			<video width={orbSize} autoplay loop muted>
+				<source
+					src="/assets/vids/alpha/orbitante-3-alpha.webm"
+					type="video/webm" />
+			</video>
 		</div>
 		<div
 			id="orb-right-wrapper"
-			class="h-auto w-auto sm:right-100 sm:-top-72 md:-top-100">
-			<!-- <ImageSequence
-				totalFrames={$img_seq_total_frames}
-				name={'section-5-orb-right'}
-				url={'/assets/vids/orbitante-2-seq/'}
-				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight} /> -->
-				<video width="50%" autoplay loop muted>
-					<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
-				</video>
+			class="h-auto w-auto sm:-right-224 sm:-top-72 md:-right-210 md:-top-64 lg:-right-124">
+			<video width={orbSize} autoplay loop muted>
+				<source
+					src="/assets/vids/alpha/orbitante-2-alpha.webm"
+					type="video/webm" />
+			</video>
 		</div>
 	</Main>
 </div>
 
 <style>
 	#orb-left-wrapper {
-		left: 100px;
 		position: absolute;
-		top: 300px;
 		z-index: 4;
 	}
 

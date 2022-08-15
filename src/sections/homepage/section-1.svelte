@@ -24,7 +24,7 @@
 
 <div
 	id="wrapper"
-	class="h-auto w-auto bg-primary-dark pb-124 text-center sm:pt-148 md:pt-264">
+	class="h-auto w-auto bg-primary-dark text-center sm:pb-124 sm:pt-148 lg:pt-224 ">
 	<Main>
 		<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
 			<div class="flex h-auto w-full items-center justify-center">

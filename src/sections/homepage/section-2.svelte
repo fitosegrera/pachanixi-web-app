@@ -4,12 +4,7 @@
 	import * as prismicH from '@prismicio/helpers';
 
 	//STORES
-	import {
-		window_width,
-		is_mobile_view,
-		break_point,
-		img_seq_total_frames
-	} from '../../stores/main';
+	import { window_width, is_mobile_view, break_point } from '../../stores/main';
 
 	//HELPERS
 	import { detectMobileView } from '../../helpers/mobileViewDetect';
@@ -19,45 +14,33 @@
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/light/lg/primary.svelte';
-	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
 	import Divider from '../../components/information/divider.svelte';
 
 	//PROPS
 	export let data;
 
-	let nftImgSeqWidth = 1000;
-	let nftImgSeqHeight = 723;
-	let orbLeftImgSeqWidth = 240;
-	let orbLeftImgSeqHeight = 240;
-	let orbRightImgSeqWidth = 180;
-	let orbRightImgSeqHeight = 180;
+	let nftWidth = '100%';
+	let orbSize = '40%';
 
 	onMount(async () => {
 		$is_mobile_view = detectMobileView($window_width, $break_point);
 	});
 
 	const evaluateWindowWidth = () => {
-		if ($window_width < 820) {
-			nftImgSeqWidth = 480;
-			nftImgSeqHeight = 347;
-			orbLeftImgSeqWidth = 120;
-			orbLeftImgSeqHeight = 120;
-			orbRightImgSeqWidth = 72;
-			orbRightImgSeqHeight = 72;
-		} else if ($window_width >= 820 && $window_width < 1100) {
-			nftImgSeqWidth = 720;
-			nftImgSeqHeight = 521;
-			orbLeftImgSeqWidth = 180;
-			orbLeftImgSeqHeight = 180;
-			orbRightImgSeqWidth = 120;
-			orbRightImgSeqHeight = 120;
+		if ($window_width <= 640) {
+			nftWidth = '90%';
+		} else if ($window_width <= 960) {
+			nftWidth = '70%';
+		} else if ($window_width <= 1280) {
+			nftWidth = '80%';
 		} else {
-			nftImgSeqWidth = 1000;
-			nftImgSeqHeight = 723;
-			orbLeftImgSeqWidth = 240;
-			orbLeftImgSeqHeight = 240;
-			orbRightImgSeqWidth = 180;
-			orbRightImgSeqHeight = 180;
+			nftWidth = '70%';
+		}
+
+		if ($is_mobile_view === true) {
+			orbSize = '25%';
+		} else {
+			orbSize = '40%';
 		}
 	};
 
@@ -105,16 +88,13 @@
 					</h1>
 				</div>
 			</div>
-			<div
-				id="nft-wrapper"
-				class="xl:-right-320 h-full w-auto sm:-right-224 sm:-top-32 md:-right-124 md:-top-264 lg:-top-368 lg:-right-296 xl:-top-160 2xl:-right-196">
-				<!-- <ImageSequence
-					totalFrames={$img_seq_total_frames}
-					name={'section-2-nft'}
-					url={'/assets/vids/nft-2-seq/'}
-					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} /> -->
-				<video width="100%" autoplay loop muted>
+			<div id="nft-wrapper" class="-h-auto w-auto">
+				<video
+					class="sm:top-96 sm:-right-96 md:top-112 md:-right-124 lg:-right-264 lg:-top-72 xl:-top-160 xl:-right-240"
+					width={nftWidth}
+					autoplay
+					loop
+					muted>
 					<source src="/assets/vids/alpha/nft-2-alpha.webm" type="video/webm" />
 				</video>
 			</div>
@@ -135,37 +115,27 @@
 		<div
 			id="orb-left-wrapper"
 			class="h-auto w-auto sm:-bottom-24 sm:-left-96 lg:top-960 lg:left-72 xl:left-210">
-			<!-- <ImageSequence
-				totalFrames={$img_seq_total_frames}
-				name={'section-2-orb-left'}
-				url={'/assets/vids/orbitante-2-seq/'}
-				imgWidth={orbLeftImgSeqWidth}
-				imgHeight={orbLeftImgSeqHeight} /> -->
-				<video width="50%" autoplay loop muted>
-					<source src="/assets/vids/alpha/orbitante-2-alpha.webm" type="video/webm" />
-				</video>
+			<video width={orbSize} autoplay loop muted>
+				<source
+					src="/assets/vids/alpha/orbitante-2-alpha.webm"
+					type="video/webm" />
+			</video>
 		</div>
 		<div
 			id="orb-right-wrapper"
-			class="lg:bottom-32 h-auto w-auto sm:bottom-24 sm:-right-148 lg:right-210">
-			<!-- <ImageSequence
-				totalFrames={$img_seq_total_frames}
-				name={'section-2-orb-right'}
-				url={'/assets/vids/orbitante-3-seq/'}
-				imgWidth={orbRightImgSeqWidth}
-				imgHeight={orbRightImgSeqHeight} /> -->
-				<video width="50%" autoplay loop muted>
-					<source src="/assets/vids/alpha/orbitante-3-alpha.webm" type="video/webm" />
-				</video>
+			class="h-auto w-auto sm:bottom-24 sm:-right-148 lg:bottom-32 lg:right-210">
+			<video width={orbSize} autoplay loop muted>
+				<source
+					src="/assets/vids/alpha/orbitante-3-alpha.webm"
+					type="video/webm" />
+			</video>
 		</div>
 	</Main>
 </div>
 
 <style>
-	#nft-wrapper {
+	#nft-wrapper video {
 		position: absolute;
-		/* right: -50px;
-		top: -180px; */
 		pointer-events: none;
 		/* mix-blend-mode: normal; */
 		z-index: 3;
