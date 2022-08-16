@@ -45,66 +45,97 @@
 
 {#if !$is_mobile_view}
 	<div
-		class="profile-wrapper w-full h-auto bg-primary-dark"
-		transition:fly={{ x: 1920, opacity: 1 }}
-	>
-		<div class="grid grid-flow-col grid-cols-3 w-full h-auto">
+		class="profile-wrapper h-screen w-full bg-primary-dark"
+		transition:fly={{ x: 1920, opacity: 1 }}>
+		<div class="grid h-screen w-full grid-flow-col grid-cols-3">
 			<div class="close-button-wrapper" on:click={handleClick}>
 				<CloseButton icon={'ant-design:close-square-outlined'} />
 			</div>
-			<div class="img-wrapper pt-16" style="background-image: url({profile_picture})" />
-			<div class="col-span-2 w-auto h-auto md:px-48 xl:px-72 2xl:px-112 pt-88 text-left">
+			<div
+				class="img-wrapper pt-16"
+				style="background-image: url({profile_picture})" />
+			<div
+				class="col-span-2 h-auto w-auto pt-88 text-left md:px-48 xl:px-72 2xl:px-112">
 				<div class="relative">
-					<div class="md:text-h7 lg:text-h6 text-primary-main font-bold">
+					<div class="font-bold text-primary-main md:text-h7 lg:text-h6">
 						<h6>{name}</h6>
 					</div>
-					<div class="text-p3 text-primary-light font-bold pt-4">
+					<div class="pt-4 text-p3 font-bold text-primary-light">
 						<p>{rol}</p>
 					</div>
 					<div
-						class="bio-wrapper md:text-p3 lg:text-p2 text-primary-light font-medium mt-48 md:pr-16 lg:pr-32"
-					>
+						class="bio-wrapper mt-48 font-medium text-primary-light md:pr-16 md:text-p3 lg:pr-32 lg:text-p2">
 						<p>{bio}</p>
 					</div>
-					<div class="flex space-x-32 text-h5 text-primary-light font-medium pt-48">
-						<SocialButton icon={website_icon} active={true} name={'website'} url={website_url} />
-						<SocialButton icon={twitter_icon} active={true} name={'twitter'} url={twitter_url} />
+					<div
+						class="flex space-x-32 pt-48 text-h5 font-medium text-primary-light">
+						<SocialButton
+							icon={website_icon}
+							active={true}
+							name={'website'}
+							url={website_url} />
+						<SocialButton
+							icon={twitter_icon}
+							active={true}
+							name={'twitter'}
+							url={twitter_url} />
 						<SocialButton
 							icon={instagram_icon}
 							active={true}
 							name={'instagram'}
-							url={instagram_url}
-						/>
-						<SocialButton icon={facebook_icon} active={true} name={'facebook'} url={facebook_url} />
+							url={instagram_url} />
+						<SocialButton
+							icon={facebook_icon}
+							active={true}
+							name={'facebook'}
+							url={facebook_url} />
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 {:else}
-	<div class="profile-wrapper-mobile bg-primary-dark" transition:fly={{ x: 1080, opacity: 1 }}>
+	<div
+		class="profile-wrapper-mobile h-screen w-full bg-primary-dark"
+		transition:fly={{ x: 1080, opacity: 1 }}>
 		<div class="close-button-wrapper" on:click={handleClick}>
 			<CloseButton icon={'ant-design:close-square-outlined'} />
 		</div>
-		<div class="img-wrapper-mobile" style="background-image: url({profile_picture})" />
-		<div class="w-auto h-auto px-16 pt-24 text-center">
-			<div class="lg:text-h6 sm:text-p1 text-primary-main font-bold">
+		<div
+			class="img-wrapper-mobile"
+			style="background-image: url({profile_picture})" />
+		<div class="h-screen w-full px-16 pt-24 text-center">
+			<div class="font-bold text-primary-main sm:text-p1 lg:text-h6">
 				<h6>{name}</h6>
 			</div>
-			<div class="lg:text-p2 sm:text-p3 text-primary-light font-bold pt-4">
+			<div class="pt-4 font-bold text-primary-light sm:text-p3 lg:text-p2">
 				<p>{rol}</p>
 			</div>
 			<div
-				class="flex w-full px-16 justify-center space-x-24 text-h7 text-primary-light font-medium py-32"
-			>
-				<SocialButton icon={website_icon} active={true} name={'website'} url={website_url} />
-				<SocialButton icon={twitter_icon} active={true} name={'twitter'} url={twitter_url} />
-				<SocialButton icon={instagram_icon} active={true} name={'instagram'} url={instagram_url} />
-				<SocialButton icon={facebook_icon} active={true} name={'facebook'} url={facebook_url} />
+				class="flex w-full justify-center space-x-24 px-16 py-32 text-h7 font-medium text-primary-light">
+				<SocialButton
+					icon={website_icon}
+					active={true}
+					name={'website'}
+					url={website_url} />
+				<SocialButton
+					icon={twitter_icon}
+					active={true}
+					name={'twitter'}
+					url={twitter_url} />
+				<SocialButton
+					icon={instagram_icon}
+					active={true}
+					name={'instagram'}
+					url={instagram_url} />
+				<SocialButton
+					icon={facebook_icon}
+					active={true}
+					name={'facebook'}
+					url={facebook_url} />
 			</div>
 			<div
-				class="bio-wrapper-mobile sm:h-296 md:h-240 lg:text-p2 sm:text-p3 text-primary-light font-medium sm:pb-124"
-			>
+				class="bio-wrapper-mobile font-medium text-primary-light sm:h-296 sm:pb-124 sm:text-p3 md:h-240 lg:text-p2">
 				<p>{bio}</p>
 			</div>
 		</div>
@@ -113,20 +144,17 @@
 
 <style>
 	.profile-wrapper {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 60;
+		z-index: 100;
 	}
 
 	.profile-wrapper-mobile {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
-		z-index: 60;
+		z-index: 100;
 	}
 
 	.close-button-wrapper {

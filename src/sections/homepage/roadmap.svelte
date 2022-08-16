@@ -5,8 +5,6 @@
 
 	//PROPS
 	export let data;
-
-	console.log(data);
 </script>
 
 <div id="wrapper" class="h-auto w-auto py-32 md:mb-64">
