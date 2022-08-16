@@ -8,17 +8,20 @@
 			'MC5Zc1h1ZVJBQUFDQUFUWWlt.Q--_vWbvv70DYwHvv70577-977-977-9Pe-_ve-_ve-_vSJz77-9Le-_ve-_vTtNMkYtX1wf77-9Ew';
 		const routes = [
 			// Update to match your website's URL structure
-			{ type: 'home', path: '/' }
+			{ type: 'home', path: '/' },
+			{ type: 'roadmap', path: '/' }
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
 		const homepageData = await client.getSingle('home');
+		const roadmapData = await client.getSingle('roadmap');
 
-		//console.log(homepageData.data);
+		// console.log(roadmapData.data);
 
 		return {
 			props: {
-				homepageData: homepageData.data.body
+				homepageData: homepageData.data.body,
+				roadmapData: roadmapData.data
 			}
 		};
 	}
@@ -40,7 +43,7 @@
 	//import AssetsLoader from '../components/information/assets-loader.svelte';
 
 	//PROPS
-	export let homepageData;
+	export let homepageData, roadmapData;
 </script>
 
 <svelte:head>
@@ -54,6 +57,6 @@
 <Section2 data={homepageData[3]} />
 <Section3 data={homepageData[4]} />
 <Section4 data={homepageData[5]} />
-<RoadMapSection data={''} />
+<RoadMapSection data={roadmapData} />
 <Section5 data={homepageData[6]} />
 <Section6 data={homepageData[7]} />

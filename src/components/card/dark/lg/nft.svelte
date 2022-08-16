@@ -1,7 +1,6 @@
 <script>
 	//PROPS
 	export let data;
-	console.log(data);
 </script>
 
 <div class="h-auto w-auto shadow-xl">

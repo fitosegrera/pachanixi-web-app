@@ -5,9 +5,11 @@
 
 	//PROPS
 	export let data;
+
+	console.log(data);
 </script>
 
-<div id="wrapper" class="mb-64 h-auto w-auto py-32">
+<div id="wrapper" class="h-auto w-auto py-32 md:mb-64">
 	<div id="img-wrapper" class="h-full w-full" />
 	<div class="h-full w-full">
 		<div class="text-center font-bold text-primary-main sm:text-h7 md:text-h5">
@@ -18,33 +20,39 @@
 					h={'32'}
 					pixCol={'#BDFF00'} />
 			</div>
-			<h5>ROADMAP</h5>
+			<h5>{data.title[0].text}</h5>
 		</div>
 		<div class="flex h-auto w-full justify-center">
-			<div class="my-32 flex h-996 w-auto flex-col space-y-72 py-124">
-				<RoadmapQuarter
+			<div class="flex h-full w-auto flex-col space-y-72 sm:py-72 md:py-124">
+				{#each data.body as item}
+					<RoadmapQuarter
+						quarter={item.primary.quarter}
+						year={item.primary.year}
+						state={item.primary.state}
+						items={item.items} />
+				{/each}
+				<!-- <RoadmapQuarter
 					quarter={'Q1'}
 					year={'2022'}
 					state={'done'}
 					items={['Pachanixi is born', 'Partners and sponsors', 'Branding']} />
+				<RoadmapQuarter
+					quarter={'Q2'}
+					year={'2022'}
+					state={'done'}
+					items={[
+						'NIXISEEDS collection',
+						'Website UX/UI design',
+						'Whitepaper v_1.0'
+					]} />
 				<RoadmapQuarter
 					quarter={'Q3'}
 					year={'2022'}
 					state={'active'}
 					items={[
 						'Website release',
-						'Demo 3D online experience',
+						'Microverse demo experience',
 						'Tree planting begins'
-					]} />
-
-				<RoadmapQuarter
-					quarter={'Q2'}
-					year={'2022'}
-					state={'done'}
-					items={[
-						'NIXISEEDS collection design',
-						'Website UX/UI design',
-						'Whitepaper v_1.0'
 					]} />
 				<RoadmapQuarter
 					quarter={'Q4'}
@@ -52,13 +60,22 @@
 					state={'upcoming'}
 					items={[
 						'NIXISEEDS NFT drop',
-						'Microverse v_1.0',
+						'Microverse v_1.0 - NIXIGARDENS',
 						'Big scale tree planting'
 					]} />
+				<RoadmapQuarter
+					quarter={'QX'}
+					year={'XXXX'}
+					state={'upcoming'}
+					items={[
+						'NIXITREES + NIXIFRUITS collections',
+						'30.000 total trees planted',
+						'Microverse v_2.0 - PACHANIXI'
+					]} /> -->
 			</div>
 		</div>
 	</div>
-	<div class="my-48">
+	<!-- <div class="my-48">
 		<div class="flex h-auto w-full items-center justify-center">
 			<Divider name="roadmap-divider-soon" pixCol={'#F6FFFA44'} />
 		</div>
@@ -71,7 +88,7 @@
 			<li>Partners and sponsors</li>
 			<li>Branding</li>
 		</ul>
-	</div>
+	</div> -->
 </div>
 
 <style>
