@@ -26,7 +26,7 @@
 
 	const evaluateWindowWidth = () => {
 		if ($is_mobile_view === true) {
-			orbSize = '25%';
+			orbSize = '20%';
 		} else {
 			orbSize = '40%';
 		}
@@ -61,11 +61,13 @@
 		<div
 			class="flex h-full w-auto items-center justify-center text-primary-dark sm:space-x-24 sm:py-24 sm:text-h6 md:space-x-48 md:py-48 md:text-h4 lg:text-h3">
 			{#each data.items as item}
-				<SocialButton
-					icon={item.social_icon_label}
-					name={item.social}
-					active={item.active}
-					url={item.social_network_url.url} />
+				{#if item.active}
+					<SocialButton
+						icon={item.social_icon_label}
+						name={item.social}
+						active={item.active}
+						url={item.social_network_url.url} />
+				{/if}
 			{/each}
 		</div>
 		<div id="orb-left-wrapper" class="h-auto w-auto sm:top-112">

@@ -25,7 +25,7 @@
 
 <svelte:window bind:innerWidth={$window_width} />
 
-<div class="sm:pt-112 md:pt-196">
+<div class="sm:pt-112 md:pt-72">
 	<Main>
 		<div
 			class="pb-112 text-center font-bold text-primary-light sm:text-p3 md:text-p2">

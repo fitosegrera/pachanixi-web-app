@@ -6,10 +6,8 @@
 	export let icon, url, name, active;
 </script>
 
-<div class="cursor-pointer hover:text-primary-main">
-	{#if active}
-		<a href={url} target="__blank">
-			<Icon {icon} />
-		</a>
-	{/if}
+<div class="h-auto w-auto cursor-pointer hover:text-primary-main">
+	<a href={url} target="__blank">
+		<Icon {icon} />
+	</a>
 </div>

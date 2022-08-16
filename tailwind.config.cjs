@@ -7,6 +7,7 @@ const primaryDarkAlpha = '#02232B55';
 const primaryDarkAlphaVariant = '#02232BDD';
 const primarySemiDark = '#386B68';
 const primaryLight = '#F6FFFA';
+const primaryLightAlpha = '#F6FFFA66';
 const secondaryMain = '#7E44F8';
 
 /** @type {import('tailwindcss').Config} */
@@ -22,6 +23,7 @@ module.exports = {
 			'primary-dark-alpha-variant': primaryDarkAlphaVariant,
 			'primary-semi-dark': primarySemiDark,
 			'primary-light': primaryLight,
+			'primary-light-alpha': primaryLightAlpha,
 			'secondary-main': secondaryMain
 		},
 		spacing: {
@@ -65,6 +67,7 @@ module.exports = {
 			240: '240px',
 			264: '264px',
 			296: '296px',
+			320: '320px',
 			340: '340px',
 			368: '368px',
 			420: '420px',

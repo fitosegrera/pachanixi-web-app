@@ -73,11 +73,13 @@
 		<div
 			class="flex h-full w-auto items-center justify-center sm:space-x-16 lg:space-x-48">
 			{#each navBarData.social as item}
-				<SocialButton
-					icon={item.icon}
-					name={item.name}
-					active={item.active}
-					url={item.url.url} />
+				{#if item.active}
+					<SocialButton
+						icon={item.icon}
+						name={item.name}
+						active={item.active}
+						url={item.url.url} />
+				{/if}
 			{/each}
 		</div>
 		<div class="flex h-full w-auto items-center justify-end pr-16 text-h4">

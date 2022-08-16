@@ -32,6 +32,7 @@
 	import Section2 from '../sections/homepage/section-2.svelte';
 	import Section3 from '../sections/homepage/section-3.svelte';
 	import Section4 from '../sections/homepage/section-4.svelte';
+	import RoadMapSection from '../sections/homepage/roadmap.svelte';
 	import Section5 from '../sections/homepage/section-5.svelte';
 	import Section6 from '../sections/homepage/section-6.svelte';
 
@@ -53,5 +54,6 @@
 <Section2 data={homepageData[3]} />
 <Section3 data={homepageData[4]} />
 <Section4 data={homepageData[5]} />
+<RoadMapSection data={''} />
 <Section5 data={homepageData[6]} />
 <Section6 data={homepageData[7]} />

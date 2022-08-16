@@ -7,3 +7,33 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.gradient-primary-to-alpha{
+    background: -webkit-linear-gradient(180deg,#BDFF00, rgba(0, 0, 0, 0));
+}
+
+.gradient-border-primary-alpha-to-right{
+    background: /* gradient can be an image */
+    linear-gradient(
+      to right, 
+      #BDFF00 0%,
+      rgba(0,0,0,0) 60%
+    )
+    left 
+    bottom   
+    no-repeat; 
+  background-size:100% 8px ;/* if linear-gradient, we need to resize it */
+}
+
+.gradient-border-primary-alpha-to-left{
+    background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      #BDFF00 0%,
+      rgba(0,0,0,0) 60%
+    )
+    left 
+    bottom   
+    no-repeat; 
+  background-size:100% 8px ;/* if linear-gradient, we need to resize it */
+}

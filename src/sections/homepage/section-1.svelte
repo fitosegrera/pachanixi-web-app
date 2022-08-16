@@ -24,7 +24,7 @@
 
 <div
 	id="wrapper"
-	class="h-auto w-auto bg-primary-dark text-center sm:pb-124 sm:pt-148 lg:pt-224 ">
+	class="h-auto w-auto bg-primary-dark text-center sm:pb-124 sm:pt-148 lg:pt-224">
 	<Main>
 		<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
 			<div class="flex h-auto w-full items-center justify-center">
@@ -37,7 +37,6 @@
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div class="pt-48 font-medium text-primary-light sm:text-p3 md:text-p1">
-			<!-- <p>{data.primary.paragraph[0].text}</p> -->
 			<p>
 				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
 			</p>

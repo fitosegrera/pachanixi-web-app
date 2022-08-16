@@ -38,7 +38,7 @@
 		}
 
 		if ($is_mobile_view === true) {
-			orbSize = '25%';
+			orbSize = '20%';
 		} else {
 			orbSize = '40%';
 		}
@@ -101,7 +101,6 @@
 		</div>
 		<div
 			class="h-auto w-full pt-32 text-justify font-medium sm:text-p3 md:text-p2 lg:text-p1">
-			<!-- <p class="">{data.primary.paragraph[0].text}</p> -->
 			<p>
 				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
 			</p>
@@ -137,7 +136,6 @@
 	#nft-wrapper video {
 		position: absolute;
 		pointer-events: none;
-		/* mix-blend-mode: normal; */
 		z-index: 3;
 	}
 
@@ -147,8 +145,6 @@
 
 	#orb-right-wrapper {
 		position: absolute;
-		/* right: 200px; */
-		/* top: 800px; */
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 12;
@@ -156,8 +152,6 @@
 
 	#orb-left-wrapper {
 		position: absolute;
-		/* left: 200px;
-		top: 960px; */
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 12;

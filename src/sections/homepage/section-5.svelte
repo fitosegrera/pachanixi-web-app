@@ -11,7 +11,7 @@
 </script>
 
 <div id="wrapper" class="h-auto w-auto pb-72 pt-48 text-center">
-	<div id="img-wrapper" class="h-full w-full" />
+	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
 			<div class="flex h-auto w-full items-center justify-center">

@@ -29,7 +29,6 @@
 	//SECTIONS
 	import HeroSection from '../sections/cosmovision/hero-section.svelte';
 	import Section1 from '../sections/cosmovision/section-1.svelte';
-	import SectionSplitter from '../sections/cosmovision/section-splitter.svelte';
 	import Section2 from '../sections/cosmovision/section-2.svelte';
 
 	//COMPONENTS
@@ -46,5 +45,4 @@
 <!-- <AssetsLoader totalAssets={2} /> -->
 <HeroSection data={cosmovisionData[0]} />
 <Section1 data={cosmovisionData[1]} />
-<SectionSplitter />
 <Section2 data={cosmovisionData[2]} />

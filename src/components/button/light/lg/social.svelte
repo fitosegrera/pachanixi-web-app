@@ -7,10 +7,8 @@
 	// console.log(icon);
 </script>
 
-<div class="hover:text-primary-light cursor-pointer">
-	{#if active}
-		<a href={url} target="__blank">
-			<Icon {icon} />
-		</a>
-	{/if}
+<div class="cursor-pointer hover:text-primary-light">
+	<a href={url} target="__blank">
+		<Icon {icon} />
+	</a>
 </div>

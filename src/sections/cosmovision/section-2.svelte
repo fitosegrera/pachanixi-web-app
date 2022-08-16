@@ -22,6 +22,13 @@
 </script>
 
 <div id="wrapper" class="h-auto w-auto bg-primary-dark text-center">
+	<div class="mt-16 h-full w-full">
+		<div class="flex justify-center">
+			<video width="65%" autoplay loop muted>
+				<source src="/assets/vids/alpha/nft-1-alpha.webm" type="video/webm" />
+			</video>
+		</div>
+	</div>
 	<Container>
 		<div class="pb-96">
 			<div class="flex h-auto w-full items-center justify-center">

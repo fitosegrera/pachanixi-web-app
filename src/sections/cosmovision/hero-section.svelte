@@ -2,20 +2,11 @@
 	//LIBS
 	import Icon from '@iconify/svelte';
 
-	//STORES
-	import { img_seq_total_frames } from '../../stores/main';
-
 	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
-	//COMPONENTS
-	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
-
 	//PORPS
 	export let data;
-
-	let nftImgSeqWidth = 360;
-	let nftImgSeqHeight = 416;
 </script>
 
 <div id="wrapper" class="h-auto w-auto">
@@ -40,15 +31,9 @@
 				</p>
 			</div>
 			<div class="mt-72 flex h-auto w-auto justify-center">
-				<!-- <ImageSequence
-					totalFrames={$img_seq_total_frames}
-					name={'hero-nft'}
-					url={'/assets/vids/nft-3-seq/'}
-					imgWidth={nftImgSeqWidth}
-					imgHeight={nftImgSeqHeight} /> -->
-					<video width="40%" autoplay loop muted>
-						<source src="/assets/vids/alpha/nft-3-alpha.webm" type="video/webm" />
-					</video>
+				<video width="80%" autoplay loop muted>
+					<source src="/assets/vids/alpha/nft-3-alpha.webm" type="video/webm" />
+				</video>
 			</div>
 		</Main>
 	</div>
