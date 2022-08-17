@@ -11,7 +11,6 @@
 
 	//PROPS
 	export let menu, social;
-	//console.log(menu);
 
 	const dispatch = createEventDispatcher();
 
@@ -31,11 +30,13 @@
 			</div>
 		</div>
 	</div>
-	{#each menu as item}
-		<div class="mt-16 h-auto w-auto" on:click={handleClick}>
-			<MenuItem label={item.item} url={item.url} />
-		</div>
-	{/each}
+	<div class="sm:mt-64 md:mt-32 lg:mt-0">
+		{#each menu as item}
+			<div class="mt-16 h-auto w-auto" on:click={handleClick}>
+				<MenuItem label={item.item} url={item.url} />
+			</div>
+		{/each}
+	</div>
 	<div
 		class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
 		{#each social as item}

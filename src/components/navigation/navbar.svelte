@@ -12,12 +12,10 @@
 	import SideBar from './sidebar.svelte';
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import HamburgerButton from '../button/dark/lg/hamburger.svelte';
-	// import LogoButton from '../button/dark/lg/logo-generative.svelte';
 	import LogoButton from '../button/dark/lg/logo-static.svelte';
 
 	//PROPS
 	export let navBarData;
-	//console.log(navBarData);
 
 	let showSideBar = false;
 
@@ -42,7 +40,6 @@
 		class="fixed grid h-auto w-full max-w-full grid-flow-col grid-cols-2 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
 		<div class="flex h-72 w-64 items-center justify-start pl-8">
 			<div class="cursor-pointer">
-				<!-- <LogoButton type={navBarData.logo} url={'/'} /> -->
 				<LogoButton />
 			</div>
 		</div>
