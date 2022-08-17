@@ -30,27 +30,29 @@
 			</div>
 		</div>
 	</div>
-	<div class="sm:mt-64 md:mt-32 lg:mt-0">
-		{#each menu as item}
-			<div class="mt-16 h-auto w-auto" on:click={handleClick}>
-				<MenuItem label={item.item} url={item.url} />
-			</div>
-		{/each}
-	</div>
-	<div
-		class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
-		{#each social as item}
-			{#if item.active}
-				<div
-					class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">
-					<SocialButton
-						icon={item.icon}
-						name={item.name}
-						active={item.active}
-						url={item.url.url} />
+	<div>
+		<div class="sm:mt-64 md:mt-32 lg:mt-0">
+			{#each menu as item}
+				<div class="mt-16 h-auto w-auto" on:click={handleClick}>
+					<MenuItem label={item.item} url={item.url} />
 				</div>
-			{/if}
-		{/each}
+			{/each}
+		</div>
+		<div
+			class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
+			{#each social as item}
+				{#if item.active}
+					<div
+						class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">
+						<SocialButton
+							icon={item.icon}
+							name={item.name}
+							active={item.active}
+							url={item.url.url} />
+					</div>
+				{/if}
+			{/each}
+		</div>
 	</div>
 </div>
 
@@ -58,7 +60,8 @@
 	.sidebar {
 		position: fixed;
 		width: 100%;
-		min-height: 100vh;
+		height: 100vh;
 		z-index: 10;
+		overflow-y: scroll !important;
 	}
 </style>
