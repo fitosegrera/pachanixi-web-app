@@ -65,23 +65,25 @@
 	{#if isDropped}
 		{#if $is_mobile_view}
 			<div
-				class="fixed flex h-screen w-full flex-col items-center justify-center space-y-16 bg-primary-dark"
+				class="fixed flex h-screen w-full flex-col items-center justify-center bg-primary-dark"
 				transition:fly={{ y: 1080, opacity: 1 }}>
-				{#each $languages as lang}
-					<div
-						class="cursor-pointer text-center text-h6 font-medium text-primary-main hover:bg-primary-main hover:text-primary-dark"
-						on:click={changeLanguage(lang)}>
-						<div on:click={goto($page.url.pathname)}>
-							<p class="">{lang}</p>
+				<div>
+					{#each $languages as lang}
+						<div
+							class="cursor-pointer text-center text-h6 font-medium text-primary-main hover:bg-primary-main hover:text-primary-dark"
+							on:click={changeLanguage(lang)}>
+							<div on:click={goto($page.url.pathname)}>
+								<p class="">{lang}</p>
+							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
+				</div>
 			</div>
 		{:else}
-			<div class="fixed mx-80 h-auto w-116">
+			<div class="fixed mx-80 h-auto w-auto">
 				{#each $languages as lang}
 					<div
-						class="cursor-pointer bg-primary-dark pt-16 text-center text-p1 text-primary-main hover:bg-primary-main hover:text-primary-dark"
+						class="cursor-pointer bg-primary-dark py-8 px-8 text-center text-p1 text-primary-main hover:bg-primary-main hover:text-primary-dark"
 						on:click={changeLanguage(lang)}>
 						<div on:click={goto($page.url.pathname)}>
 							<p class="">{lang}</p>

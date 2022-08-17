@@ -28,8 +28,8 @@
 	<div id="footer-wrapper">
 		<div
 			class="grid h-auto w-1920 max-w-full grid-flow-col bg-primary-dark-alpha py-16 text-primary-light backdrop-blur-md md:grid-cols-1 md:text-h7 lg:grid-cols-2 lg:text-h5">
-			<div class="h-110 flex w-full justify-start space-x-32 pl-32">
-				<div class="flex h-72 w-64 items-center justify-start pl-8">
+			<div class="flex h-full w-full justify-start space-x-32 px-32">
+				<div class="flex items-center justify-center space-x-16">
 					<div class="cursor-pointer">
 						<LogoButton />
 					</div>
