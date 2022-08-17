@@ -12,35 +12,48 @@
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
-		const mintData = await client.getSingle('mint');
+		const mintDataEN = await client.getSingle('mint', {
+			lang: 'en-us'
+		});
+
+		const mintDataES = await client.getSingle('mint', {
+			lang: 'es-co'
+		});
 
 		//console.log(mintData.data);
 
 		return {
 			props: {
-				mintData: mintData.data.body,
-				title: mintData.data.page_title[0].text
+				mintDataEN: mintDataEN.data.body,
+				mintDataES: mintDataES.data.body,
+				title: mintDataEN.data.page_title[0].text
 			}
 		};
 	}
 </script>
 
 <script>
+	//STORES
+	import { locale } from '../stores/main';
+
 	//SECTIONS
 	import HeroSection from '../sections/mint/hero-section.svelte';
 	import Section_1 from '../sections/mint/section-1.svelte';
 
-	//COMPONENTS
-	//import AssetsLoader from '../components/information/assets-loader.svelte';
-
 	//PROPS
-	export let mintData, title;
+	export let mintDataEN, mintDataES, title;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<!-- <AssetsLoader totalAssets={1} /> -->
-<HeroSection data={mintData[0]} />
-<Section_1 data={mintData[1]} />
+{#if $locale === 'en-us'}
+	<HeroSection data={mintDataEN[0]} />
+	<Section_1 data={mintDataEN[1]} />
+{/if}
+
+{#if $locale === 'es-co'}
+	<HeroSection data={mintDataES[0]} />
+	<Section_1 data={mintDataES[1]} />
+{/if}

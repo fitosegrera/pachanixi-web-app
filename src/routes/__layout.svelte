@@ -13,13 +13,31 @@
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
-		const navBarData = await client.getSingle('navbar');
-		const footerData = await client.getSingle('footer');
+
+		//const repository = await client.getRepository();
+
+		const navBarDataEN = await client.getSingle('navbar', {
+			lang: 'en-us'
+		});
+
+		const navBarDataES = await client.getSingle('navbar', {
+			lang: 'es-co'
+		});
+
+		const footerDataEN = await client.getSingle('footer', {
+			lang: 'en-us'
+		});
+
+		const footerDataES = await client.getSingle('footer', {
+			lang: 'es-co'
+		});
 
 		return {
 			props: {
-				navBarData: navBarData.data,
-				footerData: footerData.data
+				navBarDataEN: navBarDataEN.data,
+				navBarDataES: navBarDataES.data,
+				footerDataEN: footerDataEN.data,
+				footerDataES: footerDataES.data
 			}
 		};
 	}
@@ -29,18 +47,16 @@
 	//STYLES
 	import '../app.css';
 
-	//LIBS
-
-	import { navigating } from '$app/stores';
-	import { loading } from '../stores/main';
+	//STORES
+	import { locale } from '../stores/main';
 
 	//COMPONENTS
 	import NavBar from '../components/navigation/navbar.svelte';
 	import Footer from '../components/navigation/footer.svelte';
 
 	//PROPS
-	export let navBarData;
-	export let footerData;
+	export let navBarDataEN, navBarDataES;
+	export let footerDataEN, footerDataES;
 </script>
 
 <svelte:head>
@@ -48,14 +64,20 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap"
-		rel="stylesheet"
-	/>
+		rel="stylesheet" />
 </svelte:head>
 
-<div id="page-wrapper" class="w-auto h-auto">
-	<NavBar {navBarData} />
-	<slot />
-	<Footer {footerData} />
+<div id="page-wrapper" class="h-auto w-auto">
+	{#if $locale === 'en-us'}
+		<NavBar navBarData={navBarDataEN} />
+		<slot />
+		<Footer footerData={footerDataEN} />
+	{/if}
+	{#if $locale === 'es-co'}
+		<NavBar navBarData={navBarDataES} />
+		<slot />
+		<Footer footerData={footerDataES} />
+	{/if}
 </div>
 
 <style>

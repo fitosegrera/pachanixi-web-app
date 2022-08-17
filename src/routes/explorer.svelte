@@ -12,37 +12,52 @@
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
-		const explorerData = await client.getSingle('explorer');
 
-		//console.log(explorerData.data.body);
+		const explorerDataEN = await client.getSingle('explorer', {
+			lang: 'en-us'
+		});
+
+		const explorerDataES = await client.getSingle('explorer', {
+			lang: 'es-co'
+		});
+
+		console.log(explorerDataEN.data.body);
 
 		return {
 			props: {
-				explorerData: explorerData.data.body,
-				title: explorerData.data.page_title[0].text
+				explorerDataEN: explorerDataEN.data.body,
+				explorerDataES: explorerDataES.data.body,
+				title: explorerDataEN.data.page_title[0].text
 			}
 		};
 	}
 </script>
 
 <script>
+	//STORES
+	import { locale } from '../stores/main';
+
 	//SECTIONS
 	import HeroSection from '../sections/explorer/hero-section.svelte';
 	import Section1 from '../sections/explorer/section-1.svelte';
 	import Section2 from '../sections/explorer/section-2.svelte';
 
-	//COMPONENTS
-	//import AssetsLoader from '../components/information/assets-loader.svelte';
-
 	//PROPS
-	export let explorerData, title;
+	export let explorerDataEN, explorerDataES, title;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<!-- <AssetsLoader totalAssets={1} /> -->
-<HeroSection data={explorerData[0]} />
-<Section1 data={explorerData[1]} />
-<Section2 data={explorerData[2]} />
+{#if $locale === 'en-us'}
+	<HeroSection data={explorerDataEN[0]} />
+	<Section1 data={explorerDataEN[1]} />
+	<Section2 data={explorerDataEN[2]} />
+{/if}
+
+{#if $locale === 'es-co'}
+	<HeroSection data={explorerDataES[0]} />
+	<Section1 data={explorerDataES[1]} />
+	<Section2 data={explorerDataES[2]} />
+{/if}
