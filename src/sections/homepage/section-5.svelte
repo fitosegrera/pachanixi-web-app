@@ -38,7 +38,7 @@
 		/* z-index: 100; */
 	}
 
-	#img-wrapper {
+	/* #img-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -55,5 +55,5 @@
 		);
 		mask-image: linear-gradient(to bottom, #02232b22, #02232b00);
 		z-index: -10;
-	}
+	} */
 </style>

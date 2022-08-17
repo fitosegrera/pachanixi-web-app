@@ -51,3 +51,9 @@
 		</div>
 	</Container>
 </div>
+
+<style>
+	video::-internal-media-controls-overlay-cast-button {
+		display: none;
+	}
+</style>

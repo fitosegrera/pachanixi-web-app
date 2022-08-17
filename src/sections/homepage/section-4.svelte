@@ -88,6 +88,10 @@
 		height: auto !important;
 	}
 
+	video::-internal-media-controls-overlay-cast-button {
+		display: none;
+	}
+
 	.text-wrapper {
 		position: absolute;
 		top: 0;

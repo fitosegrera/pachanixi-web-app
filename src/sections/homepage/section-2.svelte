@@ -139,10 +139,6 @@
 		z-index: 3;
 	}
 
-	video {
-		background-color: transparent;
-	}
-
 	#orb-right-wrapper {
 		position: absolute;
 		rotate: 60deg;
@@ -155,5 +151,9 @@
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 12;
+	}
+
+	video::-internal-media-controls-overlay-cast-button {
+		display: none;
 	}
 </style>
