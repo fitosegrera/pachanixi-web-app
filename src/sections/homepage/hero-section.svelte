@@ -67,4 +67,8 @@
 		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
 		z-index: -10;
 	}
+
+	video::-internal-media-controls-overlay-cast-button {
+		display: none;
+	}
 </style>
