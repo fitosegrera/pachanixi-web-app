@@ -10,6 +10,7 @@
 
 	//COMPONENTS
 	import SocialButton from '../button/dark/lg/social.svelte';
+	import LogoButton from '../button/dark/lg/logo-static.svelte';
 
 	//PROPS
 	export let footerData;
@@ -27,9 +28,14 @@
 	<div id="footer-wrapper">
 		<div
 			class="grid h-auto w-1920 max-w-full grid-flow-col bg-primary-dark-alpha py-16 text-primary-light backdrop-blur-md md:grid-cols-1 md:text-h7 lg:grid-cols-2 lg:text-h5">
-			<div class="h-110 flex w-full justify-start space-x-48 pl-32">
+			<div class="h-110 flex w-full justify-start space-x-32 pl-32">
+				<div class="flex h-72 w-64 items-center justify-start pl-8">
+					<div class="cursor-pointer">
+						<LogoButton />
+					</div>
+				</div>
 				<div class="flex h-full w-full items-center">
-					<img src="/assets/imgs/logo-horizontal.png" alt="pachanixi logo" />
+					<img src="/assets/imgs/logo-font-white.png" alt="pachanixi logo" />
 				</div>
 				<div class="flex h-full w-full items-center">
 					<p class="text-p4 font-medium">{footerData.copy_right}</p>
@@ -50,22 +56,17 @@
 		</div>
 	</div>
 {:else}
-	<div id="footer-wrapper" class="mx-auto h-full w-full space-y-16 p-16">
-		<div class="flex w-full justify-center">
-			<img
-				width="75%"
-				height="auto"
-				src="/assets/imgs/logo-horizontal.png"
-				alt="pachanixi logo" />
+	<div class="flex h-auto items-center justify-center px-32">
+		<div class="flex items-center justify-center space-x-16">
+			<div class="cursor-pointer">
+				<LogoButton />
+			</div>
+			<div class="">
+				<img
+					style="max-width: 220px; width: auto;"
+					src="/assets/imgs/logo-font-white.png"
+					alt="pachanixi logo" />
+			</div>
 		</div>
 	</div>
 {/if}
-
-<style>
-	/* #footer-wrapper {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		z-index: 15;
-	} */
-</style>

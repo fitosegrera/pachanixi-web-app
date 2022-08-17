@@ -40,14 +40,16 @@
 	<div
 		class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
 		{#each social as item}
-			<div
-				class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">
-				<SocialButton
-					icon={item.icon}
-					name={item.name}
-					active={item.active}
-					url={item.url.url} />
-			</div>
+			{#if item.active}
+				<div
+					class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">
+					<SocialButton
+						icon={item.icon}
+						name={item.name}
+						active={item.active}
+						url={item.url.url} />
+				</div>
+			{/if}
 		{/each}
 	</div>
 </div>

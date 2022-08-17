@@ -63,7 +63,6 @@
 		<div
 			class="lg:h-110 flex items-center justify-start pl-32 sm:h-88 sm:w-80 lg:w-100">
 			<div class="cursor-pointer">
-				<!-- <LogoButton type={navBarData.logo} url={'/'} /> -->
 				<LogoButton />
 			</div>
 		</div>
