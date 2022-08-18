@@ -12,4 +12,4 @@ export const window_width = writable(1920);
 export const languages = writable(['en-us', 'es-co']);
 export const locale = writable('en-us');
 
-export let nixigarden_url = readable('https://50.116.40.214/');
+export let nixigarden_url = readable('https://nixigarden.com/');
