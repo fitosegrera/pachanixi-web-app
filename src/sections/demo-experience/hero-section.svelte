@@ -32,19 +32,25 @@
 	};
 </script>
 
-<div class="relative bg-primary-dark h-screen">
+<div class="relative h-screen bg-primary-dark">
 	{#if !showDemoExperience}
-		<div class="information w-full h-full bg-primary-dark-alpha-variant text-center">
-			<div class="flex w-auto justify-center mt-96">
-				<Divider name="demo-hero-section-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
+		<div
+			class="information h-full w-full bg-primary-dark-alpha-variant text-center">
+			<div class="mt-96 flex w-auto justify-center">
+				<Divider
+					name="demo-hero-section-divider"
+					w={'420'}
+					h={'32'}
+					pixCol={'#BDFF00'} />
 			</div>
-			<h5 class="text-h5 font-bold text-primary-main mb-32">{data.primary.title1[0].text}</h5>
+			<h5 class="mb-32 text-h5 font-bold text-primary-main">
+				{data.primary.title1[0].text}
+			</h5>
 			{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
 			<div
-				class="flex items-center justify-center space-x-16 text-h5 text-primary-main-variant mt-32"
-			>
+				class="mt-32 flex items-center justify-center space-x-16 text-h5 text-primary-main-variant">
 				<Icon icon={data.primary.subtitle_icon_label} />
-				<h6 class="text-h6 font-bold gradient-text-primary-light">
+				<h6 class="gradient-text-primary-light text-h6 font-bold">
 					{data.primary.subtitle[0].text}
 				</h6>
 			</div>
@@ -53,7 +59,7 @@
 					{@html prismicH.asHTML(item.control, null, htmlSerializer)}
 				{/each}
 			</div>
-			<div class="flex items-center justify-center space-x-64 mt-64">
+			<div class="mt-64 flex items-center justify-center space-x-64">
 				<div class="w-240">
 					<a href="/">
 						<MainButton label={data.primary.back_button_label} />
@@ -71,9 +77,8 @@
 	{/if}
 	<iframe
 		class="demo-experience"
-		src="localhost:3333"
-		title="Pachanixi demo experience"
-	/>
+		src="http://50.116.40.214"
+		title="Pachanixi demo experience" />
 </div>
 
 <style>
