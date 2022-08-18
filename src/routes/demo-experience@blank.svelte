@@ -12,29 +12,45 @@
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
-		const demoExperienceData = await client.getSingle('demo-experience');
+		const demoExperienceDataEN = await client.getSingle('demo-experience', {
+			lang: 'en-us'
+		});
 
-		//console.log(demoExperienceData.data.body);
+		const demoExperienceDataES = await client.getSingle('demo-experience', {
+			lang: 'es-co'
+		});
+
+		//console.log(demoExperienceDataEN.data.body);
 
 		return {
 			props: {
-				demoExperienceData: demoExperienceData.data.body,
-				title: demoExperienceData.data.title[0].text
+				demoExperienceDataEN: demoExperienceDataEN.data.body,
+				demoExperienceDataES: demoExperienceDataES.data.body,
+				title: demoExperienceDataEN.data.title[0].text
 			}
 		};
 	}
 </script>
 
 <script>
+	//STORES
+	import { locale } from '../stores/main';
+
 	//SECTIONS
 	import HeroSection from '../sections/demo-experience/hero-section.svelte';
 
 	//PROPS
-	export let demoExperienceData, title;
+	export let demoExperienceDataEN, demoExperienceDataES, title;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<HeroSection data={demoExperienceData[0]} />
+{#if $locale === 'en-us'}
+	<HeroSection data={demoExperienceDataEN[0]} />
+{/if}
+
+{#if $locale === 'es-co'}
+	<HeroSection data={demoExperienceDataES[0]} />
+{/if}

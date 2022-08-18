@@ -3,6 +3,9 @@
 	import Icon from '@iconify/svelte';
 	import * as prismicH from '@prismicio/helpers';
 
+	//STORES
+	import { nixigarden_url } from '../../stores/main';
+
 	//COMPONENTS
 	import MainButton from '../../components/button/dark/lg/primary.svelte';
 	import Divider from '../../components/information/divider.svelte';
@@ -77,7 +80,7 @@
 	{/if}
 	<iframe
 		class="demo-experience"
-		src="http://50.116.40.214"
+		src={$nixigarden_url}
 		title="Pachanixi demo experience" />
 </div>
 
