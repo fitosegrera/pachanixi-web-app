@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="mt-96 flex h-auto w-auto justify-center">
-				<video width="90%" autoplay loop muted>
+				<video width="99%" autoplay loop muted>
 					<source src="/assets/vids/alpha/nft-4-alpha.webm" type="video/webm" />
 				</video>
 			</div>

@@ -20,7 +20,7 @@
 			lang: 'es-co'
 		});
 
-		//console.log(demoExperienceDataEN.data.body);
+		console.log(demoExperienceDataEN.data.body);
 
 		return {
 			props: {
