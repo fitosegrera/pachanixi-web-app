@@ -22,8 +22,8 @@
 		active = true;
 	}
 	if (state === 'upcoming') {
-		highlightColor = 'primary-main-variant';
-		borderColor = 'primary-main-variant';
+		highlightColor = 'primary-light';
+		borderColor = 'primary-main-light';
 		active = false;
 	}
 
