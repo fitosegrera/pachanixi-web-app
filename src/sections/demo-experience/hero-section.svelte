@@ -101,7 +101,40 @@
 			<InfoButton icon={'ci:info-square-outline'} />
 		</div>
 	{/if}
-	{#if $is_mobile_view && showMobileWarning}
+	{#if $is_mobile_view}
+		<div
+			class="warning h-screen w-full bg-primary-dark-alpha-variant text-justify text-p3 text-primary-light sm:p-32 md:p-72">
+			<div>
+				<div class="flex w-auto justify-center">
+					<Divider
+						name="demo-hero-section-divider"
+						w={'420'}
+						h={'32'}
+						pixCol={'#BDFF00'} />
+				</div>
+				<h1
+					class="mb-32 text-center font-bold text-primary-main sm:text-p1 md:text-h6">
+					{data.primary.warning_title}
+				</h1>
+			</div>
+			<div>
+				<p class="text-center">
+					{data.primary.warning_paragraph}
+				</p>
+			</div>
+			<div class="mt-48">
+				<a href="/">
+					<MainButton label={data.primary.cancel_button_label} />
+				</a>
+			</div>
+		</div>
+	{:else}
+		<iframe
+			class="demo-experience"
+			src={$nixigarden_url}
+			title="Pachanixi demo experience" />
+	{/if}
+	<!-- {#if $is_mobile_view && showMobileWarning}
 		<div
 			class="warning h-screen w-full bg-primary-dark-alpha-variant text-justify text-p3 text-primary-light sm:p-32 md:p-72">
 			<div>
@@ -135,7 +168,7 @@
 	<iframe
 		class="demo-experience"
 		src={$nixigarden_url}
-		title="Pachanixi demo experience" />
+		title="Pachanixi demo experience" /> -->
 </div>
 
 <style>
