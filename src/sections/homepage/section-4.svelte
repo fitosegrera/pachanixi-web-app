@@ -39,7 +39,7 @@
 					<h5>{data.primary.title[0].text}</h5>
 				</div>
 				<div
-					class="flex h-auto w-full space-x-32 text-primary-main-variant sm:my-16 sm:justify-center sm:px-16 sm:text-h7 md:px-32 md:text-h5 xl:my-48 xl:justify-end 2xl:px-112">
+					class="flex h-auto w-full space-x-32 text-primary-main sm:my-16 sm:justify-center sm:px-16 sm:text-h7 md:px-32 md:text-h5 xl:my-48 xl:justify-end 2xl:px-112">
 					<Icon icon={data.primary.icon_1_label} />
 					<Icon icon={data.primary.icon_2_label} />
 				</div>
