@@ -60,4 +60,8 @@
 		width: 100% !important;
 		height: auto !important;
 	}
+
+	video::-internal-media-controls-overlay-cast-button {
+		display: none;
+	}
 </style>

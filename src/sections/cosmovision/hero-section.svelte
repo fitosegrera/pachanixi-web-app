@@ -40,10 +40,6 @@
 </div>
 
 <style>
-	* {
-		overflow: hidden;
-	}
-
 	#wrapper {
 		position: relative;
 	}

@@ -139,10 +139,6 @@
 </div>
 
 <style>
-	* {
-		overflow: hidden;
-	}
-
 	.demo-experience {
 		margin: 0;
 		width: 100%;

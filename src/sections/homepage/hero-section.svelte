@@ -13,7 +13,7 @@
 	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
 		<div class="h-auto w-full">
-			<div class="mt-160">
+			<div class="pt-160">
 				<img
 					src={data.primary.background_image.url}
 					alt={data.primary.background_image.alt}
@@ -40,10 +40,6 @@
 </div>
 
 <style>
-	* {
-		overflow: hidden;
-	}
-
 	#wrapper {
 		position: relative;
 		z-index: 10;
