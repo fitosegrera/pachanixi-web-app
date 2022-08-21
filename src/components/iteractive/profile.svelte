@@ -19,14 +19,23 @@
 		name,
 		rol,
 		bio,
+		website_state,
 		website_icon,
 		website_url,
+		twitter_state,
 		twitter_icon,
 		twitter_url,
+		discord_state,
+		discord_icon,
+		discord_url,
+		instagram_state,
 		instagram_icon,
 		instagram_url,
+		facebook_state,
 		facebook_icon,
 		facebook_url;
+
+	console.log(website_url);
 
 	const dispatch = createEventDispatcher();
 
@@ -69,26 +78,21 @@
 					</div>
 					<div
 						class="flex space-x-32 pt-48 text-h5 font-medium text-primary-light">
-						<SocialButton
-							icon={website_icon}
-							active={true}
-							name={'website'}
-							url={website_url} />
-						<SocialButton
-							icon={twitter_icon}
-							active={true}
-							name={'twitter'}
-							url={twitter_url} />
-						<SocialButton
-							icon={instagram_icon}
-							active={true}
-							name={'instagram'}
-							url={instagram_url} />
-						<SocialButton
-							icon={facebook_icon}
-							active={true}
-							name={'facebook'}
-							url={facebook_url} />
+						{#if website_state}
+							<SocialButton icon={website_icon} url={website_url} />
+						{/if}
+						{#if twitter_state}
+							<SocialButton icon={twitter_icon} url={twitter_url} />
+						{/if}
+						{#if discord_state}
+							<SocialButton icon={discord_icon} url={discord_url} />
+						{/if}
+						{#if instagram_state}
+							<SocialButton icon={instagram_icon} url={instagram_url} />
+						{/if}
+						{#if facebook_state}
+							<SocialButton icon={facebook_icon} url={facebook_url} />
+						{/if}
 					</div>
 				</div>
 			</div>
@@ -113,26 +117,21 @@
 			</div>
 			<div
 				class="flex w-full justify-center space-x-24 px-16 py-32 text-h7 font-medium text-primary-light">
-				<SocialButton
-					icon={website_icon}
-					active={true}
-					name={'website'}
-					url={website_url} />
-				<SocialButton
-					icon={twitter_icon}
-					active={true}
-					name={'twitter'}
-					url={twitter_url} />
-				<SocialButton
-					icon={instagram_icon}
-					active={true}
-					name={'instagram'}
-					url={instagram_url} />
-				<SocialButton
-					icon={facebook_icon}
-					active={true}
-					name={'facebook'}
-					url={facebook_url} />
+				{#if website_state}
+					<SocialButton icon={website_icon} url={website_url} />
+				{/if}
+				{#if twitter_state}
+					<SocialButton icon={twitter_icon} url={twitter_url} />
+				{/if}
+				{#if discord_state}
+					<SocialButton icon={discord_icon} url={discord_url} />
+				{/if}
+				{#if instagram_state}
+					<SocialButton icon={instagram_icon} url={instagram_url} />
+				{/if}
+				{#if facebook_state}
+					<SocialButton icon={facebook_icon} url={facebook_url} />
+				{/if}
 			</div>
 			<div
 				class="bio-wrapper-mobile font-medium text-primary-light sm:h-296 sm:pb-124 sm:text-p3 md:h-240 lg:text-p2">
