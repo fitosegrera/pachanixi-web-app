@@ -4,7 +4,7 @@
 
 	//PROPS
 	export let data;
-	console.log(data);
+	//console.log(data);
 
 	let showProfile = false;
 

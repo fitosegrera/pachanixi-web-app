@@ -5,12 +5,31 @@
 	export let items;
 	export let state;
 
+	//console.log(state);
+
 	let highlightColor;
-	let active = false;
+	let borderColor;
+	$: active = false;
+
+	if (state === 'done') {
+		highlightColor = 'primary-light';
+		borderColor = 'primary-light';
+		active = false;
+	}
+	if (state === 'active') {
+		highlightColor = 'primary-main';
+		borderColor = 'primary-main';
+		active = true;
+	}
+	if (state === 'upcoming') {
+		highlightColor = 'primary-main-variant';
+		borderColor = 'primary-main-variant';
+		active = false;
+	}
 
 	$: active_class = active
-		? 'highlight border-r-8 border-solid border-primary-main text-right'
-		: 'highlight border-r-8 border-solid border-primary-light text-right';
+		? `border-r-8 border-solid border-${borderColor} text-right`
+		: `border-r-8 border-solid border-${borderColor} text-right`;
 
 	$: animated_h_class = active
 		? 'animate-pulse font-bold text-primary-main'
@@ -19,15 +38,6 @@
 	$: animated_p_class = active
 		? 'animate-pulse font-medium text-primary-main'
 		: 'font-medium';
-
-	if (state === 'done') {
-		highlightColor = 'primary-light';
-	} else if (state === 'active') {
-		highlightColor = 'primary-main';
-		active = true;
-	} else if (state === 'upcoming') {
-		highlightColor = 'primary-light-alpha';
-	}
 </script>
 
 <div class={`text-${highlightColor} w-full`}>
@@ -50,9 +60,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.highlight {
-		z-index: 10;
-	}
-</style>

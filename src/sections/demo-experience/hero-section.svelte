@@ -69,7 +69,7 @@
 			</h5>
 			{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
 			<div
-				class="mt-32 flex items-center justify-center space-x-16 text-primary-main-variant sm:text-h6 md:text-h5">
+				class="mt-32 flex items-center justify-center space-x-16 text-primary-main sm:text-h6 md:text-h5">
 				{#if !$is_mobile_view}
 					<Icon icon={data.primary.subtitle_icon_label} />
 				{/if}
