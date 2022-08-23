@@ -26,8 +26,7 @@
 			<div class="mt-88 flex w-auto justify-center">
 				<PrimaryButton
 					label={data.primary.button_label}
-					url={data.primary.button_url}
-					target={'__blank'} />
+					url={data.primary.button_url} />
 			</div>
 
 			<div class="mt-96 flex h-auto w-auto justify-center">

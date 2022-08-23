@@ -11,10 +11,10 @@
 
 <div id="wrapper" class="h-auto w-auto">
 	<div id="img-wrapper" class="h-full w-full" />
-	<div class="h-full w-full">
-		<Main>
+	<Main>
+		<div class="h-auto w-full">
 			<div
-				class="mt-148 flex h-auto w-full flex-col items-center justify-center">
+				class="flex h-auto w-full flex-col items-center justify-center pt-148">
 				<div
 					class="my-16 h-auto w-auto text-primary-main sm:text-h4 md:text-h3">
 					<Icon icon={data.primary.icon_label} />
@@ -35,8 +35,8 @@
 					<source src="/assets/vids/alpha/nft-1-alpha.webm" type="video/webm" />
 				</video>
 			</div>
-		</Main>
-	</div>
+		</div>
+	</Main>
 </div>
 
 <style>

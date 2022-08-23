@@ -2,41 +2,45 @@
 	//LIBS
 	import Icon from '@iconify/svelte';
 
-	//CONTAINERS
-	import Main from '../../containers/main.svelte';
+	//COMPONENTS
+	import PrimarButton from '../../components/button/dark/lg/primary.svelte';
 
-	//PORPS
-	export let data;
+	//PROPS
+	export let data, title;
 </script>
 
 <div id="wrapper" class="h-auto w-auto bg-primary-dark">
 	<div id="img-wrapper" class="h-full w-full" />
-	<Main>
-		<div class="h-auto w-full">
+	<div class="px-auto mb-96 h-auto w-full space-y-48">
+		<div class="w-auto text-center">
 			<div
 				class="flex h-auto w-full flex-col items-center justify-center pt-148">
 				<div
-					class="-mb-24 h-auto w-auto text-primary-main sm:text-h3 md:text-h2">
-					<Icon icon={data.primary.icon_label} />
+					class="mb-12 h-auto w-auto text-primary-main sm:text-h3 md:text-h2">
+					<Icon icon="gg:loadbar-doc" />
 				</div>
 			</div>
 			<div
 				class="w-auto text-center font-bold text-primary-main sm:text-h7 md:text-h5 lg:text-h3">
-				<h3>{data.primary.hero_section_title[0].text}</h3>
+				<h1>{title.toUpperCase()}</h1>
 			</div>
-			<div class="h-auto w-full pt-4">
-				<p
-					class="text-center font-bold text-primary-light sm:text-p3 lg:text-p2">
-					{data.primary.hero_section_subtitle[0].text.toUpperCase()}
-				</p>
-			</div>
-			<div class="mt-72 flex h-auto w-auto justify-center">
-				<video width="80%" autoplay loop muted>
-					<source src="/assets/vids/alpha/nft-3-alpha.webm" type="video/webm" />
-				</video>
+			<p class="py-48 font-medium text-primary-light sm:text-p3 lg:text-p2">
+				{data.paragraph[0].text}
+			</p>
+		</div>
+		<div class="flex w-full justify-center">
+			<div class="md:px-auto w-320 space-y-48 sm:px-16">
+				{#each data.button as button}
+					<div class="w-auto">
+						<PrimarButton
+							target={'__blank'}
+							label={button.button_label}
+							url={button.button_url} />
+					</div>
+				{/each}
 			</div>
 		</div>
-	</Main>
+	</div>
 </div>
 
 <style>
@@ -62,9 +66,5 @@
 		);
 		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
 		z-index: -10;
-	}
-
-	video::-internal-media-controls-overlay-cast-button {
-		display: none;
 	}
 </style>
