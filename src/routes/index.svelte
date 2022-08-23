@@ -9,7 +9,8 @@
 		const routes = [
 			// Update to match your website's URL structure
 			{ type: 'home', path: '/' },
-			{ type: 'roadmap', path: '/' }
+			{ type: 'roadmap', path: '/' },
+			{ type: 'faq', path: '/' }
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
@@ -26,14 +27,24 @@
 			lang: 'es-co'
 		});
 
-		// console.log(roadmapDataEN.data);
+		const faqDataEN = await client.getSingle('faq', {
+			lang: 'en-us'
+		});
+
+		const faqDataES = await client.getSingle('faq', {
+			lang: 'es-co'
+		});
+
+		// console.log(faqDataEN.data);
 
 		return {
 			props: {
 				homepageDataEN: homepageDataEN.data.body,
 				roadmapDataEN: roadmapDataEN.data,
 				homepageDataES: homepageDataES.data.body,
-				roadmapDataES: roadmapDataES.data
+				roadmapDataES: roadmapDataES.data,
+				faqDataEN: faqDataEN.data,
+				faqDataES: faqDataES.data
 			}
 		};
 	}
@@ -45,18 +56,20 @@
 
 	//SECTIONS
 	import HeroSection from '../sections/homepage/hero-section.svelte';
-	import BrandsSection from '../sections/homepage/brands.svelte';
+	import BrandsSection from '../sections/homepage/brands-section.svelte';
 	import Section1 from '../sections/homepage/section-1.svelte';
 	import Section2 from '../sections/homepage/section-2.svelte';
 	import Section3 from '../sections/homepage/section-3.svelte';
 	import Section4 from '../sections/homepage/section-4.svelte';
-	import RoadMapSection from '../sections/homepage/roadmap.svelte';
+	import RoadMapSection from '../sections/homepage/roadmap-section.svelte';
 	import Section5 from '../sections/homepage/section-5.svelte';
+	import FaqSection from '../sections/homepage/faq-section.svelte';
 	import Section6 from '../sections/homepage/section-6.svelte';
 
 	//PROPS
 	export let homepageDataEN, homepageDataES;
 	export let roadmapDataEN, roadmapDataES;
+	export let faqDataEN, faqDataES;
 </script>
 
 <svelte:head>
@@ -72,6 +85,7 @@
 	<Section4 data={homepageDataEN[5]} />
 	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[6]} />
+	<FaqSection data={faqDataEN} />
 	<Section6 data={homepageDataEN[7]} />
 {/if}
 
@@ -84,5 +98,6 @@
 	<Section4 data={homepageDataES[5]} />
 	<RoadMapSection data={roadmapDataES} />
 	<Section5 data={homepageDataES[6]} />
+	<FaqSection data={faqDataES} />
 	<Section6 data={homepageDataES[7]} />
 {/if}
