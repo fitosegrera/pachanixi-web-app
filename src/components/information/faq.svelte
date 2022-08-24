@@ -5,12 +5,19 @@
 	import * as prismicH from '@prismicio/helpers';
 
 	//PROPS
-	export let data;
+	export let data, iconInitial, iconActive, id;
+	// console.log(data, iconInitial, iconActive);
 
 	let showContent = '';
+	let iconLabel = iconInitial;
 
 	const handleDropdown = (payload) => {
 		showContent = payload === showContent ? '' : payload;
+		if (payload === showContent) {
+			iconLabel = iconActive;
+		} else {
+			iconLabel = iconInitial;
+		}
 	};
 
 	const htmlSerializer = (type, element, content, children) => {
@@ -26,40 +33,32 @@
 	};
 </script>
 
-<div class="space-y-72">
-	{#each data as faq, i}
-		<div>
-			<div
-				class="grid h-auto w-auto grow grid-cols-8 items-center border-b-4 border-solid border-primary-main px-16 py-16">
-				<div
-					class="col-span-7 flex items-center justify-start space-x-32 text-h7 font-medium text-primary-light">
-					<div class="h-auto w-48 font-bold text-primary-main">
-						<p>{i + 1}.</p>
-					</div>
-					<div class="h-auto w-full">
-						{@html prismicH.asHTML(faq.question, null, htmlSerializer)}
-					</div>
-				</div>
-				<div
-					class="flex items-center justify-end text-h7 font-medium text-primary-main">
-					<div
-						on:click={() => handleDropdown(faq.answer[0].text)}
-						class="cursor-pointer hover:text-primary-light">
-						{#if showContent}
-							<Icon icon="fe:drop-up" />
-						{:else}
-							<Icon icon="fe:drop-down" />
-						{/if}
-					</div>
-				</div>
+<div>
+	<div
+		class="grid h-auto w-auto grow grid-cols-8 items-center border-b-4 border-solid border-primary-main sm:py-16 md:px-16 md:py-32">
+		<div
+			class="col-span-7 flex items-center justify-start font-medium text-primary-light sm:space-x-12 sm:text-p3 md:space-x-32 md:text-h7">
+			<div class="h-auto w-48 font-bold text-primary-main">
+				<p>{id + 1}.</p>
 			</div>
-			{#if showContent === faq.answer[0].text}
-				<div
-					transition:slide={{ duration: 400 }}
-					class="border-b-4 border-solid border-primary-main px-16 py-72 text-p2 text-primary-light">
-					{@html prismicH.asHTML(faq.answer, null, htmlSerializer)}
-				</div>
-			{/if}
+			<div class="h-auto w-full">
+				{@html prismicH.asHTML(data.question, null, htmlSerializer)}
+			</div>
 		</div>
-	{/each}
+		<div
+			class="flex items-center justify-end font-medium text-primary-main sm:text-p1 md:text-h7">
+			<div
+				on:click={() => handleDropdown(data.answer[0].text)}
+				class="cursor-pointer hover:text-primary-light">
+				<Icon icon={iconLabel} />
+			</div>
+		</div>
+	</div>
+	{#if showContent === data.answer[0].text}
+		<div
+			transition:slide={{ duration: 400 }}
+			class="border-b-4 border-solid border-primary-main px-16 text-primary-light sm:py-48 sm:text-p3 md:py-72 md:text-p2">
+			{@html prismicH.asHTML(data.answer, null, htmlSerializer)}
+		</div>
+	{/if}
 </div>

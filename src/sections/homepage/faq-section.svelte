@@ -7,7 +7,8 @@
 	import Divider from '../../components/information/divider.svelte';
 
 	//PROPS
-	export let data;
+	export let data, title;
+	console.log(data);
 </script>
 
 <div id="wrapper" class="h-full w-full">
@@ -22,11 +23,19 @@
 					pixCol={'#BDFF00'} />
 			</div>
 			<div class="mb-72 flex items-center justify-center">
-				<h1 class="text-h5 font-bold text-primary-main">
-					{data.title[0].text}
+				<h1 class="font-bold text-primary-main sm:text-h7 md:text-h5">
+					{title}
 				</h1>
 			</div>
-			<Faq data={data.faq_group} />
+			<div class="sm:space-y-24 md:space-y-72">
+				{#each data as item}
+					<Faq
+						id={item.id}
+						data={item.faq}
+						iconInitial={'fe:drop-down'}
+						iconActive={'fe:drop-up'} />
+				{/each}
+			</div>
 		</div>
 	</Margins>
 </div>
@@ -41,7 +50,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url('/assets/imgs/bg-grabado-1.jpg');
+		background-image: url('/assets/imgs/bg-grabado-2.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -50,9 +59,9 @@
 			left top,
 			left bottom,
 			from(#02232b00),
-			to(#02232b55)
+			to(#02232b66)
 		);
-		mask-image: linear-gradient(to bottom, #02232b00, #02232b55);
+		mask-image: linear-gradient(to bottom, #02232b00, #02232b66);
 		z-index: -10;
 	}
 </style>

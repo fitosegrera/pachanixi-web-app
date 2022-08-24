@@ -20,7 +20,7 @@
 			lang: 'es-co'
 		});
 
-		console.log(whitepaperEN.data, whitepaperES.data);
+		//console.log(whitepaperEN.data, whitepaperES.data);
 
 		return {
 			props: {

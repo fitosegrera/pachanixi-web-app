@@ -35,7 +35,23 @@
 			lang: 'es-co'
 		});
 
-		// console.log(faqDataEN.data);
+		console.log(faqDataEN.data.title[0].text);
+
+		let tmpFaqDataEN = [];
+		let tmpFaqDataES = [];
+
+		await faqDataEN.data.faq_group.forEach((q, i) => {
+			tmpFaqDataEN.push({ id: i, faq: q });
+		});
+
+		await faqDataES.data.faq_group.forEach((q, i) => {
+			tmpFaqDataES.push({ id: i, faq: q });
+		});
+
+		let faqTitleEN = faqDataEN.data.title[0].text;
+		let faqTitleES = faqDataES.data.title[0].text;
+
+		//console.log(tmpFaqDataEN, tmpFaqDataES);
 
 		return {
 			props: {
@@ -43,8 +59,10 @@
 				roadmapDataEN: roadmapDataEN.data,
 				homepageDataES: homepageDataES.data.body,
 				roadmapDataES: roadmapDataES.data,
-				faqDataEN: faqDataEN.data,
-				faqDataES: faqDataES.data
+				faqDataEN: tmpFaqDataEN,
+				faqDataES: tmpFaqDataES,
+				faqTitleEN: faqTitleEN,
+				faqTitleES: faqTitleES
 			}
 		};
 	}
@@ -70,6 +88,7 @@
 	export let homepageDataEN, homepageDataES;
 	export let roadmapDataEN, roadmapDataES;
 	export let faqDataEN, faqDataES;
+	export let faqTitleEN, faqTitleES;
 </script>
 
 <svelte:head>
@@ -85,7 +104,7 @@
 	<Section4 data={homepageDataEN[5]} />
 	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[6]} />
-	<FaqSection data={faqDataEN} />
+	<FaqSection data={faqDataEN} title={faqTitleEN} />
 	<Section6 data={homepageDataEN[7]} />
 {/if}
 
@@ -98,6 +117,6 @@
 	<Section4 data={homepageDataES[5]} />
 	<RoadMapSection data={roadmapDataES} />
 	<Section5 data={homepageDataES[6]} />
-	<FaqSection data={faqDataES} />
+	<FaqSection data={faqDataES} title={faqTitleES} />
 	<Section6 data={homepageDataES[7]} />
 {/if}
