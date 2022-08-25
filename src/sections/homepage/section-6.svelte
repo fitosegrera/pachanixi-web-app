@@ -38,7 +38,7 @@
 <svelte:window bind:innerWidth={$window_width} />
 
 <div
-	class="relative h-auto w-auto bg-primary-main pt-48 text-center sm:pb-24 md:pb-124">
+	class="relative h-auto w-auto bg-primary-main text-center sm:pt-24 sm:pb-24 md:pt-48 md:pb-124">
 	<Main>
 		<div class="">
 			<div class="flex h-auto w-full items-center justify-center">

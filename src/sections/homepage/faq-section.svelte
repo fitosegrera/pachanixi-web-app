@@ -14,7 +14,7 @@
 <div id="wrapper" class="h-full w-full">
 	<div id="img-wrapper" class="h-full w-full" />
 	<Margins>
-		<div class="h-auto w-full pb-196 pt-72">
+		<div class="h-auto w-full sm:pb-124 md:pb-196 md:pt-72">
 			<div class="flex h-auto w-full items-center justify-center">
 				<Divider
 					name="faq-section-divider"

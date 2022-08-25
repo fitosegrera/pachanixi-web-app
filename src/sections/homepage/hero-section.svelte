@@ -29,7 +29,7 @@
 					url={data.primary.button_url} />
 			</div>
 
-			<div class="mt-96 flex h-auto w-auto justify-center">
+			<div class="mt-8 flex h-auto w-auto justify-center">
 				<video width="99%" autoplay loop muted>
 					<source src="/assets/vids/alpha/nft-4-alpha.webm" type="video/webm" />
 				</video>
