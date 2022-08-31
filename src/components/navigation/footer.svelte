@@ -11,6 +11,7 @@
 	//COMPONENTS
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import LogoButton from '../button/dark/lg/logo-static.svelte';
+	import DiscordLockedButton from '../button/dark/lg/discord-locked.svelte';
 
 	//PROPS
 	export let footerData;
@@ -18,6 +19,14 @@
 	onMount(async () => {
 		$is_mobile_view = detectMobileView($window_width, $break_point);
 	});
+
+	let iconHeight = 60;
+
+	if ($window_width >= '960') {
+		iconHeight = 64;
+	} else {
+		iconHeight = 48;
+	}
 
 	$: $is_mobile_view;
 </script>
@@ -27,7 +36,7 @@
 {#if !$is_mobile_view}
 	<div id="footer-wrapper">
 		<div
-			class="grid h-auto w-1920 max-w-full grid-flow-col bg-primary-dark-alpha py-16 text-primary-light backdrop-blur-md md:grid-cols-1 md:text-h7 lg:grid-cols-2 lg:text-h5">
+			class="grid h-auto w-1920 max-w-full grid-flow-col bg-primary-dark-alpha py-16 text-primary-light backdrop-blur-md sm:text-h7 md:grid-cols-1 md:text-h6 lg:grid-cols-2 lg:text-h5">
 			<div class="flex h-full w-full justify-start space-x-32 px-32">
 				<div class="flex items-center justify-center space-x-16">
 					<div class="cursor-pointer">
@@ -45,11 +54,15 @@
 				class="flex h-full w-auto items-center justify-end px-16 md:space-x-24 lg:space-x-48">
 				{#each footerData.social_network as item}
 					{#if item.active}
-						<SocialButton
-							icon={item.social_icon_label}
-							name={item.social_nework_label}
-							active={item.active}
-							url={item.social_network_url.url} />
+						{#if item.social_nework_label !== 'discord'}
+							<SocialButton
+								icon={item.social_icon_label}
+								name={item.social_nework_label}
+								active={item.active}
+								url={item.social_network_url.url} />
+						{:else}
+							<DiscordLockedButton height={iconHeight} />
+						{/if}
 					{/if}
 				{/each}
 			</div>

@@ -2,12 +2,20 @@
 	//LIBS
 	import { createEventDispatcher } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
+	//STORES
+	import { window_width, is_mobile_view, break_point } from '../../stores/main';
+
+	//HELPERS
+	import { detectMobileView } from '../../helpers/mobileViewDetect';
 
 	//COMPONENTS
 	import MenuItem from './menu-item.svelte';
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import CloseButton from '../button/dark/lg/close.svelte';
 	import LanguageDropdown from '../navigation/language-dropdown.svelte';
+	import DiscordLockedButton from '../button/dark/lg/discord-locked.svelte';
 
 	//PROPS
 	export let menu, social;
@@ -17,7 +25,23 @@
 	const handleClick = () => {
 		dispatch('closeSideBar');
 	};
+
+	onMount(async () => {
+		$is_mobile_view = detectMobileView($window_width, $break_point);
+	});
+
+	let iconHeight = 60;
+
+	if ($window_width >= '960') {
+		iconHeight = 64;
+	} else if ($window_width > 640) {
+		iconHeight = 56;
+	} else {
+		iconHeight = 48;
+	}
 </script>
+
+<svelte:window bind:innerWidth={$window_width} />
 
 <div class="sidebar bg-primary-dark" transition:fly={{ y: -1080, opacity: 1 }}>
 	<div class="grid grid-cols-2">
@@ -44,11 +68,15 @@
 				{#if item.active}
 					<div
 						class="cursor-pointer hover:text-primary-light sm:text-h6 md:text-h5">
-						<SocialButton
-							icon={item.icon}
-							name={item.name}
-							active={item.active}
-							url={item.url.url} />
+						{#if item.name !== 'discord'}
+							<SocialButton
+								icon={item.icon}
+								name={item.name}
+								active={item.active}
+								url={item.url.url} />
+						{:else}
+							<DiscordLockedButton height={iconHeight} />
+						{/if}
 					</div>
 				{/if}
 			{/each}

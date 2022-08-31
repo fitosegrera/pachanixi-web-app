@@ -13,6 +13,7 @@
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import HamburgerButton from '../button/dark/lg/hamburger.svelte';
 	import LogoButton from '../button/dark/lg/logo-static.svelte';
+	import DiscordLockedButton from '../button/dark/lg/discord-locked.svelte';
 
 	//PROPS
 	export let navBarData;
@@ -30,6 +31,14 @@
 	const closeMenu = () => {
 		showSideBar = false;
 	};
+
+	let iconHeight = 60;
+
+	if ($window_width >= '960') {
+		iconHeight = 64;
+	} else {
+		iconHeight = 60;
+	}
 </script>
 
 <svelte:window bind:innerWidth={$window_width} />
@@ -70,11 +79,15 @@
 			class="flex h-full w-auto items-center justify-center sm:space-x-16 lg:space-x-48">
 			{#each navBarData.social as item}
 				{#if item.active}
-					<SocialButton
-						icon={item.icon}
-						name={item.name}
-						active={item.active}
-						url={item.url.url} />
+					{#if item.name !== 'discord'}
+						<SocialButton
+							icon={item.icon}
+							name={item.name}
+							active={item.active}
+							url={item.url.url} />
+					{:else}
+						<DiscordLockedButton height={iconHeight} />
+					{/if}
 				{/if}
 			{/each}
 		</div>

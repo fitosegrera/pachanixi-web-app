@@ -14,9 +14,12 @@
 	//COMPONENTS
 	import SocialButton from '../../components/button/light/lg/social.svelte';
 	import Divider from '../../components/information/divider.svelte';
+	import DiscordLockedButton from '../../components/button/light/lg/discord-locked.svelte';
 
 	//PROPS
 	export let data;
+
+	console.log(data);
 
 	let orbSize = '40%';
 
@@ -31,6 +34,16 @@
 			orbSize = '40%';
 		}
 	};
+
+	let iconHeight = 60;
+
+	if ($window_width >= '960') {
+		iconHeight = 80;
+	} else if ($window_width > 640) {
+		iconHeight = 76;
+	} else {
+		iconHeight = 52;
+	}
 
 	$: $is_mobile_view, evaluateWindowWidth();
 </script>
@@ -62,11 +75,15 @@
 			class="flex h-full w-auto items-center justify-center text-primary-dark sm:space-x-24 sm:py-24 sm:text-h6 md:space-x-48 md:py-48 md:text-h4 lg:text-h3">
 			{#each data.items as item}
 				{#if item.active}
-					<SocialButton
-						icon={item.social_icon_label}
-						name={item.social}
-						active={item.active}
-						url={item.social_network_url.url} />
+					{#if item.social !== 'discord'}
+						<SocialButton
+							icon={item.social_icon_label}
+							name={item.social}
+							active={item.active}
+							url={item.social_network_url.url} />
+					{:else}
+						<DiscordLockedButton height={iconHeight} />
+					{/if}
 				{/if}
 			{/each}
 		</div>
