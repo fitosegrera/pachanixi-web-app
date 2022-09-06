@@ -1,3 +1,3 @@
 # pachanixi-web-app
 
-Official site [`HERE`](https://pachanixi.com).
+Project's site [`HERE`](https://pachanixi.com).
