@@ -57,6 +57,16 @@
 	//PROPS
 	export let navBarDataEN, navBarDataES;
 	export let footerDataEN, footerDataES;
+
+	if (typeof window !== 'undefined' && window) {
+		window.dataLayer = window.dataLayer || [];
+		const gtag = () => {
+			dataLayer.push(arguments);
+		};
+		gtag('js', new Date());
+
+		gtag('config', 'G-YG86NHKEBX');
+	}
 </script>
 
 <svelte:head>
@@ -65,6 +75,7 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap"
 		rel="stylesheet" />
+	<script async src="https://www.googletagmanager.com/gtag/js"></script>
 </svelte:head>
 
 <div id="page-wrapper" class="h-auto w-auto">
