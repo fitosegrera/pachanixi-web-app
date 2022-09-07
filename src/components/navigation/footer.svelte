@@ -69,7 +69,9 @@
 		</div>
 	</div>
 {:else}
-	<div class="flex h-auto items-center justify-center px-32">
+	<div
+		id="footer-wrapper"
+		class="flex h-auto items-center justify-center bg-primary-dark px-32">
 		<div class="flex items-center justify-center space-x-16">
 			<div class="cursor-pointer">
 				<LogoButton />
@@ -83,3 +85,10 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	#footer-wrapper {
+		position: relative;
+		z-index: 100;
+	}
+</style>

@@ -8,12 +8,20 @@
 			'MC5Zc1h1ZVJBQUFDQUFUWWlt.Q--_vWbvv70DYwHvv70577-977-977-9Pe-_ve-_ve-_vSJz77-9Le-_ve-_vTtNMkYtX1wf77-9Ew';
 		const routes = [
 			// Update to match your website's URL structure
+			{ type: 'prelaunch', path: '/' },
 			{ type: 'home', path: '/' },
 			{ type: 'roadmap', path: '/' },
 			{ type: 'faq', path: '/' }
 		];
 
 		const client = prismic.createClient(endpoint, { routes, accessToken });
+
+		const prelaunchDataEN = await client.getSingle('prelaunch', {
+			lang: 'en-us'
+		});
+		const prelaunchDataES = await client.getSingle('prelaunch', {
+			lang: 'es-co'
+		});
 		const homepageDataEN = await client.getSingle('home', {
 			lang: 'en-us'
 		});
@@ -35,8 +43,6 @@
 			lang: 'es-co'
 		});
 
-		console.log(faqDataEN.data.title[0].text);
-
 		let tmpFaqDataEN = [];
 		let tmpFaqDataES = [];
 
@@ -51,10 +57,12 @@
 		let faqTitleEN = faqDataEN.data.title[0].text;
 		let faqTitleES = faqDataES.data.title[0].text;
 
-		//console.log(tmpFaqDataEN, tmpFaqDataES);
+		//console.log(prelaunchDataEN, prelaunchDataES);
 
 		return {
 			props: {
+				prelaunchDataEN: prelaunchDataEN.data,
+				prelaunchDataES: prelaunchDataES.data,
 				homepageDataEN: homepageDataEN.data.body,
 				roadmapDataEN: roadmapDataEN.data,
 				homepageDataES: homepageDataES.data.body,
@@ -73,6 +81,7 @@
 	import { locale } from '../stores/main';
 
 	//SECTIONS
+	import Prelaunch from '../sections/homepage/prelaunch.svelte';
 	import HeroSection from '../sections/homepage/hero-section.svelte';
 	import BrandsSection from '../sections/homepage/brands-section.svelte';
 	import Section1 from '../sections/homepage/section-1.svelte';
@@ -85,6 +94,7 @@
 	import Section6 from '../sections/homepage/section-6.svelte';
 
 	//PROPS
+	export let prelaunchDataEN, prelaunchDataES;
 	export let homepageDataEN, homepageDataES;
 	export let roadmapDataEN, roadmapDataES;
 	export let faqDataEN, faqDataES;
@@ -96,7 +106,8 @@
 </svelte:head>
 
 {#if $locale === 'en-us'}
-	<HeroSection data={homepageDataEN[0]} />
+	<Prelaunch data={prelaunchDataEN} />
+	<!-- <HeroSection data={homepageDataEN[0]} />
 	<BrandsSection data={homepageDataEN[1]} />
 	<Section1 data={homepageDataEN[2]} />
 	<Section2 data={homepageDataEN[3]} />
@@ -105,11 +116,12 @@
 	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[6]} />
 	<FaqSection data={faqDataEN} title={faqTitleEN} />
-	<Section6 data={homepageDataEN[7]} />
+	<Section6 data={homepageDataEN[7]} /> -->
 {/if}
 
 {#if $locale === 'es-co'}
-	<HeroSection data={homepageDataES[0]} />
+	<Prelaunch data={prelaunchDataES} />
+	<!-- <HeroSection data={homepageDataES[0]} />
 	<BrandsSection data={homepageDataES[1]} />
 	<Section1 data={homepageDataES[2]} />
 	<Section2 data={homepageDataES[3]} />
@@ -118,5 +130,5 @@
 	<RoadMapSection data={roadmapDataES} />
 	<Section5 data={homepageDataES[6]} />
 	<FaqSection data={faqDataES} title={faqTitleES} />
-	<Section6 data={homepageDataES[7]} />
+	<Section6 data={homepageDataES[7]} /> -->
 {/if}
