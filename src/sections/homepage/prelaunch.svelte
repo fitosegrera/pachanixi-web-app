@@ -18,7 +18,7 @@
 	</div>
 	<Main>
 		<div class="h-auto w-full">
-			<div class="pt-160">
+			<div class="sm:pt-124 md:pt-160">
 				<img
 					src={data.background_image.url}
 					alt={data.background_image.alt}
