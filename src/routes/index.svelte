@@ -83,6 +83,7 @@
 	//SECTIONS
 	import Prelaunch from '../sections/homepage/prelaunch.svelte';
 	import HeroSection from '../sections/homepage/hero-section.svelte';
+	import CountdownSection from '../sections/homepage/countdown-section.svelte';
 	import BrandsSection from '../sections/homepage/brands-section.svelte';
 	import Section1 from '../sections/homepage/section-1.svelte';
 	import Section2 from '../sections/homepage/section-2.svelte';
@@ -107,10 +108,11 @@
 
 {#if $locale === 'en-us'}
 	<Prelaunch data={prelaunchDataEN} />
-	<!-- <HeroSection data={homepageDataEN[0]} />
-	<BrandsSection data={homepageDataEN[1]} />
+	<CountdownSection />
+	<!-- <HeroSection data={homepageDataEN[0]} />-->
+	<!-- <BrandsSection data={homepageDataEN[1]} /> -->
 	<Section1 data={homepageDataEN[2]} />
-	<Section2 data={homepageDataEN[3]} />
+	<!-- <Section2 data={homepageDataEN[3]} />
 	<Section3 data={homepageDataEN[4]} />
 	<Section4 data={homepageDataEN[5]} />
 	<RoadMapSection data={roadmapDataEN} />
@@ -121,10 +123,11 @@
 
 {#if $locale === 'es-co'}
 	<Prelaunch data={prelaunchDataES} />
-	<!-- <HeroSection data={homepageDataES[0]} />
-	<BrandsSection data={homepageDataES[1]} />
+	<CountdownSection />
+	<!-- <HeroSection data={homepageDataES[0]} /> -->
+	<!-- <BrandsSection data={homepageDataES[1]} /> -->
 	<Section1 data={homepageDataES[2]} />
-	<Section2 data={homepageDataES[3]} />
+	<!-- <Section2 data={homepageDataES[3]} />
 	<Section3 data={homepageDataES[4]} />
 	<Section4 data={homepageDataES[5]} />
 	<RoadMapSection data={roadmapDataES} />
@@ -132,3 +135,48 @@
 	<FaqSection data={faqDataES} title={faqTitleES} />
 	<Section6 data={homepageDataES[7]} /> -->
 {/if}
+
+<style>
+	@keyframes -global-from-left {
+		0% {
+			transform: translateX(-10vw);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	@keyframes -global-from-right {
+		0% {
+			transform: translateX(10vw);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	@keyframes -global-from-bottom {
+		0% {
+			transform: translateY(10vw);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+	@keyframes -global-slide-in-elliptic-top-fwd {
+		0% {
+			transform: translateY(-600px) rotateX(-30deg) scale(0);
+			transform-origin: 50% 100%;
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0) rotateX(0) scale(1);
+			transform-origin: 50% 1200px;
+			opacity: 1;
+		}
+	}
+</style>
