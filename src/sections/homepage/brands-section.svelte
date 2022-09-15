@@ -28,7 +28,7 @@
 
 <svelte:window bind:innerWidth={$window_width} />
 
-<div class="bg-primary-dark sm:py-124 md:py-132">
+<div class="bg-primary-dark sm:py-48 md:py-132">
 	<Main>
 		<!-- <Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 			<div

@@ -16,24 +16,33 @@
 </script>
 
 <div class="space-y-32">
-	<div class="flex h-full w-full justify-center space-x-160 py-32">
-		<Saos animation={'from-left 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-			<Highlight1
-				heading={data.items[0].highlight_title[0].text}
-				paragraph={data.items[0].highlight_paragraph[0].text} />
-		</Saos>
-		<Saos animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-			<Highlight2
-				heading={data.items[1].highlight_title[0].text}
-				paragraph={data.items[1].highlight_paragraph[0].text} />
-		</Saos>
-		<Saos animation={'from-right 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-			<Highlight3
-				heading={data.items[2].highlight_title[0].text}
-				paragraph={data.items[2].highlight_paragraph[0].text} />
-		</Saos>
+	<div
+		class="grid h-full w-full gap-160 py-32 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+		<div class="flex h-full w-full justify-center">
+			<Saos animation={'from-left 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<Highlight1
+					heading={data.items[0].highlight_title[0].text}
+					paragraph={data.items[0].highlight_paragraph[0].text} />
+			</Saos>
+		</div>
+		<div class="flex h-full w-full justify-center">
+			<Saos
+				animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<Highlight2
+					heading={data.items[1].highlight_title[0].text}
+					paragraph={data.items[1].highlight_paragraph[0].text} />
+			</Saos>
+		</div>
+		<div class="flex h-full w-full justify-center md:col-span-2 lg:col-span-1">
+			<Saos
+				animation={'from-right 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<Highlight3
+					heading={data.items[2].highlight_title[0].text}
+					paragraph={data.items[2].highlight_paragraph[0].text} />
+			</Saos>
+		</div>
 	</div>
-	<div class="flex h-full w-full justify-center space-x-160 py-32">
+	<div class="grid h-full w-full gap-160 py-32 sm:grid-cols-1 md:grid-cols-2">
 		<Saos animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 			<Highlight4
 				heading={data.items[3].highlight_title[0].text}

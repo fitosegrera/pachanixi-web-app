@@ -76,13 +76,15 @@
 						h={'32'}
 						pixCol={'#BDFF00'} />
 				</div>
-				<h1 class="text-center text-p1 font-bold text-primary-main">
+				<h1
+					class="text-center font-bold text-primary-main sm:text-h7 md:text-h5">
 					{data.section_title[0].text}
 				</h1>
 			</Saos>
 		</div>
 		<div class="flex h-auto w-full items-center justify-center">
-			<div class="grid h-auto w-996 grid-cols-4 space-x-48 sm:mt-72 sm:pb-96">
+			<div
+				class="grid h-auto w-996 space-x-48 sm:mt-72 sm:grid-cols-1 sm:space-y-32 sm:pb-96 md:grid-cols-2 lg:grid-cols-4 lg:space-y-0">
 				<div class="mx-auto">
 					<CircularCountdown
 						progress={0.0}
