@@ -64,7 +64,7 @@
 		let faqTitleEN = faqDataEN.data.title[0].text;
 		let faqTitleES = faqDataES.data.title[0].text;
 
-		//console.log(homepageDataEN);
+		console.log(homepageDataEN);
 
 		return {
 			props: {
@@ -127,9 +127,9 @@
 	<TiersSection data={homepageDataEN[4]} /> -->
 	<!-- <Section3 data={homepageDataEN[4]} />
 	<Section4 data={homepageDataEN[5]} /> 
-	<RoadMapSection data={roadmapDataEN} />
-	<Section5 data={homepageDataEN[6]} />
-	<FaqSection data={faqDataEN} title={faqTitleEN} />-->
+	<RoadMapSection data={roadmapDataEN} />-->
+	<Section5 data={homepageDataEN[7]} />
+	<!-- <FaqSection data={faqDataEN} title={faqTitleEN} />-->
 	<Section6 data={homepageDataEN[8]} />
 {/if}
 
@@ -143,9 +143,9 @@
 	<TiersSection data={homepageDataES[4]} /> -->
 	<!-- <Section3 data={homepageDataES[4]} />
 	<Section4 data={homepageDataES[5]} />
-	<RoadMapSection data={roadmapDataES} />
-	<Section5 data={homepageDataES[6]} />
-	<FaqSection data={faqDataES} title={faqTitleES} /> -->
+	<RoadMapSection data={roadmapDataES} /> -->
+	<Section5 data={homepageDataES[7]} />
+	<!-- <FaqSection data={faqDataES} title={faqTitleES} /> -->
 	<Section6 data={homepageDataES[8]} />
 {/if}
 
