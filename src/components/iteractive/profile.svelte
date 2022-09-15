@@ -168,7 +168,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		z-index: 10;
+		z-index: 30;
 	}
 
 	.img-wrapper-mobile {
@@ -177,7 +177,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		z-index: 10;
+		z-index: 30;
 	}
 
 	.bio-wrapper {
