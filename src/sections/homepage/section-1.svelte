@@ -9,9 +9,10 @@
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
 	import Divider from '../../components/information/divider.svelte';
+	import HighlightsSection from './highlights-section.svelte';
 
 	//PROPS
-	export let data;
+	export let data, highlightData;
 
 	const htmlSerializer = (type, element, content, children) => {
 		if (type === 'strong') {
@@ -24,7 +25,7 @@
 </script>
 
 <div
-	id="wrapper"
+	id="cosmovision"
 	class="h-auto w-auto bg-primary-dark text-center sm:pb-124 sm:pt-72">
 	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
@@ -47,7 +48,7 @@
 				</p>
 			</div>
 		</Saos>
-		<Saos animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+		<Saos animation={'fade-in 2s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 			<div class="flex w-auto justify-center sm:mt-32 md:mt-72">
 				<PrimaryButton
 					label={data.primary.button_label}
@@ -55,11 +56,14 @@
 					target={''} />
 			</div>
 		</Saos>
+		<div class="mt-196">
+			<HighlightsSection data={highlightData} />
+		</div>
 	</Main>
 </div>
 
 <style>
-	#wrapper {
+	#cosmovision {
 		position: relative;
 		z-index: 1;
 	}
@@ -76,10 +80,10 @@
 			linear,
 			left top,
 			left bottom,
-			from(#02232b00),
-			to(#02232b44)
+			from(#10181a11),
+			to(#10181a22)
 		);
-		mask-image: linear-gradient(to bottom, #02232b00, #02232b44);
+		mask-image: linear-gradient(to bottom, #10181a00, #10181a44);
 		z-index: -10;
 	}
 </style>

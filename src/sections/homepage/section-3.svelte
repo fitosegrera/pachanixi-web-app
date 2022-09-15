@@ -7,7 +7,7 @@
 	import NftCard from '../../components/card/dark/lg/nft.svelte';
 	import Scroller from '../../components/information/scroller.svelte';
 	import Divider from '../../components/information/divider.svelte';
-
+	import RandomPixels from '../../components/sketch/random-pixels.svelte';
 	//PROPS
 	export let data;
 </script>

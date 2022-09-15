@@ -8,6 +8,7 @@
 			'MC5Zc1h1ZVJBQUFDQUFUWWlt.Q--_vWbvv70DYwHvv70577-977-977-9Pe-_ve-_ve-_vSJz77-9Le-_ve-_vTtNMkYtX1wf77-9Ew';
 		const routes = [
 			// Update to match your website's URL structure
+			{ type: 'countdown', path: '/' },
 			{ type: 'prelaunch', path: '/' },
 			{ type: 'home', path: '/' },
 			{ type: 'roadmap', path: '/' },
@@ -20,6 +21,12 @@
 			lang: 'en-us'
 		});
 		const prelaunchDataES = await client.getSingle('prelaunch', {
+			lang: 'es-co'
+		});
+		const countdownDataEN = await client.getSingle('countdown', {
+			lang: 'en-us'
+		});
+		const countdownDataES = await client.getSingle('countdown', {
 			lang: 'es-co'
 		});
 		const homepageDataEN = await client.getSingle('home', {
@@ -57,12 +64,14 @@
 		let faqTitleEN = faqDataEN.data.title[0].text;
 		let faqTitleES = faqDataES.data.title[0].text;
 
-		//console.log(prelaunchDataEN, prelaunchDataES);
+		//console.log(homepageDataEN);
 
 		return {
 			props: {
 				prelaunchDataEN: prelaunchDataEN.data,
 				prelaunchDataES: prelaunchDataES.data,
+				countdownDataEN: countdownDataEN.data,
+				countdownDataES: countdownDataES.data,
 				homepageDataEN: homepageDataEN.data.body,
 				roadmapDataEN: roadmapDataEN.data,
 				homepageDataES: homepageDataES.data.body,
@@ -87,6 +96,7 @@
 	import BrandsSection from '../sections/homepage/brands-section.svelte';
 	import Section1 from '../sections/homepage/section-1.svelte';
 	import Section2 from '../sections/homepage/section-2.svelte';
+	import TiersSection from '../sections/homepage/tiers-section.svelte';
 	import Section3 from '../sections/homepage/section-3.svelte';
 	import Section4 from '../sections/homepage/section-4.svelte';
 	import RoadMapSection from '../sections/homepage/roadmap-section.svelte';
@@ -96,6 +106,7 @@
 
 	//PROPS
 	export let prelaunchDataEN, prelaunchDataES;
+	export let countdownDataEN, countdownDataES;
 	export let homepageDataEN, homepageDataES;
 	export let roadmapDataEN, roadmapDataES;
 	export let faqDataEN, faqDataES;
@@ -108,32 +119,34 @@
 
 {#if $locale === 'en-us'}
 	<Prelaunch data={prelaunchDataEN} />
-	<CountdownSection />
+	<CountdownSection data={countdownDataEN} />
 	<!-- <HeroSection data={homepageDataEN[0]} />-->
-	<!-- <BrandsSection data={homepageDataEN[1]} /> -->
-	<Section1 data={homepageDataEN[2]} />
+	<BrandsSection data={homepageDataEN[1]} />
+	<Section1 data={homepageDataEN[2]} highlightData={homepageDataEN[3]} />
 	<!-- <Section2 data={homepageDataEN[3]} />
-	<Section3 data={homepageDataEN[4]} />
-	<Section4 data={homepageDataEN[5]} />
+	<TiersSection data={homepageDataEN[4]} /> -->
+	<!-- <Section3 data={homepageDataEN[4]} />
+	<Section4 data={homepageDataEN[5]} /> 
 	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[6]} />
-	<FaqSection data={faqDataEN} title={faqTitleEN} />
-	<Section6 data={homepageDataEN[7]} /> -->
+	<FaqSection data={faqDataEN} title={faqTitleEN} />-->
+	<Section6 data={homepageDataEN[8]} />
 {/if}
 
 {#if $locale === 'es-co'}
 	<Prelaunch data={prelaunchDataES} />
-	<CountdownSection />
+	<CountdownSection data={countdownDataES} />
 	<!-- <HeroSection data={homepageDataES[0]} /> -->
-	<!-- <BrandsSection data={homepageDataES[1]} /> -->
-	<Section1 data={homepageDataES[2]} />
+	<BrandsSection data={homepageDataES[1]} />
+	<Section1 data={homepageDataES[2]} highlightData={homepageDataES[3]} />
 	<!-- <Section2 data={homepageDataES[3]} />
-	<Section3 data={homepageDataES[4]} />
+	<TiersSection data={homepageDataES[4]} /> -->
+	<!-- <Section3 data={homepageDataES[4]} />
 	<Section4 data={homepageDataES[5]} />
 	<RoadMapSection data={roadmapDataES} />
 	<Section5 data={homepageDataES[6]} />
-	<FaqSection data={faqDataES} title={faqTitleES} />
-	<Section6 data={homepageDataES[7]} /> -->
+	<FaqSection data={faqDataES} title={faqTitleES} /> -->
+	<Section6 data={homepageDataES[8]} />
 {/if}
 
 <style>
@@ -169,13 +182,22 @@
 	}
 	@keyframes -global-slide-in-elliptic-top-fwd {
 		0% {
-			transform: translateY(-600px) rotateX(-30deg) scale(0);
+			transform: translateY(-600px) rotateX(-20deg) scale(0);
 			transform-origin: 50% 100%;
 			opacity: 0;
 		}
 		100% {
 			transform: translateY(0) rotateX(0) scale(1);
 			transform-origin: 50% 1200px;
+			opacity: 1;
+		}
+	}
+
+	@keyframes -global-fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
 			opacity: 1;
 		}
 	}
