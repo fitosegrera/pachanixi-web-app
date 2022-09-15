@@ -9,11 +9,11 @@
 	let showProfile = false;
 
 	const openProfile = () => {
-		showProfile = true;
+		//showProfile = true;
 	};
 
 	const closeProfile = () => {
-		showProfile = false;
+		//showProfile = false;
 	};
 </script>
 
