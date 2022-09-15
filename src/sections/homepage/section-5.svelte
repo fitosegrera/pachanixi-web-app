@@ -13,8 +13,8 @@
 	export let data;
 </script>
 
-<div id="wrapper" class="h-auto w-auto bg-primary-dark pb-72 pt-16 text-center">
-	<div id="img-wrapper" class="h-full w-full" />
+<div id="wrapper" class="h-auto w-auto  pb-72 pt-16 text-center">
+	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 			<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
