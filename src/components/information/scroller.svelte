@@ -4,8 +4,7 @@
 </script>
 
 <div
-	class="bg-blur w-screen flex items-center justify-center text-p2 font-bold text-primary-main h-72 py-16 bg-secondary-main"
->
+	class="bg-blur flex h-72 w-screen items-center justify-center bg-primary-dark-variant py-16 text-p2 font-bold text-primary-main">
 	<p class="marquee">
 		<span>{data}</span>
 	</p>

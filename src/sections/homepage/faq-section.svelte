@@ -8,7 +8,7 @@
 
 	//PROPS
 	export let data, title;
-	console.log(data);
+	// console.log(data);
 </script>
 
 <div id="wrapper" class="h-full w-full">

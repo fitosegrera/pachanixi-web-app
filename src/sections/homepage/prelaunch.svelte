@@ -58,11 +58,11 @@
 			once={true}
 			animation={'slide-in-elliptic-top-fwd 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 			<p
-				class="text-center font-bold text-primary-light sm:mt-32 sm:mb-48 sm:px-16 sm:text-p3 md:px-72 md:text-p2 lg:mt-0 lg:mb-72 lg:px-124 lg:text-p1 xl:px-224">
+				class="text-center font-medium text-primary-light sm:mt-32 sm:mb-48 sm:px-16 sm:text-p3 md:px-72 md:text-p2 lg:mt-0 lg:mb-72 lg:px-124 lg:text-p1 xl:px-224">
 				{data.quote_paragraph[0].text}
 			</p>
 			<p
-				class="text-center font-semibold text-primary-main sm:px-16 sm:text-p4 md:text-p3 lg:px-124 lg:text-p2 xl:px-224">
+				class="text-center italic text-primary-light sm:px-16 sm:text-p4 md:text-p3 lg:px-124 lg:text-p3 xl:px-224">
 				{data.author_paragraph[0].text}
 			</p>
 		</Saos>
@@ -72,7 +72,7 @@
 <style>
 	#wrapper {
 		position: relative;
-		z-index: 10;
+		z-index: -10;
 		background: linear-gradient(#02232b, #000000);
 	}
 
@@ -104,18 +104,5 @@
 
 	video::-internal-media-controls-overlay-cast-button {
 		display: none;
-	}
-
-	@keyframes -global-slide-in-elliptic-top-fwd {
-		0% {
-			transform: translateY(-600px) rotateX(-30deg) scale(0);
-			transform-origin: 50% 100%;
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0) rotateX(0) scale(1);
-			transform-origin: 50% 1200px;
-			opacity: 1;
-		}
 	}
 </style>

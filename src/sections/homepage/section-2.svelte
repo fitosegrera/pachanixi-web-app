@@ -2,6 +2,7 @@
 	//LIBS
 	import { onMount } from 'svelte';
 	import * as prismicH from '@prismicio/helpers';
+	import Saos from 'saos';
 
 	//STORES
 	import { window_width, is_mobile_view, break_point } from '../../stores/main';
@@ -15,6 +16,7 @@
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/light/lg/primary.svelte';
 	import Divider from '../../components/information/divider.svelte';
+	import RandomPixels from '../../components/sketch/random-pixels.svelte';
 
 	//PROPS
 	export let data;
@@ -61,55 +63,79 @@
 <div class="relative h-auto w-auto bg-primary-main pt-32 sm:pb-72 md:pb-124">
 	<Main>
 		<div class="flex">
-			<div>
-				<div class="flex h-auto w-full items-center justify-start">
-					<Divider
-						name="homepage-section-2-divider"
-						w={'50'}
-						h={'32'}
-						pixCol={'#02232B'} />
+			<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
+				<div class="">
+					<div class="flex h-auto w-full items-center justify-start">
+						<Divider
+							name="homepage-section-2-divider"
+							w={'50'}
+							h={'32'}
+							pixCol={'#02232B'} />
+					</div>
+					<div
+						class="items-center font-bold text-primary-dark sm:space-y-16 sm:text-p1 md:text-h5 lg:flex lg:space-x-32">
+						<h5>
+							{data.primary.title[0].text}
+						</h5>
+						<p class="font-bold sm:text-p3 md:text-p2">
+							{data.primary.subtitle_1[0].text}
+						</p>
+					</div>
+					<div
+						class="h-auto w-auto pt-32 font-bold sm:text-h6 md:text-h3 lg:text-h1">
+						<h1 class="">
+							{data.primary.subtitle_2[0].text}
+						</h1>
+						<h1 class="">
+							{data.primary.subtitle_2[1].text}
+						</h1>
+					</div>
 				</div>
-				<div
-					class="items-center font-bold text-primary-dark sm:space-y-16 sm:text-p1 md:text-h5 lg:flex lg:space-x-32">
-					<h5>
-						{data.primary.title[0].text}
-					</h5>
-					<p class="font-bold sm:text-p3 md:text-p2">
-						{data.primary.subtitle_1[0].text}
-					</p>
-				</div>
-				<div
-					class="h-auto w-auto pt-32 font-bold sm:text-h6 md:text-h3 lg:text-h1">
-					<h1 class="">
-						{data.primary.subtitle_2[0].text}
-					</h1>
-					<h1 class="">
-						{data.primary.subtitle_2[1].text}
-					</h1>
-				</div>
-			</div>
+			</Saos>
 			<div id="nft-wrapper" class="-h-auto w-auto">
-				<video
+				<!-- <video
 					class="sm:top-96 sm:-right-96 md:top-112 md:-right-124 lg:-right-264 lg:-top-72 xl:-top-160 xl:-right-240"
 					width={nftWidth}
 					autoplay
 					loop
 					muted>
 					<source src="/assets/vids/alpha/nft-2-alpha.webm" type="video/webm" />
-				</video>
+				</video> -->
+				<div id="pixels-wrapper" class="right-160 top-96">
+					<RandomPixels
+						alphaPixels={false}
+						rows={8}
+						cols={8}
+						randMin={96}
+						randMax={172}
+						w={360}
+						h={360}
+						path={'/assets/vids/nft-1.mp4'} />
+				</div>
 			</div>
 		</div>
-		<div
-			class="h-auto w-full pt-32 text-justify font-medium sm:text-p3 md:text-p2 lg:text-p1">
-			<p>
-				{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
-			</p>
-		</div>
-		<div class="flex w-auto justify-center sm:mt-32 md:mt-72">
-			<PrimaryButton
-				label={data.primary.button_label}
-				url={data.primary.button_url}
-				target={''} />
+		<Saos animation={'from-right 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
+			<div
+				class="h-auto w-full pt-32 text-justify font-medium sm:text-p3 md:text-p2 lg:text-p1">
+				<p>
+					{@html prismicH.asHTML(data.primary.paragraph, null, htmlSerializer)}
+				</p>
+			</div>
+		</Saos>
+		<Saos animation={'from-bottom 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
+			<div class="flex w-auto justify-center sm:mt-32 md:mt-72">
+				<PrimaryButton
+					label={data.primary.button_label}
+					url={data.primary.button_url}
+					target={''} />
+			</div>
+		</Saos>
+		<div id="orb-left-wrapper" class="left-45 top-124">
+			<video width={orbSize} autoplay loop muted>
+				<source
+					src="/assets/vids/alpha/orbitante-2-alpha.webm"
+					type="video/webm" />
+			</video>
 		</div>
 		<div
 			id="orb-left-wrapper"
@@ -134,6 +160,12 @@
 
 <style>
 	#nft-wrapper video {
+		position: absolute;
+		pointer-events: none;
+		z-index: -10;
+	}
+
+	#pixels-wrapper {
 		position: absolute;
 		pointer-events: none;
 		z-index: 3;
