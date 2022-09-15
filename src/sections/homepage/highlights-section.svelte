@@ -43,22 +43,28 @@
 		</div>
 	</div>
 	<div class="grid h-full w-full gap-160 py-32 sm:grid-cols-1 md:grid-cols-2">
-		<Saos animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-			<Highlight4
-				heading={data.items[3].highlight_title[0].text}
-				paragraph={data.items[3].highlight_paragraph[0].text} />
-		</Saos>
-		<Saos animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-			<Highlight5
-				heading={data.items[4].highlight_title[0].text}
-				paragraph={data.items[4].highlight_paragraph[0].text} />
-		</Saos>
+		<div class="flex h-full w-full justify-center">
+			<Saos
+				animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<Highlight4
+					heading={data.items[3].highlight_title[0].text}
+					paragraph={data.items[3].highlight_paragraph[0].text} />
+			</Saos>
+		</div>
+		<div class="flex h-full w-full justify-center">
+			<Saos
+				animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<Highlight5
+					heading={data.items[4].highlight_title[0].text}
+					paragraph={data.items[4].highlight_paragraph[0].text} />
+			</Saos>
+		</div>
 	</div>
 </div>
 <div class="mt-160">
 	<Saos animation={'from-right 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 		<p
-			class="text-center font-medium text-primary-light sm:mt-32 sm:mb-48 sm:px-16 sm:text-p3 md:px-72 md:text-p2 lg:mt-0 lg:mb-72 lg:px-124 lg:text-p1 xl:px-224">
+			class="text-center font-medium text-primary-light sm:mt-32 sm:mb-48 sm:px-16 sm:text-p3 md:px-24 md:text-p2 lg:mt-0 lg:mb-72 lg:px-124 lg:text-p1 xl:px-224">
 			{data.primary.quote[0].text}
 		</p>
 		<p

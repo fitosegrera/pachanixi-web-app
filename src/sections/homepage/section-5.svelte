@@ -13,7 +13,7 @@
 	export let data;
 </script>
 
-<div id="wrapper" class="h-auto w-auto  pb-72 pt-16 text-center">
+<div id="team" class="h-auto w-auto  pb-72 pt-16 text-center">
 	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
@@ -30,21 +30,18 @@
 		</Saos>
 
 		<div
-			class="grid h-auto w-full sm:mt-48 sm:grid-cols-1 lg:mt-88 lg:grid-cols-2 xl:grid-cols-3">
+			id="team-wrapper"
+			class="grid h-auto w-full gap-y-32 sm:mt-48 sm:grid-cols-1 lg:mt-88 lg:grid-cols-2 xl:grid-cols-3">
 			{#each data.items as item, i}
-				<Saos
-					animation={'from-bottom 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
-					<TeamCard data={item} />
-				</Saos>
+				<TeamCard data={item} />
 			{/each}
 		</div>
 	</Main>
 </div>
 
 <style>
-	#wrapper {
+	#team-wrapper {
 		position: relative;
-		z-index: 1;
 	}
 
 	#img-wrapper {

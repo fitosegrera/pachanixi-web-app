@@ -9,15 +9,15 @@
 	let showProfile = false;
 
 	const openProfile = () => {
-		//showProfile = true;
+		showProfile = true;
 	};
 
 	const closeProfile = () => {
-		//showProfile = false;
+		showProfile = false;
 	};
 </script>
 
-<div class="wrapper bg-transparent mx-auto mb-48 h-auto sm:w-320 md:w-420">
+<div class="wrapper ">
 	<div class="image-cropper mx-auto sm:h-240 sm:w-240 md:h-340 md:w-340">
 		<img src={data.profile_picture.url} alt="" />
 	</div>
