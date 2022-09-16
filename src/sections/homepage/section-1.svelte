@@ -2,6 +2,7 @@
 	//LIBS
 	import * as prismicH from '@prismicio/helpers';
 	import Saos from 'saos';
+	import { onMount } from 'svelte';
 
 	//CONTAINERS
 	import Main from '../../containers/margins.svelte';
@@ -22,6 +23,18 @@
 		if (type === 'paragraph') {
 			return `<p class="text-primary-light pb-32">${children}</p>`;
 		}
+	};
+
+	onMount(async () => {
+		document.addEventListener('mousemove', parallax);
+	});
+
+	const parallax = (event) => {
+		let img = document.getElementById('img-wrapper');
+		const imgPos = 2;
+		const imgX = (window.innerWidth - event.pageX * imgPos) / 130;
+		const imgY = (window.innerHeight - event.pageY * imgPos) / 90;
+		img.style.transform = `translateX(${imgX}px) translateY(${imgY}px)`;
 	};
 </script>
 
@@ -80,7 +93,9 @@
 		top: 0;
 		left: 0;
 		background-image: url('/assets/imgs/bg-grabado-1.jpg');
-		background-position: center;
+		box-shadow: 55px 55px 80px 10px #02232b inset,
+			-25px -55px 50px 80px #02232b inset;
+		background-position: bottom;
 		background-repeat: no-repeat;
 		background-size: cover;
 		-webkit-mask-image: -webkit-gradient(
@@ -90,7 +105,7 @@
 			from(#10181a11),
 			to(#10181a22)
 		);
-		mask-image: linear-gradient(to bottom, #10181a00, #10181a44);
+		mask-image: linear-gradient(to bottom, #10181a00, #10181a22, #10181a00);
 		z-index: -10;
 	}
 </style>
