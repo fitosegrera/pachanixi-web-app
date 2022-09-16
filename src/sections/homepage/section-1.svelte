@@ -10,6 +10,7 @@
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
 	import Divider from '../../components/information/divider.svelte';
 	import HighlightsSection from './highlights-section.svelte';
+	import Scroller from '../../components/information/scroller.svelte';
 
 	//PROPS
 	export let data, highlightData;
@@ -26,7 +27,7 @@
 
 <div
 	id="cosmovision"
-	class="h-auto w-auto bg-primary-dark text-center sm:pb-124 sm:pt-72">
+	class="h-auto w-auto bg-primary-dark text-center sm:pt-72">
 	<div id="img-wrapper" class="h-full w-full" />
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
@@ -56,10 +57,16 @@
 					target={''} />
 			</div>
 		</Saos>
-		<div class="mt-196">
+		<div class="my-148">
 			<HighlightsSection data={highlightData} />
 		</div>
 	</Main>
+	<div class="mt-96 h-auto w-full">
+		<Scroller
+			fontSize={'h7'}
+			h={96}
+			data={'🍄🗿💎SOON NIXISEEDS NFT COLLECTION TIERS + DROPS, RARITY TRAITS, ATTRIBUTES & UTILITY!'} />
+	</div>
 </div>
 
 <style>

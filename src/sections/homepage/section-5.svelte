@@ -13,7 +13,7 @@
 	export let data;
 </script>
 
-<div id="team" class="h-auto w-auto  pb-72 pt-16 text-center">
+<div id="team" class="h-auto w-auto  pb-72 pt-48 text-center">
 	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
@@ -31,7 +31,7 @@
 
 		<div
 			id="team-wrapper"
-			class="grid h-auto w-full gap-y-32 sm:mt-48 sm:grid-cols-1 lg:mt-88 lg:grid-cols-2 xl:grid-cols-3">
+			class="grid h-auto w-full gap-y-64 sm:mt-48 sm:grid-cols-1 lg:mt-88 lg:grid-cols-2 xl:grid-cols-3">
 			{#each data.items as item, i}
 				<TeamCard data={item} />
 			{/each}
@@ -40,6 +40,11 @@
 </div>
 
 <style>
+	#team {
+		position: relative;
+		background-image: linear-gradient(to bottom, #10181a 5%, #10181a22 100%);
+	}
+
 	#team-wrapper {
 		position: relative;
 	}
