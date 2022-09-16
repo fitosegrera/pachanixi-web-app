@@ -11,8 +11,7 @@
 
 	//PROPS
 	export let data;
-
-	console.log(data);
+	// console.log(data);
 </script>
 
 <div class="space-y-32">

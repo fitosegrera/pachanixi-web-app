@@ -64,9 +64,9 @@
 	}, 1000);
 </script>
 
-<div id="wrapper" class="h-auto w-auto pt-16 text-center">
+<div id="wrapper" class="h-auto w-auto pt-16">
 	<Main>
-		<div class="flex h-auto w-full items-center justify-center">
+		<div class="flex h-auto w-full items-center justify-center py-48">
 			<Saos
 				animation={'slide-in-elliptic-top-fwd 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 				<div class="flex h-auto w-full items-center justify-center">
@@ -84,8 +84,8 @@
 		</div>
 		<div class="flex h-auto w-full items-center justify-center">
 			<div
-				class="grid h-auto w-996 space-x-48 sm:mt-72 sm:grid-cols-1 sm:space-y-32 sm:pb-96 md:grid-cols-2 lg:grid-cols-4 lg:space-y-0">
-				<div class="mx-auto">
+				class="grid h-auto w-auto gap-48 sm:mt-72 sm:grid-cols-1 sm:space-y-32 sm:pb-96 md:grid-cols-2 lg:grid-cols-4 lg:space-y-0">
+				<div class="flex justify-center">
 					<CircularCountdown
 						progress={0.0}
 						label={'DAYS'}
@@ -93,7 +93,7 @@
 						limit={365}
 						orbits={1} />
 				</div>
-				<div class="mx-auto">
+				<div class="flex justify-center">
 					<CircularCountdown
 						progress={0.6}
 						label={'HOURS'}
@@ -101,7 +101,7 @@
 						limit={24}
 						orbits={1} />
 				</div>
-				<div class="mx-auto">
+				<div class="flex justify-center">
 					<CircularCountdown
 						progress={0.88}
 						label={'MINS'}
@@ -109,7 +109,7 @@
 						limit={60}
 						orbits={1} />
 				</div>
-				<div class="mx-auto">
+				<div class="flex justify-center">
 					<CircularCountdown
 						progress={0.9}
 						label={'SECS'}
