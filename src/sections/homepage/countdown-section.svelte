@@ -77,7 +77,7 @@
 						pixCol={'#BDFF00'} />
 				</div>
 				<h1
-					class="text-center font-bold text-primary-main sm:text-h7 md:text-h5">
+					class="text-center font-bold text-primary-main sm:text-h7 md:text-h6">
 					{data.section_title[0].text}
 				</h1>
 			</Saos>

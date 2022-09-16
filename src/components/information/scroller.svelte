@@ -1,10 +1,12 @@
 <script>
 	//PROPS
 	export let data;
+	export let h = 72;
+	export let fontSize = 'p1';
 </script>
 
 <div
-	class="bg-blur flex h-72 w-screen items-center justify-center bg-primary-dark-variant py-16 text-p2 font-bold text-primary-main">
+	class={`bg-blur flex h-${h} w-screen items-center justify-center bg-primary-dark-variant py-16 text-${fontSize} font-bold text-primary-main`}>
 	<p class="marquee">
 		<span>{data}</span>
 	</p>

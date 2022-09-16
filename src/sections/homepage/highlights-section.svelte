@@ -18,7 +18,7 @@
 <div class="space-y-32">
 	<div
 		class="grid h-full w-full gap-160 py-32 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-		<div class="flex h-full w-full justify-center">
+		<div class="flex h-full w-full sm:justify-center md:justify-end">
 			<Saos animation={'from-left 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 				<Highlight1
 					heading={data.items[0].highlight_title[0].text}
@@ -33,7 +33,8 @@
 					paragraph={data.items[1].highlight_paragraph[0].text} />
 			</Saos>
 		</div>
-		<div class="flex h-full w-full justify-center md:col-span-2 lg:col-span-1">
+		<div
+			class="flex h-full w-full sm:justify-center md:col-span-2 md:justify-start lg:col-span-1">
 			<Saos
 				animation={'from-right 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 				<Highlight3
@@ -43,7 +44,7 @@
 		</div>
 	</div>
 	<div class="grid h-full w-full gap-160 py-32 sm:grid-cols-1 md:grid-cols-2">
-		<div class="flex h-full w-full justify-center">
+		<div class="flex h-full w-full sm:justify-center md:justify-end">
 			<Saos
 				animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 				<Highlight4
@@ -51,7 +52,7 @@
 					paragraph={data.items[3].highlight_paragraph[0].text} />
 			</Saos>
 		</div>
-		<div class="flex h-full w-full justify-center">
+		<div class="flex h-full w-full sm:justify-center md:justify-start">
 			<Saos
 				animation={'from-bottom 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
 				<Highlight5
