@@ -86,8 +86,10 @@
 					</div>
 				</th>
 				<th scope="col" class="px-32 py-12">
-					<div class="flex h-auto w-auto justify-center pb-48 text-h3">
-						<Icon icon="material-symbols:question-mark" />
+					<div class="justify-left flex h-auto w-auto pb-48">
+						<video width="100%" autoplay loop muted>
+							<source src="/assets/vids/alpha/rainbow.webm" type="video/webm" />
+						</video>
 					</div>
 				</th>
 			</tr>
