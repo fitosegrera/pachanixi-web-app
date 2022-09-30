@@ -15,7 +15,7 @@
 		angle = 360 * progress;
 
 		return `radial-gradient(black 50%, transparent 50%),
-    		conic-gradient(transparent 0deg ${angle}deg, #10181A ${angle}deg 360deg),
+    		conic-gradient(transparent 0deg ${angle}deg, #111111 ${angle}deg 360deg),
     		conic-gradient(#BDFF00, #BDFF00);`;
 	};
 
@@ -53,7 +53,9 @@
 				planetColor={'#BDFF00'}
 				{orbits} />
 		</div>
-		<div id="text-wrapper" class=" text-p4 font-black text-primary-light">
+		<div
+			id="text-wrapper"
+			class="text-center text-p4 font-black text-primary-light">
 			<p>{label}</p>
 			<p>{timeLeft}</p>
 		</div>

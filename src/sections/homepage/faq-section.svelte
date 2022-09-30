@@ -11,8 +11,8 @@
 	// console.log(data);
 </script>
 
-<div id="wrapper" class="h-full w-full">
-	<div id="img-wrapper" class="h-full w-full" />
+<div id="faq" class="h-full w-full">
+	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Margins>
 		<div class="h-auto w-full sm:pb-124 md:pb-196 md:pt-72">
 			<div class="flex h-auto w-full items-center justify-center">
@@ -41,12 +41,12 @@
 </div>
 
 <style>
-	#wrapper {
+	#faq {
 		position: relative;
 		z-index: 10;
 	}
 
-	#img-wrapper {
+	/* #img-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -63,5 +63,5 @@
 		);
 		mask-image: linear-gradient(to bottom, #02232b00, #02232b66);
 		z-index: -10;
-	}
+	} */
 </style>

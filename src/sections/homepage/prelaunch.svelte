@@ -12,7 +12,6 @@
 
 	//PORPS
 	export let data;
-	//console.log(data);
 
 	onMount(async () => {
 		document.addEventListener('mousemove', parallax);
@@ -30,27 +29,35 @@
 <div id="wrapper" class="wrapper h-auto w-auto sm:mb-72 md:mb-96 lg:mb-124">
 	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<div id="sketch-wrapper" class="h-full w-full">
-		<Starfield startColor={'#000000'} endColor={'#02232B'} speed={'3'} />
+		<Starfield startColor={'#000000'} endColor={'#10181A'} speed={'3'} />
 	</div>
 	<Main>
 		<div class="h-auto w-full">
-			<div class="sm:pt-124 md:pt-160">
-				<img
-					src={data.background_image.url}
-					alt={data.background_image.alt}
-					class="w-full" />
-			</div>
-			<div
-				class="mt-16 flex w-full items-center justify-center text-center font-bold text-primary-light sm:text-p3 md:text-p2 xl:text-p1">
-				<h2>{data.section_title[0].text}</h2>
-			</div>
+			<Saos
+				once={true}
+				animation={'from-left 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<div class="sm:pt-196 md:pt-264">
+					<img
+						src={data.background_image.url}
+						alt={data.background_image.alt}
+						class="w-full" />
+				</div>
+			</Saos>
+			<Saos
+				once={true}
+				animation={'from-right 1s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+				<div
+					class="mt-16 flex w-full items-center justify-center text-center font-bold text-primary-light sm:text-p3 md:text-p2 xl:text-p1">
+					<h2>{data.section_title[0].text}</h2>
+				</div>
+			</Saos>
 			<!-- <div class="w-full sm:mt-32 md:mt-88">
 				<PrimaryButton label={data.button_label} url={data.button_url} />
 			</div> -->
 
 			<div class="flex h-auto w-auto justify-center sm:mt-32 md:mt-8">
-				<video id="nft" width="99%" autoplay loop muted>
-					<source src="/assets/vids/alpha/hero-alpha.webm" type="video/webm" />
+				<video id="nft" width="90%" autoplay loop muted>
+					<source src="/assets/vids/alpha/nft-4-alpha.webm" type="video/webm" />
 				</video>
 			</div>
 		</div>

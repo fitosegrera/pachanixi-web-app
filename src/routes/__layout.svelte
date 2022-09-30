@@ -51,7 +51,8 @@
 	import { locale } from '../stores/main';
 
 	//COMPONENTS
-	import NavBar from '../components/navigation/navbar.svelte';
+	import NavBar from '../components/navigation/navbarWithScroller.svelte';
+	// import NavBar from '../components/navigation/navbar.svelte';
 	import Footer from '../components/navigation/footer.svelte';
 
 	//PROPS
