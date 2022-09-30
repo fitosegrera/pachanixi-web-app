@@ -56,10 +56,10 @@
 			linear,
 			left top,
 			left bottom,
-			from(#02232b55),
-			to(#02232b00)
+			from(#10181a55),
+			to(#10181a00)
 		);
-		mask-image: linear-gradient(to bottom, #02232b55, #02232b00);
+		mask-image: linear-gradient(to bottom, #10181a55, #10181a00);
 		z-index: -10;
 	}
 

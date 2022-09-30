@@ -1,6 +1,7 @@
 <script>
 	//LIBS
 	import Saos from 'saos';
+	import * as prismicH from '@prismicio/helpers';
 
 	//HELPERS
 	import { validateMonth } from '../../helpers/monthValidator';
@@ -10,7 +11,7 @@
 	import Divider from '../../components/information/divider.svelte';
 
 	//CONTAINER
-	import Main from '../../containers/main.svelte';
+	import Main from '../../containers/margins.svelte';
 
 	//PROPS
 	export let data;
@@ -62,11 +63,20 @@
 			console.log('TIME UP!!');
 		}
 	}, 1000);
+
+	const htmlSerializer = (type, element, content, children) => {
+		if (type === 'strong') {
+			return `<strong class="text-primary-main">${children}</strong>`;
+		}
+		if (type === 'paragraph') {
+			return `<p class="text-primary-light font-medium">${children}</p>`;
+		}
+	};
 </script>
 
 <div id="wrapper" class="h-auto w-auto pt-16">
 	<Main>
-		<div class="flex h-auto w-full items-center justify-center py-48">
+		<div class="flex h-auto w-full flex-col items-center justify-center pt-48">
 			<Saos
 				animation={'slide-in-elliptic-top-fwd 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 				<div class="flex h-auto w-full items-center justify-center">
@@ -77,14 +87,20 @@
 						pixCol={'#BDFF00'} />
 				</div>
 				<h1
-					class="text-center font-bold text-primary-main sm:text-h7 md:text-h6">
+					class="text-center font-bold text-primary-main sm:text-h7 md:text-h3">
 					{data.section_title[0].text}
 				</h1>
 			</Saos>
+			<div class="pt-64 text-center sm:text-p3 md:text-p1">
+				<Saos
+					animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
+					{@html prismicH.asHTML(data.section_paragraph, null, htmlSerializer)}
+				</Saos>
+			</div>
 		</div>
 		<div class="flex h-auto w-full items-center justify-center">
 			<div
-				class="grid h-auto w-auto gap-48 sm:mt-72 sm:grid-cols-1 sm:space-y-32 sm:pb-96 md:grid-cols-2 lg:grid-cols-4 lg:space-y-0">
+				class="grid h-auto w-auto gap-48 pt-160 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
 				<div class="flex justify-center">
 					<CircularCountdown
 						progress={0.0}
@@ -124,6 +140,6 @@
 
 <style>
 	#wrapper {
-		background: linear-gradient(180deg, #10181a00 0%, #02232b 70%);
+		background: linear-gradient(180deg, #10181a00 0%, #10181a 50%);
 	}
 </style>

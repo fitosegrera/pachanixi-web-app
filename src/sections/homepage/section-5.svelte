@@ -17,7 +17,7 @@
 	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
-			<div class="font-bold text-primary-main sm:text-h7 md:text-h5">
+			<div class="font-bold text-primary-main sm:text-h7 md:text-h3">
 				<div class="flex h-auto w-full items-center justify-center">
 					<Divider
 						name="homepage-section-5-divider"

@@ -9,6 +9,7 @@
 		const routes = [
 			// Update to match your website's URL structure
 			{ type: 'countdown', path: '/' },
+			{ type: 'genesis-pass', path: '/' },
 			{ type: 'prelaunch', path: '/' },
 			{ type: 'home', path: '/' },
 			{ type: 'roadmap', path: '/' },
@@ -29,6 +30,12 @@
 		const countdownDataES = await client.getSingle('countdown', {
 			lang: 'es-co'
 		});
+		const genesisPassDataEN = await client.getSingle('genesis-pass', {
+			lang: 'en-us'
+		});
+		const genesisPassDataES = await client.getSingle('genesis-pass', {
+			lang: 'es-co'
+		});
 		const homepageDataEN = await client.getSingle('home', {
 			lang: 'en-us'
 		});
@@ -41,11 +48,9 @@
 		const roadmapDataES = await client.getSingle('roadmap', {
 			lang: 'es-co'
 		});
-
 		const faqDataEN = await client.getSingle('faq', {
 			lang: 'en-us'
 		});
-
 		const faqDataES = await client.getSingle('faq', {
 			lang: 'es-co'
 		});
@@ -64,7 +69,7 @@
 		let faqTitleEN = faqDataEN.data.title[0].text;
 		let faqTitleES = faqDataES.data.title[0].text;
 
-		console.log(homepageDataEN);
+		//console.log(genesisPassDataEN);
 
 		return {
 			props: {
@@ -72,6 +77,8 @@
 				prelaunchDataES: prelaunchDataES.data,
 				countdownDataEN: countdownDataEN.data,
 				countdownDataES: countdownDataES.data,
+				genesisPassDataEN: genesisPassDataEN.data,
+				genesisPassDataES: genesisPassDataES.data,
 				homepageDataEN: homepageDataEN.data.body,
 				roadmapDataEN: roadmapDataEN.data,
 				homepageDataES: homepageDataES.data.body,
@@ -107,6 +114,7 @@
 	//PROPS
 	export let prelaunchDataEN, prelaunchDataES;
 	export let countdownDataEN, countdownDataES;
+	export let genesisPassDataEN, genesisPassDataES;
 	export let homepageDataEN, homepageDataES;
 	export let roadmapDataEN, roadmapDataES;
 	export let faqDataEN, faqDataES;
@@ -121,15 +129,18 @@
 	<Prelaunch data={prelaunchDataEN} />
 	<CountdownSection data={countdownDataEN} />
 	<!-- <HeroSection data={homepageDataEN[0]} />-->
-	<BrandsSection data={homepageDataEN[1]} />
-	<Section1 data={homepageDataEN[2]} highlightData={homepageDataEN[3]} />
+	<!-- <BrandsSection data={homepageDataEN[1]} /> -->
+	<Section1
+		data={homepageDataEN[2]}
+		highlightData={homepageDataEN[3]}
+		genesisPassData={genesisPassDataEN} />
 	<!-- <Section2 data={homepageDataEN[3]} />
 	<TiersSection data={homepageDataEN[4]} /> -->
 	<!-- <Section3 data={homepageDataEN[4]} />
-	<Section4 data={homepageDataEN[5]} /> 
-	<RoadMapSection data={roadmapDataEN} />-->
+	<Section4 data={homepageDataEN[5]} /> -->
+	<!-- <RoadMapSection data={roadmapDataEN} /> -->
 	<Section5 data={homepageDataEN[7]} />
-	<!-- <FaqSection data={faqDataEN} title={faqTitleEN} />-->
+	<FaqSection data={faqDataEN} title={faqTitleEN} />
 	<Section6 data={homepageDataEN[8]} />
 {/if}
 
@@ -137,15 +148,18 @@
 	<Prelaunch data={prelaunchDataES} />
 	<CountdownSection data={countdownDataES} />
 	<!-- <HeroSection data={homepageDataES[0]} /> -->
-	<BrandsSection data={homepageDataES[1]} />
-	<Section1 data={homepageDataES[2]} highlightData={homepageDataES[3]} />
+	<!-- <BrandsSection data={homepageDataES[1]} /> -->
+	<Section1
+		data={homepageDataES[2]}
+		highlightData={homepageDataES[3]}
+		genesisPassData={genesisPassDataES} />
 	<!-- <Section2 data={homepageDataES[3]} />
 	<TiersSection data={homepageDataES[4]} /> -->
 	<!-- <Section3 data={homepageDataES[4]} />
 	<Section4 data={homepageDataES[5]} />
 	<RoadMapSection data={roadmapDataES} /> -->
 	<Section5 data={homepageDataES[7]} />
-	<!-- <FaqSection data={faqDataES} title={faqTitleES} /> -->
+	<FaqSection data={faqDataES} title={faqTitleES} />
 	<Section6 data={homepageDataES[8]} />
 {/if}
 

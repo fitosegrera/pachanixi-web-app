@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={`bg-blur flex h-${h} w-screen items-center justify-center bg-primary-dark-variant py-16 text-${fontSize} font-bold text-primary-main`}>
+	class={`bg-blur flex h-${h} w-screen items-center justify-center bg-secondary-main py-16 text-${fontSize} font-bold text-primary-main`}>
 	<p class="marquee">
 		<span>{data}</span>
 	</p>
