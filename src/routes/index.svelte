@@ -138,7 +138,7 @@
 	<TiersSection data={homepageDataEN[4]} /> -->
 	<!-- <Section3 data={homepageDataEN[4]} />
 	<Section4 data={homepageDataEN[5]} /> -->
-	<!-- <RoadMapSection data={roadmapDataEN} /> -->
+	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[7]} />
 	<FaqSection data={faqDataEN} title={faqTitleEN} />
 	<Section6 data={homepageDataEN[8]} />
@@ -156,8 +156,8 @@
 	<!-- <Section2 data={homepageDataES[3]} />
 	<TiersSection data={homepageDataES[4]} /> -->
 	<!-- <Section3 data={homepageDataES[4]} />
-	<Section4 data={homepageDataES[5]} />
-	<RoadMapSection data={roadmapDataES} /> -->
+	<Section4 data={homepageDataES[5]} /> -->
+	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataES[7]} />
 	<FaqSection data={faqDataES} title={faqTitleES} />
 	<Section6 data={homepageDataES[8]} />
