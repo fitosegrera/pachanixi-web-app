@@ -1,6 +1,6 @@
 <script>
 	//COMPONENTS
-	import Profile from '../../../iteractive/profile.svelte';
+	import Profile from '../../../interactive/profile.svelte';
 
 	//PROPS
 	export let data;

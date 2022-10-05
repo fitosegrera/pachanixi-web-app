@@ -55,15 +55,15 @@
 		</div>
 	</div>
 	<div>
-		<div class="sm:mt-64 md:mt-32 lg:mt-0">
+		<div class="sm:pt-64 md:pt-32 lg:pt-0">
 			{#each menu as item}
-				<div class="mt-16 h-auto w-auto" on:click={handleClick}>
+				<div class="h-auto w-auto" on:click={handleClick}>
 					<MenuItem label={item.item} url={item.url} />
 				</div>
 			{/each}
 		</div>
 		<div
-			class="mt-16 flex h-full w-auto items-center justify-center sm:space-x-24 md:space-x-48">
+			class="flex h-full w-auto items-center justify-center pt-16 sm:space-x-24 md:space-x-48">
 			{#each social as item}
 				{#if item.active}
 					<div

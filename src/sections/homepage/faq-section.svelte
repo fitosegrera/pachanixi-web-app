@@ -12,7 +12,6 @@
 </script>
 
 <div id="faq" class="h-full w-full">
-	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Margins>
 		<div class="h-auto w-full sm:pb-124 md:pb-196 md:pt-72">
 			<div class="flex h-auto w-full items-center justify-center">
@@ -44,24 +43,6 @@
 	#faq {
 		position: relative;
 		z-index: 10;
+		background: linear-gradient(to bottom, #10181a, #10181a00);
 	}
-
-	/* #img-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-image: url('/assets/imgs/bg-grabado-2.jpg');
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-webkit-mask-image: -webkit-gradient(
-			linear,
-			left top,
-			left bottom,
-			from(#02232b00),
-			to(#02232b66)
-		);
-		mask-image: linear-gradient(to bottom, #02232b00, #02232b66);
-		z-index: -10;
-	} */
 </style>

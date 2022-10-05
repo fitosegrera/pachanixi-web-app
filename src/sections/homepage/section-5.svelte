@@ -14,7 +14,6 @@
 </script>
 
 <div id="team" class="h-auto w-auto  pb-72 pt-48 text-center">
-	<!-- <div id="img-wrapper" class="h-full w-full" /> -->
 	<Main>
 		<Saos animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 			<div class="font-bold text-primary-main sm:text-h7 md:text-h3">
@@ -42,29 +41,10 @@
 <style>
 	#team {
 		position: relative;
-		background-image: linear-gradient(to bottom, #10181a 5%, #10181a22 100%);
+		background-image: linear-gradient(to bottom, #10181a22 5%, #10181a 100%);
 	}
 
 	#team-wrapper {
 		position: relative;
-	}
-
-	#img-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-image: url('/assets/imgs/bg-grabado-1.jpg');
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-webkit-mask-image: -webkit-gradient(
-			linear,
-			left top,
-			left bottom,
-			from(#10181a00),
-			to(#10181a22)
-		);
-		mask-image: linear-gradient(to bottom, #10181a00 5%, #10181a44 100%);
-		z-index: -10;
 	}
 </style>

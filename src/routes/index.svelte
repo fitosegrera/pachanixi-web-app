@@ -138,7 +138,7 @@
 	<TiersSection data={homepageDataEN[4]} /> -->
 	<!-- <Section3 data={homepageDataEN[4]} />
 	<Section4 data={homepageDataEN[5]} /> -->
-	<!-- <RoadMapSection data={roadmapDataEN} /> -->
+	<RoadMapSection data={roadmapDataEN} />
 	<Section5 data={homepageDataEN[7]} />
 	<FaqSection data={faqDataEN} title={faqTitleEN} />
 	<Section6 data={homepageDataEN[8]} />
