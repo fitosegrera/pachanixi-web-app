@@ -6,7 +6,7 @@
 	import Main from '../../containers/main.svelte';
 
 	//COMPONENTS
-	import ImageCarousel from '../../components/iteractive/image-carousel.svelte';
+	import ImageCarousel from '../../components/interactive/image-carousel.svelte';
 
 	//PORPS
 	export let data;
