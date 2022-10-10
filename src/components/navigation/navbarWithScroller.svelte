@@ -54,7 +54,7 @@
 			<Scroller
 				fontSize={scrollerFontSize}
 				h={scrollerHeight}
-				data={'* UPCOMING MINT - PACHANIXI GENESIS PASS COLLECTION - 999 NFTS - 5 TYPES - UNIQUE UTILITY - OCTOBER / 08 / 2022 AT CNFTCON *'} />
+				data={'* MINTING NOW - PACHANIXI GENESIS PASS COLLECTION - 999 NFTS - 5 TYPES - UNIQUE UTILITY - STAKING - FUTURE WHITELISTS + MORE*'} />
 		</div>
 		<div
 			class="grid h-auto w-full max-w-full grid-flow-col grid-cols-2 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">

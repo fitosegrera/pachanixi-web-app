@@ -127,7 +127,7 @@
 
 {#if $locale === 'en-us'}
 	<Prelaunch data={prelaunchDataEN} />
-	<CountdownSection data={countdownDataEN} />
+	<!-- <CountdownSection data={countdownDataEN} /> -->
 	<!-- <HeroSection data={homepageDataEN[0]} />-->
 	<!-- <BrandsSection data={homepageDataEN[1]} /> -->
 	<Section1
@@ -146,7 +146,7 @@
 
 {#if $locale === 'es-co'}
 	<Prelaunch data={prelaunchDataES} />
-	<CountdownSection data={countdownDataES} />
+	<!-- <CountdownSection data={countdownDataES} /> -->
 	<!-- <HeroSection data={homepageDataES[0]} /> -->
 	<!-- <BrandsSection data={homepageDataES[1]} /> -->
 	<Section1
