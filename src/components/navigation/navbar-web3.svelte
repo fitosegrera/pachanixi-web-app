@@ -1,66 +1,153 @@
 <script>
+	//LIBS
 	import {
 		Address,
-		BaseAddress
+		BaseAddress,
+		RewardAddress,
+		Value
 	} from '@emurgo/cardano-serialization-lib-asmjs';
 	import { Buffer } from 'buffer';
 
 	//HELPERS
 	import {
 		getAssetsInWallet,
-		getSpecificAsset
+		getSpecificAsset,
+		getAssociatedAddresses
 	} from '../../helpers/blockfrost.js';
 
 	//STORES
-	import { assetDataArr, walletConnected } from '../../stores/assetStore';
+	import {
+		assetDataArr,
+		mainAddress,
+		walletConnected,
+		walletState,
+		stakeAddress,
+		chosenWallet,
+		loaded,
+		buttonLabel
+	} from '../../stores/assetStore';
 
 	//COMPONENTS
-	import WalletInterface from '../button/dark/md/wallet-interface.svelte';
-	import LogoButton from '../button/dark/lg/logo-static.svelte';
+	import WalletConnect from '../button/dark/md/wallet-connect.svelte';
+	import WalletDropdown from './wallet-dropdown.svelte';
 
-	let isEternlConnected = false;
+	let isWalletConnected = false;
 	let assetPolicyId =
-		'38f25e7bfba4b4c65de7b55d68475dcc6f02a376ec53c796ab5723b8';
-	let walletAddress = '';
-	let buttonLabel = 'Connect Wallet';
+		'87e7591164a9dd6193d3f7919ad1fee562efa45a6ed690b3dfbeb4c4';
+	$buttonLabel = 'Connect Wallet';
+	$walletState = 'Connect Wallet';
 	$: loading = false;
+	let totalAssets;
+	let assetCount;
+	let eligibleAssetsCount;
+	let activeWallet;
+
+	const resetWallet = async () => {
+		totalAssets = 0;
+		assetCount = 0;
+		eligibleAssetsCount = 0;
+		$assetDataArr = [];
+		$mainAddress = '';
+		$stakeAddress = '';
+		$loaded = false;
+		$walletState = 'Connect Wallet';
+		$buttonLabel = 'Connect Wallet';
+	};
 
 	const handleWalletConnect = async () => {
-		const eternl = await cardano.eternl.enable();
-		buttonLabel = 'Loading...';
+		resetWallet();
+
+		if ($chosenWallet == 'eternl') {
+			await cardano.eternl.off;
+			await cardano.nami.off;
+			activeWallet = await cardano.eternl.enable();
+			isWalletConnected = await cardano.eternl.isEnabled();
+		}
+
+		if ($chosenWallet == 'nami') {
+			activeWallet = await cardano.nami.enable();
+			isWalletConnected = await cardano.nami.isEnabled();
+		}
+
+		$walletState = 'Connecting...';
+		$buttonLabel = 'Connecting...';
 		loading = true;
-		const balance = await eternl.getBalance();
-		const baseAddress = await eternl.getChangeAddress();
-		isEternlConnected = await cardano.eternl.isEnabled();
+		let balance = await activeWallet.getBalance();
+		balance = Value.from_bytes(hexToBytes(balance));
+		balance = parseFloat(balance.coin().to_str()) * 0.000001;
+		const baseAddress = await activeWallet.getChangeAddress();
 
 		const byteAddress = hexToBytes(baseAddress);
 		const bechAddress = Address.from_bytes(
 			Buffer.from(byteAddress)
 		).to_bech32();
 
-		//console.log(isEternlConnected, balance, byteAddress, bechAddress);
-		walletAddress = bechAddress;
+		$mainAddress = bechAddress;
 
-		if (isEternlConnected) {
-			buttonLabel = walletAddress;
-			loading = false;
-		} else {
-			buttonLabel = 'Connect Wallet';
+		getAddressStakeKey(bechAddress, async (stake) => {
+			$stakeAddress = stake;
+			const associatedAddresses = await getAssociatedAddresses(stake);
+			//console.log(associatedAddresses);
+
+			await associatedAddresses.forEach(async (obj) => {
+				const tmpAssets = await getAssetsInWallet(obj.address);
+				//console.log(tmpAssets.amount);
+				totalAssets += tmpAssets.amount.length;
+
+				await tmpAssets.amount.forEach(async (asset) => {
+					const tmpPolicyId = asset.unit;
+					assetCount++;
+
+					if (tmpPolicyId.startsWith(assetPolicyId)) {
+						let assetData = await getSpecificAsset(tmpPolicyId);
+						//console.log(assetData.onchain_metadata);
+						$assetDataArr = [...$assetDataArr, assetData.onchain_metadata];
+						$walletConnected = true;
+						eligibleAssetsCount++;
+
+						if (assetCount === totalAssets) {
+							if (isWalletConnected) {
+								$buttonLabel = '₳' + balance + ' ';
+								$walletState = eligibleAssetsCount + ' eligible asset(s) found';
+								loading = false;
+								$loaded = true;
+							} else {
+								$walletState = 'Connect Wallet';
+								$buttonLabel = 'Connect Wallet';
+							}
+						}
+					}
+				});
+
+				if (eligibleAssetsCount == 0) {
+					$buttonLabel = '₳' + balance + ' ';
+					$walletState = '0 eligible asset(s) found';
+					loading = false;
+					$loaded = true;
+				}
+			});
+		});
+	};
+
+	const getAddressStakeKey = (addr, callback) => {
+		const address = Address.from_bech32(addr);
+		const base = BaseAddress.from_address(address);
+		const stake = RewardAddress.new(address.network_id(), base.stake_cred())
+			.to_address()
+			.to_bech32();
+
+		callback(stake);
+	};
+
+	const hex2a = (hexx) => {
+		let hex = hexx.toString(); //force conversion
+		let str = '';
+
+		for (let i = 0; i < hex.length; i += 2) {
+			str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
 		}
 
-		// let assetDataArr = [];
-
-		let assets = await getAssetsInWallet(bechAddress);
-		//console.log(assets.amount);
-		await assets.amount.forEach(async (asset) => {
-			if (asset.unit.includes(assetPolicyId)) {
-				let assetData = await getSpecificAsset(asset.unit);
-				$assetDataArr = [...$assetDataArr, assetData.onchain_metadata];
-				$walletConnected = true;
-			} else {
-				//console.log('No elegible asset found!');
-			}
-		});
+		return str;
 	};
 
 	const hexToBytes = (hex) => {
@@ -72,31 +159,27 @@
 
 		return bytes;
 	};
-
-	const hex2a = (hexx) => {
-		let hex = hexx.toString(); //force conversion
-		let str = '';
-		for (let i = 0; i < hex.length; i += 2) {
-			str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-		}
-		return str;
-	};
 </script>
 
-<div id="navbar-wrapper" class="h-auto w-1920 max-w-full">
+<div id="navbar-wrapper" class="h-auto w-1920 max-w-full bg-primary-dark">
 	<div
-		class="grid h-auto w-full grid-flow-col grid-cols-2 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
-		<div
-			class="lg:h-110 flex items-center justify-start pl-32 sm:h-88 sm:w-80 lg:w-72">
-			<div class="cursor-pointer">
-				<LogoButton />
-			</div>
+		class="grid h-auto w-full grid-flow-col grid-cols-2 bg-primary-dark py-16 text-h5 text-primary-light backdrop-blur-md">
+		<!-- <div class="w-full" /> -->
+		<div class="flex w-368 items-center justify-start pl-32">
+			<img src="/assets/imgs/logo-horizontal-green.png" alt="" />
 		</div>
-		<div class="flex h-full w-auto items-center justify-end pr-16">
+		<div class="flex h-auto w-full items-center justify-end px-32">
 			<div
-				class="flex items-center justify-center"
-				on:click={handleWalletConnect}>
-				<WalletInterface label={buttonLabel} {loading} />
+				class="flex max-h-fit max-w-fit items-center rounded-md border-2 border-darker-variant">
+				<div
+					class="flex max-h-fit max-w-fit items-center justify-center border-r-2 border-darker-variant px-16 py-8">
+					<WalletDropdown on:resetWallet={resetWallet} />
+				</div>
+				<div
+					class="flex h-full max-w-fit items-center justify-center"
+					on:click={() => (!$loaded ? handleWalletConnect() : resetWallet())}>
+					<WalletConnect label={$buttonLabel} {loading} />
+				</div>
 			</div>
 		</div>
 	</div>

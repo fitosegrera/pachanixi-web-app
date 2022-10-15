@@ -50,8 +50,7 @@
 		</div>
 		<div class="flex items-center">
 			<div>
-				<p
-					class="font-medium text-primary-main text-primary-main sm:text-p1 md:text-h7">
+				<p class="font-medium text-primary-main sm:text-p1 md:text-h7">
 					{$locale.split('-')[0]}
 				</p>
 			</div>

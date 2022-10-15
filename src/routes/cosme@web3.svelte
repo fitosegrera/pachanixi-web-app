@@ -1,34 +1,24 @@
 <script>
-	//STORES
-	import { assetDataArr, walletConnected } from '../stores/assetStore';
-
 	//COMPONENTS
-	import NavbarWeb3 from '../components/navigation/navbar-web3.svelte';
+	import DiscordLoginButton from '../components/button/dark/lg/discord-login.svelte';
 
 	//CONTAINERS
-	import Main from '../containers/main.svelte';
 </script>
 
-<NavbarWeb3 />
-<Main>
-	<div class="space-y-32 py-220">
-		<div class="text-center text-p2 text-primary-light">
-			{#if $walletConnected}
-				<h1>{$assetDataArr.length} elegible assets</h1>
-			{:else}
-				<h1>Please connect wallet</h1>
-			{/if}
+<div id="dicord-auth" class="h-screen w-full">
+	<div
+		class="flex h-full w-full flex-col justify-center space-y-32 self-center">
+		<div class="mx-auto w-75 space-y-16 text-center">
+			<h1 class="text-p1 font-bold text-primary-main">WELCOME TECHNOSHAMAN!</h1>
+			<p class="text-p3 text-primary-light">
+				You have arrived to Pachanixi's Genesis Pass holders portal. Here you
+				will be able to verify your NFTs and unlock the full potential of being
+				an early adopter within our community. Please login with your Discord
+				account using the button bellow.
+			</p>
 		</div>
-		<div class="flex items-center justify-center space-x-32">
-			{#each $assetDataArr as asset}
-				<div class="h-auto w-240">
-					<img
-						width="auto"
-						height="auto"
-						src={'https://ipfs.io/ipfs/' + asset.image.split('ipfs://')[1]}
-						alt="" />
-				</div>
-			{/each}
+		<div class="flex justify-center">
+			<DiscordLoginButton />
 		</div>
 	</div>
-</Main>
+</div>

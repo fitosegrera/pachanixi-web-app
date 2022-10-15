@@ -1,14 +1,17 @@
 //COLORS
 const primaryMain = '#BDFF00';
 const primaryMainVariant = '#DBFF7344';
-const primaryDark = '#10181A'//'#02232B';
+const primaryDark = '#10181A'; //'#02232B';
 const primaryLight = '#F6FFFA';
-const primaryDarkVariant = '#02232B'//'#10181A';
+const primaryDarkVariant = '#02232B'; //'#10181A';
 const primaryDarkAlpha = '#02232B55';
 const primaryDarkAlphaVariant = '#10181ADD';
 const primarySemiDark = '#386B68';
 const secondaryMain = '#7E44F8';
 const tertiaryMain = '#FF197A';
+const darker = '#02191E';
+const darkerVariant = '#1D3C43';
+const transparent = '#00000000';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -23,8 +26,11 @@ module.exports = {
 			'primary-dark-alpha-variant': primaryDarkAlphaVariant,
 			'primary-semi-dark': primarySemiDark,
 			'primary-light': primaryLight,
-			'secondary-main': secondaryMain, 
+			'secondary-main': secondaryMain,
 			'tertiary-main': tertiaryMain,
+			darker: darker,
+			'darker-variant': darkerVariant,
+			transparent: transparent
 		},
 		spacing: {
 			0: '0px',
