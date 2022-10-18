@@ -58,16 +58,28 @@
 		resetWallet();
 
 		if ($chosenWallet == 'eternl') {
-			await cardano.eternl.off;
-			await cardano.nami.off;
+			isWalletConnected = await cardano.eternl.isEnabled();
+
+			if (cardano.eternl !== undefined) {
+				await cardano.eternl.off;
+				console.log('disconnected ETERNL wallet before process starts');
+			} else {
+				console.error('ETERNL wallet undefined', cardano.eternl);
+			}
+
+			if (isWalletConnected) {
+				console.log('Wallet already connected!, disconnecting now...');
+			} else {
+				console.log('Wallet not connected.');
+			}
 			activeWallet = await cardano.eternl.enable();
 			console.log(activeWallet);
-			isWalletConnected = await cardano.eternl.isEnabled();
 		}
 
 		if ($chosenWallet == 'nami') {
-			await cardano.eternl.off;
-			await cardano.nami.off;
+			if (cardano.nami !== undefined) {
+				await cardano.nami.off;
+			}
 			activeWallet = await cardano.nami.enable();
 			console.log(activeWallet);
 			isWalletConnected = await cardano.nami.isEnabled();
