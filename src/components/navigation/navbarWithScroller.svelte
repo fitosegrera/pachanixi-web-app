@@ -83,7 +83,7 @@
 			<Scroller
 				fontSize={scrollerFontSize}
 				h={scrollerHeight}
-				data={'* UPCOMING MINT - PACHANIXI GENESIS PASS COLLECTION - 999 NFTS - 5 TYPES - UNIQUE UTILITY - OCTOBER / 08 / 2022 AT CNFTCON *'} />
+				data={'* MINTING LIVE - PACHANIXI GENESIS PASS COLLECTION - 999 NFTS - 5 TYPES - UNIQUE UTILITY AND BENEFITS *'} />
 		</div>
 		<div
 			class="grid h-auto w-full grid-flow-col grid-cols-3 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
@@ -97,15 +97,15 @@
 				class="flex h-full w-auto items-center justify-center sm:space-x-16 lg:space-x-48">
 				{#each navBarData.social as item}
 					{#if item.active}
-						{#if item.name !== 'discord'}
-							<SocialButton
-								icon={item.icon}
-								name={item.name}
-								active={item.active}
-								url={item.url.url} />
-						{:else}
+						<!-- {#if item.name !== 'discord'} -->
+						<SocialButton
+							icon={item.icon}
+							name={item.name}
+							active={item.active}
+							url={item.url.url} />
+						<!-- {:else}
 							<DiscordLockedButton height={iconHeight} />
-						{/if}
+						{/if} -->
 					{/if}
 				{/each}
 			</div>

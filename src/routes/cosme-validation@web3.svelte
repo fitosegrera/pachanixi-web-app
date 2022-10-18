@@ -46,10 +46,11 @@
 		})
 			.then((result) => result.json())
 			.then((response) => {
-				//console.log(response);
+				console.log(response);
 				discordData = response;
 				const { username, discriminator, avatar, id } = response;
 				//set the welcome username string
+				console.log(username, discriminator, avatar, id);
 				document.getElementById(
 					'name'
 				).innerText = ` ${username}#${discriminator}`;
