@@ -61,11 +61,15 @@
 			await cardano.eternl.off;
 			await cardano.nami.off;
 			activeWallet = await cardano.eternl.enable();
+			console.log(activeWallet);
 			isWalletConnected = await cardano.eternl.isEnabled();
 		}
 
 		if ($chosenWallet == 'nami') {
+			await cardano.eternl.off;
+			await cardano.nami.off;
 			activeWallet = await cardano.nami.enable();
+			console.log(activeWallet);
 			isWalletConnected = await cardano.nami.isEnabled();
 		}
 
@@ -87,11 +91,11 @@
 		getAddressStakeKey(bechAddress, async (stake) => {
 			$stakeAddress = stake;
 			const associatedAddresses = await getAssociatedAddresses(stake);
-			//console.log(associatedAddresses);
+			console.log(associatedAddresses);
 
 			await associatedAddresses.forEach(async (obj) => {
 				const tmpAssets = await getAssetsInWallet(obj.address);
-				//console.log(tmpAssets.amount);
+				console.log(tmpAssets.amount);
 				totalAssets += tmpAssets.amount.length;
 
 				await tmpAssets.amount.forEach(async (asset) => {
@@ -100,7 +104,7 @@
 
 					if (tmpPolicyId.startsWith(assetPolicyId)) {
 						let assetData = await getSpecificAsset(tmpPolicyId);
-						//console.log(assetData.onchain_metadata);
+						console.log(assetData.onchain_metadata);
 						$assetDataArr = [...$assetDataArr, assetData.onchain_metadata];
 						$walletConnected = true;
 						eligibleAssetsCount++;
