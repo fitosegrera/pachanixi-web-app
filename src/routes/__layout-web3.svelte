@@ -1,13 +1,6 @@
 <script>
-	//LIBS
-
 	//STYLES
 	import '../app.css';
-
-	//STORES
-	import { assetDataArr } from '../stores/assetStore';
-
-	let showAssets = false;
 
 	if (typeof window !== 'undefined' && window) {
 		window.dataLayer = window.dataLayer || [];
@@ -18,11 +11,6 @@
 
 		gtag('config', 'G-YG86NHKEBX');
 	}
-
-	const handleAssets = async (assets) => {
-		$assetDataArr = await assets.detail.data;
-		showAssets = true;
-	};
 </script>
 
 <svelte:head>

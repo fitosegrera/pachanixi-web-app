@@ -69,6 +69,7 @@
 
 			if (isWalletConnected) {
 				console.log('Wallet already connected!, disconnecting now...');
+				await cardano.eternl.off;
 			} else {
 				console.log('Wallet not connected.');
 			}
