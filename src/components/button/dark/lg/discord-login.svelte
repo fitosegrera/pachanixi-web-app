@@ -8,7 +8,7 @@
 	<a
 		id="login"
 		class="flex h-full w-full items-center justify-center space-x-32 px-32 py-16"
-		href="https://discord.com/api/oauth2/authorize?client_id=1030691657294811215&redirect_uri=http%3A%2F%2Fpachanixi.com%2Fcosme-validation&response_type=token&scope=identify">
+		href="https://discord.com/api/oauth2/authorize?client_id=1030691657294811215&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fcosme-validation&response_type=token&scope=identify">
 		<Icon icon="fa-brands:discord" />
 		<span class="">Login with Discord</span>
 	</a>

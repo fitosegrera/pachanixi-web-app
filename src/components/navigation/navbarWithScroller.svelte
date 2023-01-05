@@ -83,7 +83,7 @@
 			<Scroller
 				fontSize={scrollerFontSize}
 				h={scrollerHeight}
-				data={'* MINTING LIVE - PACHANIXI GENESIS PASS COLLECTION - 999 NFTS - 5 TYPES - UNIQUE UTILITY AND BENEFITS *'} />
+				data={'* MINTING LIVE - P2 GENESIS PASS COLLECTION - 299 NFTS - 5 TYPES - UNIQUE UTILITY AND BENEFITS *'} />
 		</div>
 		<div
 			class="grid h-auto w-full grid-flow-col grid-cols-3 bg-primary-dark-alpha py-16 text-h5 text-primary-light backdrop-blur-md">
