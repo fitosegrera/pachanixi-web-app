@@ -6,7 +6,7 @@
 	// 	RewardAddress,
 	// 	Value
 	// } from '@emurgo/cardano-serialization-lib-asmjs';
-	import Wallet from '@harmonicpool/cardano-wallet-interface';
+	//import Wallet from '@harmonicpool/cardano-wallet-interface';
 	import { Buffer } from 'buffer';
 
 	//HELPERS
