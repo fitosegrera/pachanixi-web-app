@@ -12,6 +12,7 @@
 
 	//PORPS
 	export let data;
+	console.log(data);
 
 	onMount(async () => {
 		document.addEventListener('mousemove', parallax);
@@ -49,6 +50,14 @@
 				<div
 					class="mt-16 flex w-full items-center justify-center text-center font-bold text-primary-light sm:text-p3 md:text-p2 xl:text-p1">
 					<h2>{data.section_title[0].text}</h2>
+				</div>
+				<div class="mt-8">
+					<h3
+						class="text-center text-primary-light-variant sm:text-p4 md:text-p4 xl:text-p3">
+						<span class="font-bold text-primary-light"
+							>$NIXI Token Policy ID:
+						</span>{data.token_policy_id[0].text}
+					</h3>
 				</div>
 			</Saos>
 			<!-- <div class="w-full sm:mt-32 md:mt-88">

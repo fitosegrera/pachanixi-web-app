@@ -3,6 +3,7 @@ const primaryMain = '#BDFF00';
 const primaryMainVariant = '#DBFF7344';
 const primaryDark = '#10181A'; //'#02232B';
 const primaryLight = '#F6FFFA';
+const primaryLightVariant = '#bbbbbb';
 const primaryDarkVariant = '#02232B'; //'#10181A';
 const primaryDarkAlpha = '#02232B55';
 const primaryDarkAlphaVariant = '#10181ADD';
@@ -26,6 +27,7 @@ module.exports = {
 			'primary-dark-alpha-variant': primaryDarkAlphaVariant,
 			'primary-semi-dark': primarySemiDark,
 			'primary-light': primaryLight,
+			'primary-light-variant': primaryLightVariant,
 			'secondary-main': secondaryMain,
 			'tertiary-main': tertiaryMain,
 			darker: darker,

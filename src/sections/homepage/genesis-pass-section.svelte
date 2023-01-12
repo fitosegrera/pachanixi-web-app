@@ -11,7 +11,6 @@
 
 	//PROPS
 	export let data;
-	console.log(data);
 
 	const htmlSerializer = (type, element, content, children) => {
 		if (type === 'strong') {
