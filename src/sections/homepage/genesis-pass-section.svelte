@@ -11,7 +11,7 @@
 
 	//PROPS
 	export let data;
-	//console.log(data);
+	console.log(data);
 
 	const htmlSerializer = (type, element, content, children) => {
 		if (type === 'strong') {
@@ -23,7 +23,7 @@
 	};
 </script>
 
-<div id="genesis-pass" class="bg-transparent h-auto w-auto">
+<div id="genesis-pass" class="h-auto w-auto bg-transparent">
 	<!-- <Main> -->
 	<div
 		class="flex h-full w-full items-center justify-center space-x-32 sm:flex-col lg:flex-row">
@@ -58,11 +58,21 @@
 				</h1>
 			</Saos>
 			<div
-				class="pb-64 pt-48 font-medium text-primary-light sm:text-center sm:text-p3 md:text-p1 lg:text-left">
+				class="pb-16 pt-48 font-medium text-primary-light sm:text-center sm:text-p3 md:text-p1 lg:text-left">
 				<Saos
 					animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
 					<!-- <span class="font-bold text-primary-main">MINT</span> OCT. 8 / 2022 -->
 					{@html prismicH.asHTML(data.headline_4, null, htmlSerializer)}
+				</Saos>
+			</div>
+			<div
+				class="pb-64 pt-16 font-medium text-primary-light sm:text-center sm:text-p4 md:text-p3 lg:text-left">
+				<Saos
+					animation={'from-left 1s cubic-bezier(0.05, 0.5, 0.65, 0.95) both'}>
+					<!-- <span class="font-bold text-primary-main">MINT</span> OCT. 8 / 2022 -->
+					<span class="font-bold text-primary-main"
+						>Policy Id:
+					</span>{data.policy_id}
 				</Saos>
 			</div>
 			<div class="">
